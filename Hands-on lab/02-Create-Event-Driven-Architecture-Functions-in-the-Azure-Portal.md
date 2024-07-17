@@ -20,20 +20,23 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
 
 2. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-3. Select **Functions** in the left-hand menu, then select **+ Create**.
+3. Scroll down to **Functions** , then select **Create Function**.
 
-    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/functions-new.png 'TollBoothEvents blade')
+    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ss7.png)
 
-4. On the **Create function** form:
+4. On the **Create function** form, under **Select a template** tab:
 
-   - Enter `event grid` into the **Select a template** filter box (1).
+   - Search for  **event grid** (1)
    - Select the **Azure Event Grid trigger** template (2).
-   - Enter `SavePlateData` into the **New Function** name field (3).
-   - Select the **Create** button (4).
+   - Select the **Next** button (3).
 
-    ![In the Create Function form, event grid is entered into the filter box, the Azure Event Grid trigger template is selected and highlighted, and SavePlateData is entered in the Name field and highlighted.](media/new-function-save-plate-data.png "Create Function form")
+    ![In the Create Function form, event grid is entered into the filter box, the Azure Event Grid trigger template is selected and highlighted, and SavePlateData is entered in the Name field and highlighted.](media/ss8.png)
 
-5. On the **SavePlateData** Function blade, select **Code + Test** from the left-hand menu and replace the code in the new `SavePlateData` function's `index.js` file with the following:
+1. On the **Create function** form, under **Template details** tab Enter `SavePlateData` (1) into the **Function name** field, then Click on **Create** (2)
+
+    ![](media/ss9.png)
+
+5. On the **SavePlateData** Function blade, select **Code + Test** and replace the code in the new `SavePlateData` function's `index.js` file with the following:
 
     ```javascript
     module.exports = function(context, eventGridEvent) {
@@ -51,17 +54,19 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
     };
     ```
 
-    ![The function code is displayed.](media/saveplatedata-code.png "SavePlateData Code + Test")
-
 6. Select **Save**.
 
 ### Task 2: Add an Event Grid subscription to the SavePlateData function
 
 In this task, you will add an Event Grid subscription to the SavePlateData function. This will ensure that the events sent to the Event Grid topic containing the savePlateData event type are routed to this function.
 
-1. With the SavePlateData function open, select **Integration** in the left-hand menu, select **Event Grid Trigger (eventGridEvent)**, then select **Create Event Grid subscription**.
+1. With the SavePlateData function open, navigate to **Integration** (1) tab, then click on **Event Grid Trigger (eventGridEvent)** (2).
 
-    ![In the SavePlateData blade code window, the Add Event Grid subscription link is selected.](media/saveplatedata-add-eg-sub.png 'SavePlateData blade')
+    ![In the SavePlateData blade code window, the Add Event Grid subscription link is selected.](media/ss11.png)
+
+1. On the Edit Trigger form, select **Create Event Grid subscription**.
+
+    ![](media/ss12.png)
 
 2. On the **Create Event Subscription** blade, specify the following configuration options:
 
@@ -110,18 +115,21 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
 
 In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  This is in the Azure Function App that starts with **TollBoothEvents**.
 
-1. Select **Functions** in the left-hand menu, then select **+ Create**.
+1. Scroll down to **Functions** tab, then select **+ Create**.
 
-    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/functions-new.png 'TollBoothEvents blade')
+    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/ss13.png)
 
-2. On the **Create function** form:
+2. On the **Create function** form, under **Select a template** tab:
 
-   - Enter `event grid` into the **Select a template** filter box (1).
+   - Search for **event grid** (1).
    - Select the **Azure Event Grid trigger** template (2).
-   - Enter `QueuePlateForManualCheckup` into the **New Function** name field (3).
-   - Select **Create** (4).
+   - Select **next** (3).
 
-    ![In the Create function form, event grid is entered into the filter box. The Azure Event Grid trigger template is selected and highlighted, and QueuePlateForManualCheckup is entered in the Name field and highlighted.](media/new-function-manual-checkup.png "Create function form")
+    ![In the Create function form, event grid is entered into the filter box. The Azure Event Grid trigger template is selected and highlighted, and QueuePlateForManualCheckup is entered in the Name field and highlighted.](media/ss8.png)
+
+1. On the **Create function** form, under **Template details** tab Enter `QueuePlateForManualCheckup` (1) into the **Function name** field, then Click on **Create** (2)
+
+    ![](media/ss14.png)
 
 3. On the **QueuePlateForManualCheckup** Function blade, select **Code + Test** from the left-hand menu and replace the code in the new `QueuePlateForManualCheckup` function's `index.js` file with the following:
 
@@ -147,9 +155,13 @@ In this task, you will create another new function triggered by Event Grid and o
 
 In this task, you will add an Event Grid subscription to the QueuePlateForManualCheckup function. This will ensure that the events sent to the Event Grid topic containing the queuePlateForManualCheckup event type are routed to this function.
 
-1. With the **QueuePlateForManualCheckup** function open, select **Integration** (1) in the left-hand menu. Select **Event Grid Trigger (eventGridEvent)** (2). On the Edit Trigger form, select **Create Event Grid subscription** (3).
+1. With the **QueuePlateForManualCheckup** function open, Navigate to **Integration** (1) tab. Select **Event Grid Trigger (eventGridEvent)** (2). 
 
-    ![In the QueuePlateForManualCheckup Integration blade, the Create Event Grid subscription link is selected.](media/queueplateformanualcheckup-add-eg-sub.png "QueuePlateForManualCheckup blade")
+    ![In the QueuePlateForManualCheckup Integration blade, the Create Event Grid subscription link is selected.](media/ss15.png)
+
+1. On the Edit Trigger form, select **Create Event Grid subscription**.
+
+    ![](media/ss12.png)
 
 2. On the **Create Event Subscription** blade, specify the following configuration options:
 
