@@ -205,11 +205,26 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
 1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Service Bus whose name begins with **ServiceBus**.
 
-2. On the ServiceBus page click on **+ Queue**.
+1. On the ServiceBus page click on **+ Queue**.
 
-    ![](media/)
+    ![](media/ss16.png)
 
+1. On the **Create Queue** form, update the configuration with these values, then Click on **create**(3).
 
+    - **Name**: `SavePlate-Queue` (1)
+    - **Max delivery count**: **1000** (2)
+
+    ![](media/ss17.png)
+
+1. Wait till the completion Queue creation. Now On the ServiceBus page click on **+ Topic** 
+
+    ![](media/ss18.png)
+
+1. On the **Create Topic** form, use the name `SavePlate-topic` (1) in the **Name** field, then Click on **create** (2).
+
+    ![](media/ss19.png)
+
+1. Wait till the completion of **Topic Creation**.
 
 
 ## Task 8: Add Service Bus output binding to SavePlateData function 
