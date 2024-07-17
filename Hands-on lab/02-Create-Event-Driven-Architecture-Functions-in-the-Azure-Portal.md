@@ -200,7 +200,17 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
 4. Close the **QueuePlateForManualCheckup** function.
 
 ## Task 7: Create a Service Bus queue and topic 
-pending...
+
+In this task, you will create a Service Bus queue and topic to manage processed data messages and to support event-driven communication within your architecture.
+
+1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Service Bus whose name begins with **ServiceBus**.
+
+2. On the ServiceBus page click on **+ Queue**.
+
+    ![](media/)
+
+
+
 
 ## Task 8: Add Service Bus output binding to SavePlateData function 
 pending...
