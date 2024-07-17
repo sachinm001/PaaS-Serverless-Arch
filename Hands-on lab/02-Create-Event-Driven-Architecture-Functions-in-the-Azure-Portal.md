@@ -18,13 +18,13 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
 
 1. Using a new tab or instance of your browser, navigate to the [Azure portal](https://portal.azure.com).
 
-2. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-3. Scroll down to **Functions** , then select **Create Function**.
+1. Scroll down to **Functions** , then select **Create Function**.
 
     ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ss7.png)
 
-4. On the **Create function** form, under **Select a template** tab:
+1. On the **Create function** form, under **Select a template** tab:
 
    - Search for  **event grid** (1)
    - Select the **Azure Event Grid trigger** template (2).
@@ -36,7 +36,7 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
 
     ![](media/ss9.png)
 
-5. On the **SavePlateData** Function blade, select **Code + Test** and replace the code in the new `SavePlateData` function's `index.js` file with the following:
+1. On the **SavePlateData** Function blade, select **Code + Test** and replace the code in the new `SavePlateData` function's `index.js` file with the following:
 
     ```javascript
     module.exports = function(context, eventGridEvent) {
@@ -54,7 +54,7 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
     };
     ```
 
-6. Select **Save**.
+1. Select **Save**.
 
 ### Task 2: Add an Event Grid subscription to the SavePlateData function
 
@@ -68,7 +68,7 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
 
     ![](media/ss12.png)
 
-2. On the **Create Event Subscription** blade, specify the following configuration options:
+1. On the **Create Event Subscription** blade, specify the following configuration options:
 
     - **Name**: Enter a unique value, similar to **saveplatedatasub** (ensure the green checkmark appears).
     - **Event Schema**: Select **Event Grid Schema**.
@@ -82,7 +82,7 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
 
     ![In the Create Event Subscription blade, fields are set to the previously defined values.](media/saveplatedata-eg-sub.png "Create Event Subscription")
 
-3. Select **Create** and then close the Edit Trigger dialog.
+1. Select **Create** and then close the Edit Trigger dialog.
 
 ### Task 3: Add an Azure Cosmos DB output to the SavePlateData function
 
@@ -90,7 +90,7 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
 
 1. While still on the **SavePlateData** Integration blade, select **+ Add output** under `Outputs`.
 
-2. In the **Create Output** blade:
+1. In the **Create Output** blade:
 
    - Select the `Azure Cosmos DB` for **Binding Type** (1).
    - Beneath the Cosmos DB account connection drop down, select the **New** link (2).
@@ -99,17 +99,17 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
 
     ![The Add Output link is highlighted with an arrow pointing to the highlighted binding type in the Create Output blade.](media/function-output-binding-type.png "Create Output")
 
-3. Specify the following additional configuration options in the Create Output form:
+1. Specify the following additional configuration options in the Create Output form:
 
     - **Document parameter name**: Leave set to `outputDocument`.
     - **Database name**: Enter `LicensePlates`.
     - **Collection name**: Enter `Processed`.
 
-4. Select **OK**.
+1. Select **OK**.
 
     ![Under Azure Cosmos DB output the following field values display: Document parameter name, outputDocument; Collection name, Processed; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb_DOCUMENTDB.](media/saveplatedata-cosmos-integration.png 'Azure Cosmos DB output section')
 
-5. Close the `SavePlateData` function.
+1. Close the `SavePlateData` function.
 
 ### Task 4: Create a function to save manual verification info to Azure Cosmos DB
 
@@ -119,7 +119,7 @@ In this task, you will create another new function triggered by Event Grid and o
 
     ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/ss13.png)
 
-2. On the **Create function** form, under **Select a template** tab:
+1. On the **Create function** form, under **Select a template** tab:
 
    - Search for **event grid** (1).
    - Select the **Azure Event Grid trigger** template (2).
@@ -131,7 +131,7 @@ In this task, you will create another new function triggered by Event Grid and o
 
     ![](media/ss14.png)
 
-3. On the **QueuePlateForManualCheckup** Function blade, select **Code + Test** from the left-hand menu and replace the code in the new `QueuePlateForManualCheckup` function's `index.js` file with the following:
+1. On the **QueuePlateForManualCheckup** Function blade, select **Code + Test** from the left-hand menu and replace the code in the new `QueuePlateForManualCheckup` function's `index.js` file with the following:
 
     ```javascript
     module.exports = async function(context, eventGridEvent) {
@@ -149,7 +149,7 @@ In this task, you will create another new function triggered by Event Grid and o
     };
     ```
 
-4. Select **Save**.
+1. Select **Save**.
 
 ### Task 5: Add an Event Grid subscription to the QueuePlateForManualCheckup function
 
@@ -163,7 +163,7 @@ In this task, you will add an Event Grid subscription to the QueuePlateForManual
 
     ![](media/ss12.png)
 
-2. On the **Create Event Subscription** blade, specify the following configuration options:
+1. On the **Create Event Subscription** blade, specify the following configuration options:
 
     - **Name**: Enter a unique value, similar to `queueplateformanualcheckupsub` (ensure the green check mark appears).
     - **Event Schema**: Select **Event Grid Schema**.
@@ -177,7 +177,7 @@ In this task, you will add an Event Grid subscription to the QueuePlateForManual
 
     ![In the Create Event Subscription blade, fields are set to the previously defined values.](media/manualcheckup-eg-sub.png)
 
-3. Select **Create** and close the Edit Trigger blade.
+1. Select **Create** and close the Edit Trigger blade.
 
 ### Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
 
@@ -185,7 +185,7 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
 
 1. While still on the **QueuePlateForManualCheckup** Integration blade, select **+ Add output** under **Outputs**.
 
-2. In the **Create Output** form, select the following configuration options in the Create Output form:
+1. In the **Create Output** form, select the following configuration options in the Create Output form:
 
     - **Binding Type**: Select `Azure Cosmos DB`.
     - **Cosmos DB account connection**: Select the **Azure Cosmos DB account connection** you created earlier.
@@ -193,11 +193,11 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
     - **Database name**: Enter `LicensePlates`.
     - **Collection name**: Enter `NeedsManualReview`.
 
-3. Select **OK**.
+1. Select **OK**.
 
     ![In the Azure Cosmos DB output form, the following field values display: Document parameter name, outputDocument; Collection name, NeedsManualReview; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb-SUFFIX.](media/manual-checkup-cosmos-integration.png 'Azure Cosmos DB output form')
 
-4. Close the **QueuePlateForManualCheckup** function.
+1. Close the **QueuePlateForManualCheckup** function.
 
 ## Task 7: Create a Service Bus queue and topic 
 
