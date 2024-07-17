@@ -37,6 +37,10 @@ Use Visual Studio and its integrated Azure Functions tooling to develop and debu
 
     ![](media/image3.png)
 
+1. After signing in you will be prompted to choose environment settings, click on **Start Visual Studio**.
+    
+    ![](media/ss3-vs.png)
+
 1. If prompted with a security warning, uncheck **Ask me for every project in this solution**, and then select **OK**.
 
 1. Notice the solution contains the following projects:
@@ -166,18 +170,17 @@ In this task, you will publish the Function App from the starter project in Visu
 
 1. Open the **hands-on-lab-SUFFIX** resource group, then select the **TollBoothFunctions** Azure Function App, to which you just published.
 
-1. Select **Functions** (1) in the left-hand navigation menu. You should see both functions you just published from the Visual Studio solution listed (2).
+1. Scroll down to functions tab. You should see both functions you just published from the Visual Studio solution listed. Click on **ProcessImage** function.
 
-    ![In the Function Apps blade, in the left tree-view, both TollBoothFunctionApp and Functions (Read Only) are expanded. Beneath Functions (Read Only), two functions ExportLicensePlates and ProcessImage are highlighted.](media/dotnet-functions.png 'TollBoothFunctionApp blade')
+    ![In the Function Apps blade, in the left tree-view, both TollBoothFunctionApp and Functions (Read Only) are expanded. Beneath Functions (Read Only), two functions ExportLicensePlates and ProcessImage are highlighted.](media/ss4.png)
 
-1. Now, we need to add an Event Grid subscription to the ProcessImage function, so the function is triggered when new images are added to the data lake storage container.
+1. In the **ProcessImage | Code + Test** page navigate to **Integration (1)** tab. In the integration tab click on **Event Grid Trigger (eventGridEvent) (2)**.
 
-    - Select the **ProcessImage** function.
-    - Select **Integration** on the left-hand menu (1).
-    - Select **Event Grid Trigger (eventGridEvent)** (2).
-    - Select **Create Event Grid subscription** (3).
+    ![In the TollboothFunctionApp tree-view, the ProcessImage function is selected. In the code window pane, the Add Event Grid subscription link is highlighted.](media/ss5.png)
 
-    ![In the TollboothFunctionApp tree-view, the ProcessImage function is selected. In the code window pane, the Add Event Grid subscription link is highlighted.](media/processimage-add-eg-sub.png 'ProcessImage function')
+1. In the **Edit Trigger** page, Click on **Create Event Grid subscription**.
+
+    ![](media/ss6.png)
 
 1. On the **Create Event Subscription** blade, specify the following configuration options:
 
