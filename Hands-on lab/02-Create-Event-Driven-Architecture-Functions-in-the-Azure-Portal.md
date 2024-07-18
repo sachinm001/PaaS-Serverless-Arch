@@ -216,15 +216,7 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
     ![](media/ss17.png)
 
-1. Wait till the completion Queue creation. Now On the ServiceBus page click on **+ Topic** 
-
-    ![](media/ss18.png)
-
-1. On the **Create Topic** form, use the name `SavePlate-topic` (1) in the **Name** field, then Click on **create** (2).
-
-    ![](media/ss19.png)
-
-1. Wait till the completion of **Topic Creation**.
+1. Wait till the completion **Queue creation**. 
 
 
 ## Task 8: Add Service Bus output binding to SavePlateData function 
