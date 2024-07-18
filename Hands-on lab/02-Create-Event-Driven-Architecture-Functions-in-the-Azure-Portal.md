@@ -105,9 +105,9 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
     - **Database name**: Enter `LicensePlates`.
     - **Collection name**: Enter `Processed`.
 
-1. Select **OK**.
+1. Select **Add**.
 
-    ![Under Azure Cosmos DB output the following field values display: Document parameter name, outputDocument; Collection name, Processed; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb_DOCUMENTDB.](media/saveplatedata-cosmos-integration.png 'Azure Cosmos DB output section')
+    ![Under Azure Cosmos DB output the following field values display: Document parameter name, outputDocument; Collection name, Processed; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb_DOCUMENTDB.](media/ss21.png)
 
 1. Close the `SavePlateData` function.
 
@@ -193,9 +193,9 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
     - **Database name**: Enter `LicensePlates`.
     - **Collection name**: Enter `NeedsManualReview`.
 
-1. Select **OK**.
+1. Select **Add**.
 
-    ![In the Azure Cosmos DB output form, the following field values display: Document parameter name, outputDocument; Collection name, NeedsManualReview; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb-SUFFIX.](media/manual-checkup-cosmos-integration.png 'Azure Cosmos DB output form')
+    ![In the Azure Cosmos DB output form, the following field values display: Document parameter name, outputDocument; Collection name, NeedsManualReview; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb-SUFFIX.](media/ss20.png)
 
 1. Close the **QueuePlateForManualCheckup** function.
 

@@ -32,7 +32,7 @@ Application Insights can be integrated with Azure Function Apps to provide robus
    > **Note**: To obtain the connection string:
    >
    > - In the Azure portal, navigate to the **datalake{SUFFIX}** storage account.
-   > - Select **Access keys** from the left menu.
+   > - Select **Access keys** from the left menu under **Security + Networking**.
    > - Copy the **Connection string** value of **key1**.
    >  
 
