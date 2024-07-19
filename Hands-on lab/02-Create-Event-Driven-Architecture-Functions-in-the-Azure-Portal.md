@@ -211,7 +211,7 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
 1. On the **Create Queue** form, update the configuration with these values, then Click on **create**(3).
 
-    - **Name**: `SavePlate-Queue` (1)
+    - **Name**: `Processed` (1)
     - **Max delivery count**: **1000** (2)
 
     ![](media/ss17.png)
