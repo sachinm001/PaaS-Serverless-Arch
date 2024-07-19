@@ -214,7 +214,7 @@ In this task, you will create a Service Bus queue and topic to manage processed 
     - **Name**: `Processed` (1)
     - **Max delivery count**: **1000** (2)
 
-    ![](media/ss17.png)
+    ![](media/ss17u.png)
 
 1. Wait till the completion **Queue creation**. 
 
