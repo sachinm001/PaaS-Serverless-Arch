@@ -1,0 +1,41 @@
+[
+  {
+    "Name": "Serverless Architecture",
+    "Language": "English",
+    "Files": [
+     {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/getting-started-2.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/Overview.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/01-Develop-and-publish-the-photo-processing-and-data-export-function.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/02-Create-Event-Driven-Architecture-Functions-in-the-Azure-Portal.md",
+        "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/03-Integrate-API-Management-with-Your-Azure-Functions.md",
+        "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/04-Monitor-Your-Azure-Functions-with-Application-Insights.md",
+        "Order": 6
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/05-Explore-your-data-in-Azure-Cosmos-DB.md",
+        "Order": 7
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/PaaS-Serverless-Arch/Test/Hands-on%20lab/06-Create-the-data-export-workflow.md",
+        "Order": 8
+      }
+
+    ]
+  }
+]
