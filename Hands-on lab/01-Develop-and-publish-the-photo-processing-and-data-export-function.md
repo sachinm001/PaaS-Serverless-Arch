@@ -13,6 +13,8 @@ Use Visual Studio and its integrated Azure Functions tooling to develop and debu
 
 ### Task 1: Open the starter solution in Visual Studio
 
+In this task, you will access the starter solution and update the files.
+
 1. On the LabVM, open File Explorer and navigate to `C:\ServerlessMCW\MCW-Serverless-architecture-main\Hands-on lab\lab-files\src\TollBooth`.
 
     > **Note:** Ensure the files are located under `C:\ServerlessMCW\`. If the files are located under a longer root path, such as  `C:\Users\workshop\Downloads\`, you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters`.
