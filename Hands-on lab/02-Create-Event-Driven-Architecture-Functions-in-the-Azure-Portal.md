@@ -203,7 +203,7 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
 
 In this task, you will create a Service Bus queue and topic to manage processed data messages and to support event-driven communication within your architecture.
 
-1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Service Bus whose name begins with **ServiceBus**.
+1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Service Bus  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
 
 1. On the ServiceBus page click on **+ Queue**.
 
@@ -212,9 +212,9 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 1. On the **Create Queue** form, update the configuration with these values, then Click on **create**(3).
 
     - **Name**: `Processed` (1)
-    - **Max delivery count**: **1000** (2)
+    - **Max delivery count**: **1500** (2)
 
-    ![](media/ss17u.png)
+    ![](media/sss6.png)
 
 1. Wait till the completion **Queue creation**. 
 
