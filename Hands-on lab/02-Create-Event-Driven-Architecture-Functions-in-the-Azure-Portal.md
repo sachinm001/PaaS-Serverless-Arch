@@ -207,6 +207,8 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
 1. Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Service Bus  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
 
+   ![](media/sss43.png)
+
 1. On the ServiceBus page click on **+ Queue**.
 
    ![](media/ss16.png)
@@ -520,6 +522,14 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 1. Click on **items** and you should be able to see that processed data and unprocessed are updated. This validates that your serverless architecture is working as expected.
 
     ![In the Live Metrics Stream window, two servers are online under Incoming Requests. The Request Rate heartbeat line graph is selected, as is the Request Duration dot graph. Under Overall Health, the Process CPU heartbeat line graph is also selected, the similarities between this graph and the Request Rate graph under Incoming Requests are highlighted for comparison.](media/sss42.png 'Live Metrics Stream window')
+
+1. Also, navigate to **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />**  and open  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
+
+   ![](media/sss43.png)
+
+1. From the side-blade, select **Queues (2)** from the **Entities (1)** drop-down, and open **Processed (3)** queue.
+
+   ![](media/sss44.png)
 
 ## Summary
 
