@@ -12,7 +12,7 @@ In this task, you will create an API Management instance in Azure. API Managemen
 
     ![](media/ex3task1img2.png)
 
-1. In Basic tab of **Create API Mangement services** page fill the necessary details and click on **Review + create**.
+1. On the **Basics** tab of the **Create API Management Service** page, fill in the necessary details, Ensure all required fields are completed accurately, then click on **Review + create** to proceed.
 
    | Setting         | Value |
    ------------------|---------
@@ -26,8 +26,7 @@ In this task, you will create an API Management instance in Azure. API Managemen
     ![](media/ex3task1img3.png)
     ![](media/ex3task1img4.png)
 
-
-1. Review your configuration and click on **Create**.
+1. Review your configuration to ensure all settings are correct, then click on **Create** to initiate the deployment process.
 
     ![](media/ex3task1img5.png)
 
@@ -35,19 +34,19 @@ In this task, you will create an API Management instance in Azure. API Managemen
 
 In this task, you will go through creating an Azure Function App and connecting it to an Azure Cosmos DB. You will create an HTTP-triggered function within the Function App and replace its default code with JavaScript to query Cosmos DB. Additionally, you'll configure environment variables for Cosmos DB connection details to ensure secure and efficient access to the database from the function.
 
-1. In the search bar of the Azure Portal search for **Function app (1)** in the search bar. Select **Function App (2)**.
+1. In the search bar of the Azure Portal, type **Function app (1)** and select **Function App (2)** from the search results.
 
     ![](media/ex3task2img1.png)
 
-1. Click on **+ Create**.
+1. Click on **+ Create** to initiate the creation of a new Function App.
 
     ![](media/ex3task2img2.png)
 
-1. From the Create Function App tab, select **Consumption** and select **Next**.
+1. From the **Create Function App** tab, select **Consumption** as the hosting plan and then click on **Next** to proceed.
 
     ![](media/ex3task2img4.png)
 
-1. On the **Basics** tab of Create Function App, provide details as mentioned in the table below and select **Review + create** (6) at the bottom of the page and subsequently click on **Create**.
+1. On the **Basics** tab of the **Create Function App** page, provide the details as mentioned in the table below. After filling in the necessary information, click on **Review + create** at the bottom of the page, and then click on **Create** to start the deployment.
 
     | Setting | Action |
     | -- | -- |
@@ -59,39 +58,39 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task2img3.png)
 
-     >**Note:** Keep rest of the options as default.
+     > **Note:** Keep the rest of the options as default.
  
-1. Once the deployment is completed, click on **Go to resource**.
+Once the deployment is completed, click on **Go to resource** to access the newly created Function App.
 
-1. On the **Overview (1)** page of the **Function app**, under the  **Function** tab, click on **Create function (2)**. It will open a  page for **Create function**. Search for and select **HTTP trigger (3)**. Click on **Next (4)**.
+1. On the **Overview** (1) page of the **Function app**, go to the **Functions** tab and click **Create function** (2). On the **Create function** page, search for and select **HTTP trigger** (3), then click **Next** (4).
 
     ![](media/ex3task2img5.png)
 
-1. On Template details page, leave the default options and click on **Create**.
+1. On the **Template details** page, leave the default options as they are and click on **Create**.
 
     ![](media/ex3task2img6.png)
 
-1. You will find a function got created with name.
+1. You will see that a function with the specified name has been created successfully.
 
     ![](media/ex3task2img7.png)
 
-1. In the search bar of the Azure Portal search for **Cosmos DB (1)** in the search bar. Select **Azure Cosmos DB (2)**.
+1. In the search bar of the Azure Portal, search for **Cosmos DB** (1) and select **Azure Cosmos DB** (2).
 
     ![](media/ex3task2img8.png)
 
 1. Select your **cosmosdb-<inject key="DeploymentID"></inject>** account.
 
-1. Click on the **Keys** (2) under **Settings** (1) and copy the **URI** (3) (Endpoint), click on the **eye** (4) icon and then copy your **PRIMARY KEY** (5). Note down your URI and PRIMARY KEY.
+1. Click on **Keys** (2) under **Settings** (1) and copy the **URI** (3) (Endpoint). Then, click on the **eye** (4) icon to reveal and copy your **PRIMARY KEY** (5). Note down both the URI and PRIMARY KEY.
 
     ![](media/ex3task2img9.png)
 
-1. Click on the **Data Explorer** (1), note down databaseId which is **LicensePlates** (2) and containerId which is **Processed** (3).
+1. Click on the **Data Explorer** (1), note down `databaseId` which is **LicensePlates** (2) and `containerId` which is **Processed** (3).
 
     ![](media/ex3task2img10.png)
 
-1. Navigate back to your **HttpTrigger** function from the function app name **License-function-<inject key="DeploymentID"></inject>**.
+1. Navigate back to your **HttpTrigger** function within the function app named **License-function-<inject key="DeploymentID"></inject>**.
 
-1. On the **HttpTrigger1** Function blade, select Code + Test and replace the code in the new `HttpTrigger1` function's `index.js` file with the following:
+1. On the **HttpTrigger1** Function blade, select **Code + Test** and replace the existing code in the `index.js` file with the following:
 
     ```
     const { CosmosClient } = require("@azure/cosmos");
@@ -149,26 +148,24 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ```
 
-1. Go to the **Environment variables** (2), under the **settings (1)** and click on **+ ADD**.
+1. In the **Settings** section (1) of your function app, navigate to **Environment variables** (2). Click on the **+ ADD** button to begin adding new environment variables.
 
     ![](media/ex3task2img14.png)
 
-1. Now add all values in **Environment variables** for:
+1. In the **Environment variables** section, add the following values:
 
-    ```
-    COSMOS_DB_ENDPOINT;
-    COSMOS_DB_PRIMARY_KEY;
-    COSMOS_DB_DATABASE_ID;
-    COSMOS_DB_CONTAINER_ID;
-    ```
+   - **COSMOS_DB_ENDPOINT**: Your Cosmos DB URI
+   - **COSMOS_DB_PRIMARY_KEY**: Your Cosmos DB primary key
+   - **COSMOS_DB_DATABASE_ID**: The Name of your Cosmos DB database
+   - **COSMOS_DB_CONTAINER_ID**: The Name of your Cosmos DB container
 
-1. Now add your **COSMOS_DB_ENDPOINT** (1) as **Name** and the **Value** (2) that you have copied previously then click on **Apply** (3).
+1. In the **Environment variables** section, add **COSMOS_DB_ENDPOINT** (1) as the **Name** and paste the copied **Value** (2) (the URI of your Cosmos DB) into the appropriate field. Click **Apply** to save the changes.
 
     ![](media/ex3task2img11.png)
 
-    >**Note**: Make sure to add all the values in **Environment variables**.
+    >**Note**: Ensure that you add all required values for **Environment variables**, including `COSMOS_DB_ENDPOINT`, `COSMOS_DB_PRIMARY_KEY`, `COSMOS_DB_DATABASE_ID`, and `COSMOS_DB_CONTAINER_ID`.
 
-1. After adding all the values click on the **Apply** and **Confirm** to Save changes.
+1. After adding all the required values, click on **Apply** to save the changes. Then, click on **Confirm** to finalize and ensure that your environment variables are updated successfully.
 
     ![](media/ex3task2img12.png)
     ![](media/ex3task2img13.png)
@@ -179,9 +176,9 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task1img1.png)
 
-1. Select the api management service as **apiservice-<inject key="DeploymentID"></inject>**.
+1. Select the API Management service named **apiservice-<inject key="DeploymentID"></inject>**.
 
-1. Click on **Console** (1) under the  **Development Tools** and run the command to install the Azure Cosmos DB.
+1. Click on **Console** (1) under **Development Tools** and run the command to install the Azure Cosmos DB SDK.
 
     ```
     npm install @azure/cosmos
@@ -189,15 +186,15 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task3img9.png)
 
-1. From the **APIs** (1), click on the **APIs** (2) and select the **Function APP** (3).
+1. In the **APIs** (1) section of your Azure API Management service, click on **APIs** (2) to open the list of available APIs. Then, select **Function App** (3) from the list of available API types. This will allow you to manage and configure your Function App API within the API Management service.
 
     ![](media/ex3task3img1.png)
 
-1. From the **Create from Function App** page, select the **Browse** option.
+1. On the **Create from Function App** page, click on the **Browse** option. This will allow you to view and select the available Function Apps that you can integrate with your API Management service.
 
     ![](media/ex3task3img2.png)
 
-1. On the **Import Azure Functions** click on the **Select** button 
+1. On the **Import Azure Functions** page, click on the **Select** button. This will confirm your choice and initiate the process of importing the selected Azure Functions into your API Management service.
 
     ![](media/ex3task3img3.png)
 
