@@ -250,15 +250,15 @@ In Progress
 
     ![](media/ex3task3img8.png)
 
-1. Provide the **Name** as **id** and thier corresponding **Value** that have been copied from the Items of Processed conatiner in Cosmos DB. Click on **Send**.
+1. Provide the **Name** as **id** and enter the corresponding **Value** that you copied from the items in the **Processed** container in Cosmos DB. Click on **Send**.
 
     ![](media/ex3task6img2.png)
 
-1. Once the GET Request is send it will fetch the all the details related to LicensePlate.
+1. After sending the GET request, it will fetch and display all the details related to the LicensePlate.
 
     ![](media/ex3task6img3.png)
 
-1. Now copy the **Request URL** and Open in new tab window.
+1. Copy the **Request URL** provided in the API test section and open it in a new browser tab to test the API endpoint.
 
     ![](media/ex3task6img4.png)
 
