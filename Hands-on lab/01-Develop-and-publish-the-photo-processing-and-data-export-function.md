@@ -231,7 +231,7 @@ In this task, you will publish the Function App from the starter project in Visu
     - **Endpoint Type**: Leave **Azure Function** **(7)** as the Endpoint Type.
     - **Endpoint**: Leave as **ProcessImage** **(7)**.
 
-    ![In the Create event subscription form, the fields are set to the previously defined values.](media/process-image-sub-topic.png)
+    ![](media/sss17.png)
 
 ### Summary
 
