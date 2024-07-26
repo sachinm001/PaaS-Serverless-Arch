@@ -4,7 +4,6 @@
 
 In this task, you will create an API Management instance in Azure. API Management is a service that acts as a gateway between backend services and client applications, allowing for centralized management, security, and monitoring of APIs.
 
-
 1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
 
     ![](media/ex3task1img1.png)
@@ -33,6 +32,8 @@ In this task, you will create an API Management instance in Azure. API Managemen
     ![](media/ex3task1img5.png)
 
 ### Task 2: Create a function to pull driver's license information 
+
+In this task, you will go through creating an Azure Function App and connecting it to an Azure Cosmos DB. You will create an HTTP-triggered function within the Function App and replace its default code with JavaScript to query Cosmos DB. Additionally, you'll configure environment variables for Cosmos DB connection details to ensure secure and efficient access to the database from the function.
 
 1. In the search bar of the Azure Portal search for **Function app (1)** in the search bar. Select **Function App (2)**.
 
