@@ -260,11 +260,11 @@ In Progress
 
     ![](media/ex3task6img4.png)
 
-1. It will give access denied due to missing subscription key. 
+1. If access is denied due to the missing subscription key, ensure you have removed the subscription key requirement correctly from the **Settings**. If the issue persists, verify that the changes have been saved and applied. 
 
     ![](media/ex3task6img5.png)
 
-1. For this we need to remove the subscription key required from the settings, So click on the **Settings** and **Uncheked** the **Subscription required**, click to **Save**.
+1. To proceed, you need to remove the subscription key requirement from the settings. Click on **Settings**, uncheck **Subscription required**, and then click **Save**.
 
     ![](media/ex3task6img6.png)
 
