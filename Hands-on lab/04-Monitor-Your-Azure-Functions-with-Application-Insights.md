@@ -1,4 +1,4 @@
-## Exercise 4: Monitor your functions with Application Insights
+# Exercise 4: Monitor your functions with Application Insights
 
 **Duration**: 15 minutes
 
@@ -12,7 +12,7 @@ Application Insights can be integrated with Azure Function Apps to provide robus
 | Monitor Azure Functions using Application Insights | <https://docs.microsoft.com/azure/azure-functions/functions-monitoring> |
 | Live Metrics Stream: Monitor & Diagnose with 1-second latency | <https://docs.microsoft.com/azure/application-insights/app-insights-live-stream> |
 
-### Task 1: Use the Live Metrics Stream to monitor functions in real-time
+## Task 1: Use the Live Metrics Stream to monitor functions in real-time
 
 1. Open the **appinsights** Application Insights resource from within your lab resource group.
 
@@ -66,7 +66,7 @@ Application Insights can be integrated with Azure Function Apps to provide robus
 
 1. After this has run for a while, close the image upload console window once again, but leave the Live Metrics Stream window open.
 
-### Task 2: Observe your functions dynamically scaling when resource-constrained
+## Task 2: Observe your functions dynamically scaling when resource-constrained
 
 In this task, you will change the Computer Vision API to the Free tier. This will limit the number of requests to the OCR service to 10 per minute. Once changed, run the UploadImages console app to upload 1,000 images again. The resiliency policy is programmed into the FindLicensePlateText.MakeOCRRequest method of the ProcessImage function will begin exponentially backing off requests to the Computer Vision API, allowing it to recover and lift the rate limit. This intentional delay will significantly increase the function's response time, causing the Consumption plan's dynamic scaling to kick in, allocating several more servers. You will watch all of this happen in real-time using the Live Metrics Stream view.
 
