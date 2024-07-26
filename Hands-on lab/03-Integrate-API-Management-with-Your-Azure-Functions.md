@@ -61,7 +61,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
      > **Note:** Keep the rest of the options as default.
  
-Once the deployment is completed, click on **Go to resource** to access the newly created Function App.
+1. Once the deployment is completed, click on **Go to resource** to access the newly created Function App.
 
 1. On the **Overview** (1) page of the **Function app**, go to the **Functions** tab and click **Create function** (2). On the **Create function** page, search for and select **HTTP trigger** (3), then click **Next** (4).
 
