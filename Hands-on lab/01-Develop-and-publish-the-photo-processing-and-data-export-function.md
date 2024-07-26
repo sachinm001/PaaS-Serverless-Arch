@@ -13,7 +13,7 @@ Use Visual Studio and its integrated Azure Functions tooling to develop and debu
 
 ## Task 1: Open the starter solution in Visual Studio
 
-In this task, you will access the starter solution and update the files.
+In this , you will access the starter solution and update the files.
 
 1. On the LabVM, open File Explorer and navigate to `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\TollBooth`.
 
@@ -68,7 +68,7 @@ In this task, you will access the starter solution and update the files.
 
    ![](media/sss9.png)
 
-### Task 2: Finish the ProcessImage function
+## Task 2: Finish the ProcessImage function
 
 A few components within the starter project must be completed, which are marked as `TODO` in the code. The first set of `TODO` items we address are in the `ProcessImage` function. We will update the `FindLicensePlateText` class that calls the Computer Vision service and the `SendToEventGrid` class, which is responsible for sending processing results to the Event Grid topic you created earlier.
 
@@ -135,7 +135,7 @@ A few components within the starter project must be completed, which are marked 
     await Send("queuePlateForManualCheckup", "TollBooth/CustomerService", data);
     ```
 
-### Task 3: Publish the Function App from Visual Studio
+## Task 3: Publish the Function App from Visual Studio
 
 In this task, you will publish the Function App from the starter project in Visual Studio to the existing Function App you provisioned in Azure.
 
@@ -174,7 +174,7 @@ In this task, you will publish the Function App from the starter project in Visu
 
 1. Navigate to home page and double click on the **Azure Portal** icon.
 
-  ![](media/sss10.png "Enter Email")
+    ![](media/sss10.png "Enter Email")
 
 1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
