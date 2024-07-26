@@ -217,9 +217,13 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task3img10.png)
 
-### Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0) 
+### Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
+
+In Progress 
 
 ### Task 5: Configure API policies (e.g., rate limiting, logging) 
+
+In Progress 
 
 ### Task 6: Test the API through the APIM Developer Portal
 
