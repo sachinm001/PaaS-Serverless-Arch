@@ -198,19 +198,19 @@ Once the deployment is completed, click on **Go to resource** to access the newl
 
     ![](media/ex3task3img3.png)
 
-1. Click on the **License-function-<inject key="DeploymentID"></inject>** and click **Select** for Azure Function APP.
+1. Click on **License-function-<inject key="DeploymentID"></inject>** and then click **Select** to choose the Azure Function App.
 
     ![](media/ex3task3img4.png)
 
-1. Click on the **Select** to add your **HttpTrigger1** function for GET and POST.
+1. Click on **Select** to add your **HttpTrigger1** function, configuring it for both GET and POST methods.
 
     ![](media/ex3task3img5.png)
 
-1. It will fetch all the details for the function app and click on **Create**.
+1. It will fetch all the details for the function app; click on **Create** to finalize the process.
 
     ![](media/ex3task3img6.png)
 
-1. Here we get the Function App get added and find **GET** and **POST** operation of **HttpTrigger1** functions are added.
+1. Here, the Function App is added successfully, and you will see that the **GET** and **POST** operations of the **HttpTrigger1** functions are included.
 
     ![](media/ex3task3img10.png)
 
@@ -224,13 +224,13 @@ In Progress
 
 ## Task 6: Test the API through the APIM Developer Portal
 
-1. In the search bar of the Azure Portal search for **Cosmos DB (1)** in the search bar. Select **Azure Cosmos DB (2)**.
+1. In the Azure Portal's search bar, type **Cosmos DB** (1) and select **Azure Cosmos DB** (2) from the search results.
 
     ![](media/ex3task2img8.png)
 
 1. Select your **cosmosdb-<inject key="DeploymentID"></inject>** account.
 
-1. Click on the **Data Explorer** (1), under the **LicensePlates** (2) expeand the **Processed** (3), select the **items** (4) and select an **id** (5) and copy the **id value**.
+1. Click on **Data Explorer** (1). Under the **LicensePlates** (2), expand the **Processed** (3) container, select **items** (4), choose an **id** (5) from the list, and copy the **id value**.
 
     ![](media/ex3task6img1.png)
 
@@ -238,9 +238,9 @@ In Progress
 
     ![](media/ex3task1img1.png)
 
-1. Select the api management service as **apiservice-<inject key="DeploymentID"></inject>**.
+1. Select the API management service named **apiservice-<inject key="DeploymentID"></inject>**.
 
-1. On the APIs the **License-function-<inject key="DeploymentID"></inject>** function got added, Now click on the **Test** (1).
+1. On the APIs page, where the **License-function-<inject key="DeploymentID"></inject>** function has been added, click on **Test** (1).
 
     ![](media/ex3task3img7.png)
 
@@ -268,6 +268,6 @@ In Progress
 
     ![](media/ex3task6img6.png)
 
-1. Now refresh the page and will find the details of the fetch data of **LicensePlate**.
+1. Refresh the page, and you will find the details of the fetched data for **LicensePlate**.
 
     ![](media/ex3task6img7.png)
