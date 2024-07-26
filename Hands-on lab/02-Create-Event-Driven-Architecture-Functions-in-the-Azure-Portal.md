@@ -207,17 +207,22 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
 1. On the ServiceBus page click on **+ Queue**.
 
-    ![](media/ss16.png)
+   ![](media/ss16.png)
 
 1. On the **Create Queue** form, update the configuration with these values, then Click on **create**(3).
 
-    - **Name**: `Processed` (1)
-    - **Max delivery count**: **1500** (2)
+   - **Name**: `Processed` (1)
+   - **Max delivery count**: **1500** (2)
 
-    ![](media/sss6.png)
+   ![](media/sss6.png)
 
 1. Wait till the completion **Queue creation**. 
 
+1. Once the Queue creation is completed, navigate to **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** and open the **TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" />** function app.
+
+   ![](media/sss6.png)
+
+1. 
 
 ## Task 8: Add Service Bus output binding to SavePlateData function 
 pending...
