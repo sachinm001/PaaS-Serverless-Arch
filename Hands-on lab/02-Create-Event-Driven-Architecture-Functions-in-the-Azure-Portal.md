@@ -1,4 +1,4 @@
-## Exercise 2: Create functions in the portal
+# Exercise 2: Create functions in the portal
 
 **Duration**: 45 minutes
 
@@ -12,13 +12,13 @@ In this exercise, you will create two new Azure Functions written in Node.js, us
 | Create your first function in the Azure portal | <https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal> |
 | Store unstructured data using Azure Functions and Azure Cosmos DB | <https://docs.microsoft.com/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb> |
 
-### Task 1: Create a function to save license plate data to Azure Cosmos DB
+## Task 1: Create a function to save license plate data to Azure Cosmos DB
 
 In this task, you will create a new Node.js function triggered by Event Grid that outputs successfully processed license plate data to Azure Cosmos DB.
 
 1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-   ![](media/sss18.png)
+   ![](media/sss18-1.png)
 
 1. Scroll down to **Functions** , then select **Create Function**.
 
@@ -56,7 +56,7 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
 
 1. Select **Save**.
 
-### Task 2: Add an Event Grid subscription to the SavePlateData function
+## Task 2: Add an Event Grid subscription to the SavePlateData function
 
 In this task, you will add an Event Grid subscription to the SavePlateData function. This will ensure that the events sent to the Event Grid topic containing the savePlateData event type are routed to this function.
 
@@ -82,7 +82,7 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
 
     ![](media/sss19.png)
 
-### Task 3: Add an Azure Cosmos DB output to the SavePlateData function
+## Task 3: Add an Azure Cosmos DB output to the SavePlateData function
 
 In this task, you will add an Azure Cosmos DB output binding to the SavePlateData function, enabling it to save its data to the Processed collection.
 
@@ -108,13 +108,13 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
 
 1. Close the `SavePlateData` function.
 
-### Task 4: Create a function to save manual verification info to Azure Cosmos DB
+## Task 4: Create a function to save manual verification info to Azure Cosmos DB
 
 In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  
 
 1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-   ![](media/sss22.png)
+   ![](media/sss22-1.png)
 
 
 1. Scroll down to **Functions** tab, then select **+ Create**.
@@ -153,7 +153,7 @@ In this task, you will create another new function triggered by Event Grid and o
 
 1. Select **Save**.
 
-### Task 5: Add an Event Grid subscription to the QueuePlateForManualCheckup function
+## Task 5: Add an Event Grid subscription to the QueuePlateForManualCheckup function
 
 In this task, you will add an Event Grid subscription to the QueuePlateForManualCheckup function. This will ensure that the events sent to the Event Grid topic containing the queuePlateForManualCheckup event type are routed to this function.
 
@@ -226,7 +226,7 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
    ![](media/sss6.png)
 
-### Task 8: Configure the Integration Function
+## Task 8: Configure the Integration Function
 
 In this task, you'll add functions in TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" /> function to integrate it with service bus.
 
@@ -234,7 +234,7 @@ In this task, you'll add functions in TollBoothIntegration-<inject key="Deployme
 
 1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](media/sss25.png)
+   ![](media/sss25-1.png)
 
 1. Scroll down to **Functions** , then select **Create Function**.
 
@@ -338,7 +338,6 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
    - **Endpoint**: Leave as **SavePlateData** **(6)**.
 
    ![](media/sss29.png)
-
 
 1. While still on the **SavePlateData** Integration blade, select **+ Add output** under `Outputs`.
 

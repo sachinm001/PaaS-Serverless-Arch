@@ -1,4 +1,4 @@
-## Exercise 1: Develop and publish the photo processing and data export functions
+# Exercise 1: Develop and publish the photo processing and data export functions
 
 **Duration**: 45 minutes
 
@@ -11,7 +11,7 @@ Use Visual Studio and its integrated Azure Functions tooling to develop and debu
 | **Description**                       | **Link**                                                              |
 | Code and test Azure Functions locally | <https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-local> |
 
-### Task 1: Open the starter solution in Visual Studio
+## Task 1: Open the starter solution in Visual Studio
 
 In this task, you will access the starter solution and update the files.
 

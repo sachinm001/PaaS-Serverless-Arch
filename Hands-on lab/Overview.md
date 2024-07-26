@@ -1,6 +1,5 @@
-## Introduction to serverless architecture
 
-# Serverless architecture hands-on lab step-by-step
+# PaaS: Serverless architecture Hands-on Lab
 
 ## Abstract and learning objectives
 
