@@ -24,6 +24,7 @@ In this task, you will create an API Management instance in Azure. API Managemen
    | **Pricing tier** | Consumption (6)|
 
     ![](media/ex3task1img3.png)
+
     ![](media/ex3task1img4.png)
 
 1. Review your configuration to ensure all settings are correct, then click on **Create** to initiate the deployment process.
@@ -168,6 +169,7 @@ Once the deployment is completed, click on **Go to resource** to access the newl
 1. After adding all the required values, click on **Apply** to save the changes. Then, click on **Confirm** to finalize and ensure that your environment variables are updated successfully.
 
     ![](media/ex3task2img12.png)
+
     ![](media/ex3task2img13.png)
 
 ## Task 3: Import your Function App into API Management
