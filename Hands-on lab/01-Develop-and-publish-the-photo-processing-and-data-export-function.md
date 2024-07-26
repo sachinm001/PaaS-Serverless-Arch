@@ -15,13 +15,11 @@ Use Visual Studio and its integrated Azure Functions tooling to develop and debu
 
 In this task, you will access the starter solution and update the files.
 
-1. On the LabVM, open File Explorer and navigate to `C:\ServerlessMCW\MCW-Serverless-architecture-main\Hands-on lab\lab-files\src\TollBooth`.
-
-    > **Note:** Ensure the files are located under `C:\ServerlessMCW\`. If the files are located under a longer root path, such as  `C:\Users\workshop\Downloads\`, you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters`.
+1. On the LabVM, open File Explorer and navigate to `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\TollBooth`.
 
 1. From the **TollBooth** folder opened in step 1, open the Visual Studio Solution by double-clicking the `TollBooth.sln` file.
 
-    ![In the TollBooth folder in File Explorer, TollBooth.sln is highlighted.](media/file-explorer-toll-booth-sln.png "File Explorer")
+   ![](media/sss8.png)
 
 1. If prompted about how to open the file, select **Visual Studio 2019**, and then select **OK**.
 
@@ -66,7 +64,9 @@ In this task, you will access the starter solution and update the files.
 
    ![](media/sss4.png)
 
-1. Return to the open File Explorer window and navigate back to the **src** subfolder. From there, open the **license plates** subfolder. It contains sample license plate photos used for testing out the solution. One of the images is guaranteed to fail OCR processing, which is meant to show how the workload is designed to handle such failures. The UploadImages project uses the **copyfrom** folder as a basis for the 1,000-photo upload option for testing scalability.
+1. Return to the open File Explorer window and navigate back `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\license plates`. It contains sample license plate photos used for testing out the solution. One of the images is guaranteed to fail OCR processing, which is meant to show how the workload is designed to handle such failures. The UploadImages project uses the **copyfrom** folder as a basis for the 1,000-photo upload option for testing scalability.
+
+   ![](media/sss9.png)
 
 ### Task 2: Finish the ProcessImage function
 
@@ -135,8 +135,6 @@ A few components within the starter project must be completed, which are marked 
     await Send("queuePlateForManualCheckup", "TollBooth/CustomerService", data);
     ```
 
-    > **Note**: `TODOs` 5, 6, and 7 will be completed in later steps of the guide.
-
 ### Task 3: Publish the Function App from Visual Studio
 
 In this task, you will publish the Function App from the starter project in Visual Studio to the existing Function App you provisioned in Azure.
@@ -159,7 +157,7 @@ In this task, you will publish the Function App from the starter project in Visu
 
     - Select your **Subscription** (1).
     - Select **Resource Group** under **View** (2).
-    - In the **Function Apps** box (3), expand your **hands-on-lab-SUFFIX** resource group. Select the Function App whose name ends with **Functions**.
+    - In the **Function Apps** box (3), expand your **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group. Select the Function App **TollBoothFunctions-<inject key="DeploymentID" enableCopy="false" />**.
     - **Uncheck the `Run from package file` option** (4).
 
     ![In the App Service form, Resource Group displays in the View field, and in the tree-view below, the hands-on-lab-SUFFIX folder is expanded, and TollBoothFunctionApp is selected.](media/vs-publish-function2.png 'Publish window')
@@ -174,13 +172,43 @@ In this task, you will publish the Function App from the starter project in Visu
 
     ![The Publish button is selected.](media/vs-publish-function3.png "Publish")
 
-1. Using a new tab or instance of your browser, navigate to the [Azure portal](https://portal.azure.com).
+1. Navigate to home page and double click on the **Azure Portal** icon.
 
-1. Open the **hands-on-lab-SUFFIX** resource group, then select the **TollBoothFunctions** Azure Function App, to which you just published.
+  ![](media/sss10.png "Enter Email")
+
+1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+   ![](media/sss11.png "Enter Email")
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![](media/sss12.png "Enter Password")
+     
+   > If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+
+     ![](media/sss13.png "Enter Password")
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+   
+1. Now you will see the Azure Portal Dashboard, click on **Resource groups** from the Navigate panel to see the resource groups.
+
+   ![](media/sss14.png "Resource groups")
+   
+1. Now, click on the **Next** from the lower right corner to move to the next page.
+
+1. Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group, then select the **TollBoothFunctions-<inject key="DeploymentID" enableCopy="false" />** Azure Function App, to which you just published.
+
+   ![](media/sss15.png "Resource groups")
 
 1. Scroll down to functions tab. You should see both functions you just published from the Visual Studio solution listed. Click on **ProcessImage** function.
 
-    ![In the Function Apps blade, in the left tree-view, both TollBoothFunctionApp and Functions (Read Only) are expanded. Beneath Functions (Read Only), two functions ExportLicensePlates and ProcessImage are highlighted.](media/ss4.png)
+   ![](media/sss16.png "Resource groups")
 
 1. In the **ProcessImage | Code + Test** page navigate to **Integration (1)** tab. In the integration tab click on **Event Grid Trigger (eventGridEvent) (2)**.
 
@@ -190,19 +218,23 @@ In this task, you will publish the Function App from the starter project in Visu
 
     ![](media/ss6.png)
 
-1. On the **Create Event Subscription** blade, specify the following configuration options:
+1. On the **Create Event Subscription** blade, specify the following configuration options and click on **Create** **(8)**.
 
-    - **Name**: **Name**: Enter **processimagesub-<inject key="DeploymentID" />** (ensure the green check mark appears).
-    - **Event Schema**: Select **Event Grid Schema**.
-    - **Topic Type**: Select **Storage Accounts (Blob & GPv2)**.
+    - **Name**: **Name**: Enter **processimagesub-<inject key="DeploymentID" />** **(1)** (ensure the green check mark appears).
+    - **Event Schema**: Select **Event Grid Schema** **(2)**.
+    - **Topic Type**: Select **Storage Accounts (Blob & GPv2)** **(3)**.
     - **Subscription**: Select the subscription you are using for this hands-on lab.
-    - **Resource Group**: Select the **hands-on-lab-SUFFIX** resource group from the list of existing resource groups.
-    - **Resource**: Select your data lake storage account. This should be the only account listed and will start with `datalake`.
-    - **System Topic Name**: Enter **processimagesubtopic**.
-    - **Filter to Event Types**: Select only the **Blob Created** from the event types dropdown list.
-    - **Endpoint Type**: Leave `Azure Function` as the Endpoint Type.
-    - **Endpoint**: Leave as `ProcessImage`.
+    - **Resource Group**: Select the **hands-on-lab-<inject key="DeploymentID" />** resource group from the list of existing resource groups.
+    - **Resource**: Select your data lake storage account **datalake<inject key="DeploymentID" />** **(4)**.
+    - **System Topic Name**: Enter **processimagesubtopic** **(5)**
+    - **Filter to Event Types**: Select only the **Blob Created** **(6)** from the event types dropdown list .
+    - **Endpoint Type**: Leave **Azure Function** **(7)** as the Endpoint Type.
+    - **Endpoint**: Leave as **ProcessImage** **(7)**.
 
     ![In the Create event subscription form, the fields are set to the previously defined values.](media/process-image-sub-topic.png)
 
-1. Select **Create**.
+### Summary
+
+In this exercise, you updated code file, published the functions to Azure, and added an event grid trigger to initiate a trigger when images are published to blob storage.
+
+
