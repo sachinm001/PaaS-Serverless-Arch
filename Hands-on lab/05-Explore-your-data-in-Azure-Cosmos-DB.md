@@ -1,4 +1,4 @@
-## Exercise 5: Explore your data in Azure Cosmos DB
+# Exercise 5: Explore your data in Azure Cosmos DB
 
 **Duration**: 15 minutes
 
@@ -13,7 +13,7 @@ In this exercise, you will use the Azure Cosmos DB Data Explorer in the portal t
 | **Description**       |                         **Links**                         |
 | About Azure Cosmos DB | <https://docs.microsoft.com/azure/cosmos-db/introduction> |
 
-### Task 1: Use the Azure Cosmos DB Data Explorer
+## Task 1: Use the Azure Cosmos DB Data Explorer
 
 1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-SUFFIX** resource group.
 
