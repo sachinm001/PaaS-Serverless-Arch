@@ -181,7 +181,7 @@ In this task, you will add an Event Grid subscription to the QueuePlateForManual
 
 1. close the Edit Trigger blade.
 
-### Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
+## Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
 
 In this task, you will add an Azure Cosmos DB output binding to the QueuePlateForManualCheckup function, enabling it to save its data to the NeedsManualReview collection.
 
@@ -537,5 +537,3 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 ## Summary
 
 In this exercise, you added functions to TollBoothEvents-<inject key="DeploymentID" enableCopy="false" /> function. Also, you configured a service bus queue and integrated it with TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" /> function.
-
-
