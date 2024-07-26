@@ -1,4 +1,4 @@
-## Exercise 6: Create the data export workflow
+# Exercise 6: Create the data export workflow
 
 **Duration**: 30 minutes
 
@@ -12,7 +12,7 @@ In this exercise, you create a new Logic App for your data export workflow. This
 | What is Azure Logic Apps? | <https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview> |
 | Call Azure Functions from logic apps | <https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-functions> |
 
-### Task 1: Create the Logic App
+## Task 1: Create the Logic App
 
 1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-SUFFIX** resource group.
 
