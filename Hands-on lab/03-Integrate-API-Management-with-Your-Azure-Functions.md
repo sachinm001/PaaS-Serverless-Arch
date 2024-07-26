@@ -1,6 +1,6 @@
-## Exercise:3 Integrate API Management with Your Azure Functions
+# Exercise:3 Integrate API Management with Your Azure Functions
 
-### Task 1: Create an API Management instance 
+## Task 1: Create an API Management instance 
 
 In this task, you will create an API Management instance in Azure. API Management is a service that acts as a gateway between backend services and client applications, allowing for centralized management, security, and monitoring of APIs.
 
@@ -31,7 +31,7 @@ In this task, you will create an API Management instance in Azure. API Managemen
 
     ![](media/ex3task1img5.png)
 
-### Task 2: Create a function to pull driver's license information 
+## Task 2: Create a function to pull driver's license information 
 
 In this task, you will go through creating an Azure Function App and connecting it to an Azure Cosmos DB. You will create an HTTP-triggered function within the Function App and replace its default code with JavaScript to query Cosmos DB. Additionally, you'll configure environment variables for Cosmos DB connection details to ensure secure and efficient access to the database from the function.
 
@@ -173,7 +173,7 @@ In this task, you will go through creating an Azure Function App and connecting 
     ![](media/ex3task2img12.png)
     ![](media/ex3task2img13.png)
 
-### Task 3: Import your Function App into API Management
+## Task 3: Import your Function App into API Management
 
 1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
 
@@ -217,15 +217,15 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task3img10.png)
 
-### Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
+## Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
 
 In Progress 
 
-### Task 5: Configure API policies (e.g., rate limiting, logging) 
+## Task 5: Configure API policies (e.g., rate limiting, logging) 
 
 In Progress 
 
-### Task 6: Test the API through the APIM Developer Portal
+## Task 6: Test the API through the APIM Developer Portal
 
 1. In the search bar of the Azure Portal search for **Cosmos DB (1)** in the search bar. Select **Azure Cosmos DB (2)**.
 
