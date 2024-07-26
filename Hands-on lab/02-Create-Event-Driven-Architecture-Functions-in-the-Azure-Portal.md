@@ -434,13 +434,30 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
 
 1. Close the **QueuePlateForManualCheckup** function.
 
+1. From **TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" />** function, select **Developer Tools (1)** drop-down from the side blade and click on **Console (2)**.
+
+   ![](media/sss38.png)
+
+1. In the console, run the below given commands. Make sure to run the commands one by one and wait till the execution completes.
+
+   ```javascript
+   npm install @azure/service-bus
+   ```
+
+   ```javascript
+   npm install @azure/cosmos
+   ```
+
+   ![](media/sss39.png)
+
+
 ## Task 8: Add Service Bus output binding to SavePlateData function 
 
 In this task, you'll bind the Service Bus to Azure Function App by adding connectio string which is used in Index.js file of SavePlateData function.
 
 1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](media/sss33.png)
+
 
 1. Select **Shared Access Policies (1)** from settings, click on **RootManageSharedAccessKey (2)**, copy the **Primary Connection String (3)** and paste it in a notepad. 
 
@@ -475,7 +492,7 @@ In this task, you will debug the uploadImage solution and obaserve the working o
    > - In the Azure portal, navigate to the **datalake{SUFFIX}** storage account.
    > - Select **Access keys** from the left menu under **Security + Networking**.
    > - Copy the **Connection string** value of **key1**.
-   >  
+   
 
    Providing this value will ensure that the required connection string is added as an argument each time you run the application. Additionally, the combination of adding the value here and having the `.gitignore` file included in the project directory will prevent the sensitive connection string from being added to your source code repository in a later step.
 
@@ -487,25 +504,23 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 
     ![In Solution Explorer, the UploadImages project is selected. From the context menu, Debug then Start New Instance is selected.](media/vs-debug-uploadimages.png 'Solution Explorer')
 
-    >**Note:** Ensure the files are located under `C:\ServerlessMCW\`. If the files are located under a longer root path, such as `C:\Users\workshop\Downloads\`, then you will encounter build issues in later steps: `The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.`
 
 1. When the console window appears, enter **1** and press **ENTER**. This action uploads a handful of car photos to the images container of your Blob storage account.
 
     ![A Command prompt window displays, showing images being uploaded.](media/image69.png 'Command prompt window')
 
-1. Switch back to your browser window with the Live Metrics Stream still open within Application Insights. You should start seeing new telemetry arrive, showing the number of servers online, the incoming request rate, CPU process amount, etc. You can select some of the sample telemetry in the list to the side to view output data.
+1. Switch back to your browser window, navigate to **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />**  and open  **cosmosdb-<inject key="DeploymentID" enableCopy="false" />**.
 
-    ![The Live Metrics Stream window displays information for the two online servers. Displaying line and point graphs including incoming requests, outgoing requests, and overall health. To the side is a list of Sample Telemetry information. ](media/image70.png 'Live Metrics Stream window')
+   ![The Live Metrics Stream window displays information for the two online servers. Displaying line and point graphs including incoming requests, outgoing requests, and overall health. To the side is a list of Sample Telemetry information. ](media/sss40.png 'Live Metrics Stream window')
 
-1. Leave the Live Metrics Stream window open once again and close the console window for the image upload. Debug the UploadImages project again, then enter **2** and press **ENTER**. This will upload 1,000 new photos.
+1. Select **Data Explorer (1)** from the side blade, expand **LicensePlates (2)** database. You'll be able to see 2 containers **NeedsManualReview** and **Processed** **(3)**.
 
-    ![The Command prompt window displays with image uploading information.](media/image71.png 'Command prompt window')
+    ![The Command prompt window displays with image uploading information.](media/sss41.png 'Command prompt window')
 
-1. Switch back to the Live Metrics Stream window and observe the activity as the photos are uploaded. You can see the number of servers online, which translates to the number of Function App instances running between both Function Apps. You should also notice things such as a steady cadence for the Request Rate monitor, the Request Duration hovering below \~200ms second, and the Incoming Requests roughly matching the Outgoing Requests.
+1. Click on **items** and you should be able to see that processed data and unprocessed are updated. This validates that your serverless architecture is working as expected.
 
-    ![In the Live Metrics Stream window, two servers are online under Incoming Requests. The Request Rate heartbeat line graph is selected, as is the Request Duration dot graph. Under Overall Health, the Process CPU heartbeat line graph is also selected, the similarities between this graph and the Request Rate graph under Incoming Requests are highlighted for comparison.](media/image72.png 'Live Metrics Stream window')
+    ![In the Live Metrics Stream window, two servers are online under Incoming Requests. The Request Rate heartbeat line graph is selected, as is the Request Duration dot graph. Under Overall Health, the Process CPU heartbeat line graph is also selected, the similarities between this graph and the Request Rate graph under Incoming Requests are highlighted for comparison.](media/sss42.png 'Live Metrics Stream window')
 
-1. After this has run for a while, close the image upload console window once again, but leave the Live Metrics Stream window open.
 ## Summary
 
 In this exercise, you added functions to TollBoothEvents-<inject key="DeploymentID" enableCopy="false" /> function. Also, you configured a service bus queue and integrated it with TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" /> function.
