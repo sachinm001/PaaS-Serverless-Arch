@@ -16,9 +16,9 @@ In this exercise, you will create two new Azure Functions written in Node.js, us
 
 In this task, you will create a new Node.js function triggered by Event Grid that outputs successfully processed license plate data to Azure Cosmos DB.
 
-1. Using a new tab or instance of your browser, navigate to the [Azure portal](https://portal.azure.com).
+1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+   ![](media/sss18.png)
 
 1. Scroll down to **Functions** , then select **Create Function**.
 
@@ -68,21 +68,19 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
 
     ![](media/ss12.png)
 
-1. On the **Create Event Subscription** blade, specify the following configuration options:
+1. On the **Create Event Subscription** blade, specify the following configuration options and click on **Create** **(7)**
 
-    - **Name**: Enter a unique value, similar to **saveplatedatasub** (ensure the green checkmark appears).
-    - **Event Schema**: Select **Event Grid Schema**.
-    - **Topic Type**: Select **Event Grid Topics**.
+    - **Name**: Enter a unique value, similar to **saveplatedatasub<inject key="DeploymentID" enableCopy="false" />** **(1)** (ensure the green checkmark appears).
+    - **Event Schema**: Select **Event Grid Schema** **(2)**.
+    - **Topic Type**: Select **Event Grid Topics** **(3)**.
     - **Subscription**: Select the subscription you are using for this hands-on lab.
-    - **Resource Group**: Select the **hands-on-lab-SUFFIX** resource group from the list of existing resource groups.
-    - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with `eventgridtopic-`.
-    - **Event Types**: Select **Add Event Type** and enter `savePlateData` for the new event type value. This will ensure this Event Grid type only triggers this function.
-    - **Endpoint Type**: Leave `Azure Function` as the Endpoint Type.
-    - **Endpoint**: Leave as `SavePlateData`.
+    - **Resource Group**: Select the **hands-on-lab-saveplatedatasub<inject key="DeploymentID" enableCopy="false" />** resource group from the list of existing resource groups.
+    - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with **eventgridtopic-<inject key="DeploymentID" enableCopy="false" />** **(4)**.
+    - **Event Types**: Select **Add Event Type** and enter **savePlateData** **(5)** for the new event type value. This will ensure this Event Grid type only triggers this function.
+    - **Endpoint Type**: Leave **Azure Function** **(6)** as the Endpoint Type.
+    - **Endpoint**: Leave as **SavePlateData** **(6)**.
 
-    ![In the Create Event Subscription blade, fields are set to the previously defined values.](media/saveplatedata-eg-sub.png "Create Event Subscription")
-
-1. Select **Create** and then close the Edit Trigger dialog.
+    ![](media/sss19.png)
 
 ### Task 3: Add an Azure Cosmos DB output to the SavePlateData function
 
@@ -97,23 +95,27 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
    - Choose the connection whose name begins with `cosmosdb-` (3).  
    - Select **OK** (4).
 
-    ![The Add Output link is highlighted with an arrow pointing to the highlighted binding type in the Create Output blade.](media/function-output-binding-type.png "Create Output")
+    ![](media/sss20.png)
 
 1. Specify the following additional configuration options in the Create Output form:
 
-    - **Document parameter name**: Leave set to `outputDocument`.
-    - **Database name**: Enter `LicensePlates`.
-    - **Collection name**: Enter `Processed`.
+    - **Document parameter name**: Leave set to `outputDocument` **(1)**.
+    - **Database name**: Enter `LicensePlates` **(2)**.
+    - **Collection name**: Enter `Processed` **(3)**.
+    - Click on **Add** **(4)**.
 
-1. Select **Add**.
-
-    ![Under Azure Cosmos DB output the following field values display: Document parameter name, outputDocument; Collection name, Processed; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb_DOCUMENTDB.](media/ss21.png)
+    ![](media/sss21.png)
 
 1. Close the `SavePlateData` function.
 
 ### Task 4: Create a function to save manual verification info to Azure Cosmos DB
 
-In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  This is in the Azure Function App that starts with **TollBoothEvents**.
+In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  
+
+1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+
+   ![](media/sss22.png)
+
 
 1. Scroll down to **Functions** tab, then select **+ Create**.
 
@@ -161,23 +163,23 @@ In this task, you will add an Event Grid subscription to the QueuePlateForManual
 
 1. On the Edit Trigger form, select **Create Event Grid subscription**.
 
-    ![](media/ss12.png)
+   ![](media/ss12.png)
 
-1. On the **Create Event Subscription** blade, specify the following configuration options:
+1. On the **Create Event Subscription** blade, specify the following configuration options and Select **Create** **(7)**.
 
-    - **Name**: Enter a unique value, similar to `queueplateformanualcheckupsub` (ensure the green check mark appears).
-    - **Event Schema**: Select **Event Grid Schema**.
-    - **Topic Type**: Select **Event Grid Topics**.
+    - **Name**: Enter a unique value, similar to **queueplateformanualcheckupsub-<inject key="DeploymentID" enableCopy="false" />** **(1)** (ensure the green check mark appears).
+    - **Event Schema**: Select **Event Grid Schema** **(2)**.
+    - **Topic Type**: Select **Event Grid Topics** **(3)**.
     - **Subscription**: Select the subscription you are using for this hands-on lab.
-    - **Resource Group**: Select the **hands-on-lab-SUFFIX** resource group from the list of existing resource groups.
-    - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with `eventgridtopic-`.
-    - **Event Types**: Select **Add Event Type** and enter `queuePlateForManualCheckup` for the new event type value. This will ensure this function is only triggered by this Event Grid type.
-    - **Endpoint Type**: Leave `Azure Function` as the Endpoint Type.
-    - **Endpoint**: Leave as `QueuePlateForManualCheckup`.
+    - **Resource Group**: Select the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group from the list of existing resource groups.
+    - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with **eventgridtopic-<inject key="DeploymentID" enableCopy="false" />** **(4)**.
+    - **Event Types**: Select **Add Event Type** and enter **queuePlateForManualCheckup** **(5)** for the new event type value. This will ensure this function is only triggered by this Event Grid type.
+    - **Endpoint Type**: Leave **Azure Function** **(6)** as the Endpoint Type.
+    - **Endpoint**: Leave as **QueuePlateForManualCheckup** **(6)**.
 
-    ![In the Create Event Subscription blade, fields are set to the previously defined values.](media/manualcheckup-eg-sub.png)
+    ![](media/sss23.png)
 
-1. Select **Create** and close the Edit Trigger blade.
+1. close the Edit Trigger blade.
 
 ### Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
 
@@ -203,7 +205,7 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
 
 In this task, you will create a Service Bus queue and topic to manage processed data messages and to support event-driven communication within your architecture.
 
-1. Open the **hands-on-lab-SUFFIX** resource group and select the Azure Service Bus  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
+1. Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Service Bus  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
 
 1. On the ServiceBus page click on **+ Queue**.
 
@@ -222,7 +224,10 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
    ![](media/sss6.png)
 
-1. 
+## Task 8: Confgiure the Integration Function
+
+
 
 ## Task 8: Add Service Bus output binding to SavePlateData function 
-pending...
+
+
