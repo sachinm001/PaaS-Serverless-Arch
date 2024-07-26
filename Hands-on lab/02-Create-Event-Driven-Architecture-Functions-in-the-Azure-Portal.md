@@ -531,6 +531,10 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 
    ![](media/sss44.png)
 
+1. Click on **Service Bus Explorer (1)** from the side blade. Select **Peek from start (2)** and you will see the queues craeted by function app.
+
+   ![](media/sss45.png)
+
 ## Summary
 
 In this exercise, you added functions to TollBoothEvents-<inject key="DeploymentID" enableCopy="false" /> function. Also, you configured a service bus queue and integrated it with TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" /> function.
