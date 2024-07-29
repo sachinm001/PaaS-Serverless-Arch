@@ -232,13 +232,20 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
 1. On the APIs page, Select **License-function-<inject key="DeploymentID"></inject>** that has been added.
 
-
+    ![](media/ex3task5img2.png)
 
 1. On the **Design** pane. Find the **Inbound Processing** box and scroll down, click on **+Add policy**.
 
+    ![](media/ex3task5img4.png)
 
+1. On the **Add inbound policy** page. click on **Filter IP adresses** option.You will be navigated to **Inbound processing** page.
 
+    ![](media/ex3task5img5.png)
 
+1. Scroll down and change the filtering to **Blocked IPs**(1). and click on **Add IP filter**(2).
+
+    ![](media/ex3task5img6.png)
+   
 ## Task 6: Test the API through the APIM Developer Portal
 
 1. In the Azure Portal's search bar, type **Cosmos DB** (1) and select **Azure Cosmos DB** (2) from the search results.
