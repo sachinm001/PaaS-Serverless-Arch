@@ -224,6 +224,20 @@ In Progress
 In this task, you will create and use an API Management (APIM) policy for IP filtering. This policy will help you restrict access to your APIs by allowing only specified IP addresses. IP filtering adds an extra layer of security, ensuring that only trusted clients can access your services.
 
 
+1. On the Azure Portal, in the Search resources, services, and docs (G+/) box at the top of the portal, enter API Management services (1), and then select API Management services (2) under Services.
+
+    ![](media/ex3task1img1.png)
+
+1. Select your **apiservice-<inject key="DeploymentID"></inject>** service.
+
+1. On the APIs page, Select **License-function-<inject key="DeploymentID"></inject>** that has been added.
+
+
+
+1. On the **Design** pane. Find the **Inbound Processing** box and scroll down, click on **+Add policy**.
+
+
+
 
 ## Task 6: Test the API through the APIM Developer Portal
 
