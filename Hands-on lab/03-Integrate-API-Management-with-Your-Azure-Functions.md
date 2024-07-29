@@ -217,12 +217,13 @@ In this task, you will go through creating an Azure Function App and connecting 
     ![](media/ex3task3img10.png)
 
 ## Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
-
-In Progress 
+In Progress
 
 ## Task 5: Configure API policies (e.g., rate limiting, logging) 
 
-In Progress 
+In this task, you will create and use an API Management (APIM) policy for IP filtering. This policy will help you restrict access to your APIs by allowing only specified IP addresses. IP filtering adds an extra layer of security, ensuring that only trusted clients can access your services.
+
+
 
 ## Task 6: Test the API through the APIM Developer Portal
 
