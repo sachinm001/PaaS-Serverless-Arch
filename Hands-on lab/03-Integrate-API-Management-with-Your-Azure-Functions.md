@@ -252,7 +252,7 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     ![](media/ex3task5img6.png)
 
-1. Add the IP adress of your **LabVM-<inject key="DeploymentID" enableCopy="false />**, which you have copied in previously. Click on **save**.
+1. Add the IP adress of your **LabVM-<inject key="DeploymentID" enableCopy="false" />**, which you have copied in previously. Click on **save**.
 
     ![](media/ex3task5img7.png)
 
