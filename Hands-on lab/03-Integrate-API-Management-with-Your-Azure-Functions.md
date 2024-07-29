@@ -53,7 +53,7 @@ In this task, you will go through creating an Azure Function App and connecting 
     | -- | -- |
     | **Subscription** | Keep it as default |
     | **Resource Group** | hands-on-lab-<inject key="DeploymentID"></inject> (2) |
-    | **Function App name** | **License-function-<inject key="DeploymentID"></inject>** (3) |
+    | **Function App name** | **License-function-<inject key="DeploymentID" enableCopy="false" />** (3) |
     | **Runtime stack** | **Node.js** (4) |
     | **Operating System** | **Windows** (5) |
 
@@ -79,7 +79,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task2img8.png)
 
-1. Select your **cosmosdb-<inject key="DeploymentID"></inject>** account.
+1. Select your **cosmosdb-<inject key="DeploymentID" enableCopy="false" />** account.
 
 1. Click on **Keys** (2) under **Settings** (1) and copy the **URI** (3) (Endpoint). Then, click on the **eye** (4) icon to reveal and copy your **PRIMARY KEY** (5). Note down both the URI and PRIMARY KEY.
 
@@ -89,7 +89,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task2img10.png)
 
-1. Navigate back to your **HttpTrigger** function within the function app named **License-function-<inject key="DeploymentID"></inject>**.
+1. Navigate back to your **HttpTrigger** function within the function app named **License-function-<inject key="DeploymentID" enableCopy="false" />**.
 
 1. On the **HttpTrigger1** Function blade, select **Code + Test** and replace the existing code in the `index.js` file with the following:
 
@@ -178,7 +178,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task1img1.png)
 
-1. Select the API Management service named **apiservice-<inject key="DeploymentID"></inject>**.
+1. Select the API Management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
 
 1. Click on **Console** (1) under **Development Tools** and run the command to install the Azure Cosmos DB SDK.
 
@@ -200,7 +200,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task3img3.png)
 
-1. Click on **License-function-<inject key="DeploymentID"></inject>** and then click **Select** to choose the Azure Function App.
+1. Click on **License-function-<inject key="DeploymentID" enableCopy="false" />** and then click **Select** to choose the Azure Function App.
 
     ![](media/ex3task3img4.png)
 
@@ -223,14 +223,20 @@ In Progress
 
 In this task, you will create and use an API Management (APIM) policy for IP filtering. This policy will help you restrict access to your APIs by allowing only specified IP addresses. IP filtering adds an extra layer of security, ensuring that only trusted clients can access your services.
 
+1. On the Azure Portal, use the search bar and search for **Virtual machines**, and then select **Virtual machines** under services.
 
-1. On the Azure Portal, in the Search resources, services, and docs (G+/) box at the top of the portal, enter API Management services (1), and then select API Management services (2) under Services.
+    ![](media/ex3task5img8.png)
 
-    ![](media/ex3task1img1.png)
+1. Select your **LabVM-<inject key="DeploymentID" enableCopy="false" />**.From the overview page copy the Public IP adress and note it down, you will be using this IP in the further steps.
 
-1. Select your **apiservice-<inject key="DeploymentID"></inject>** service.
 
-1. On the APIs page, Select **License-function-<inject key="DeploymentID"></inject>** that has been added.
+1. Use the search bar in the Azure Portal, enter API Management services, and then select API Management services under Services.
+
+    ![](media/ex3task5img1.png)
+
+1. Select your **apiservice-<inject key="DeploymentID" enableCopy="false" />** service.
+
+1. On the APIs page, Select **License-function-<inject key="DeploymentID" enableCopy="false" />** that has been added.
 
     ![](media/ex3task5img2.png)
 
@@ -245,6 +251,12 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 1. Scroll down and change the filtering to **Blocked IPs**(1). and click on **Add IP filter**(2).
 
     ![](media/ex3task5img6.png)
+
+1. Add the IP adress of your **LabVM-<inject key="DeploymentID" enableCopy="false />**, which you have copied in previously. Click on **save**.
+
+    ![](media/ex3task5img7.png)
+
+1. Now the policy will be added to your API, which restricts the access to your LabVM.You will be testing this in the next task.
    
 ## Task 6: Test the API through the APIM Developer Portal
 
@@ -252,7 +264,7 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     ![](media/ex3task2img8.png)
 
-1. Select your **cosmosdb-<inject key="DeploymentID"></inject>** account.
+1. Select your **cosmosdb-<inject key="DeploymentID" enableCopy="false" />** account.
 
 1. Click on **Data Explorer** (1). Under the **LicensePlates** (2), expand the **Processed** (3) container, select **items** (4), choose an **id** (5) from the list, and copy the **id value**.
 
@@ -262,9 +274,9 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     ![](media/ex3task1img1.png)
 
-1. Select the API management service named **apiservice-<inject key="DeploymentID"></inject>**.
+1. Select the API management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the APIs page, where the **License-function-<inject key="DeploymentID"></inject>** function has been added, click on **Test** (1).
+1. On the APIs page, where the **License-function-<inject key="DeploymentID" enableCopy="false" />** function has been added, click on **Test** (1).
 
     ![](media/ex3task3img7.png)
 
