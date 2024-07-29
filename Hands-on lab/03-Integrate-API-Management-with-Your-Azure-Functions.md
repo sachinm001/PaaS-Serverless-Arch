@@ -282,7 +282,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
 1. Goto the API Request URL in your browser and add the subscription key in the end, prior to the subscription-key query parameter, joining it with &. This query parameter will store the value of your subscription key, which is needed to access your API successfully.
 
-Your Request URI should be similar to the following:
+Your Request URL will look something like this:
 
 ```
 https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
