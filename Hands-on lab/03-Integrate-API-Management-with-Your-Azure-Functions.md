@@ -217,7 +217,82 @@ In this task, you will go through creating an Azure Function App and connecting 
     ![](media/ex3task3img10.png)
 
 ## Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
-In Progress
+
+
+1. In the Azure Portal's search bar, type **Cosmos DB** (1) and select **Azure Cosmos DB** (2) from the search results.
+
+    ![](media/ex3task2img8.png)
+
+1. Select your **cosmosdb-<inject key="DeploymentID" enableCopy="false" />** account.
+
+1. Click on **Data Explorer** (1). Under the **LicensePlates** (2), expand the **Processed** (3) container, select **items** (4), choose an **id** (5) from the list, and copy the **id value**.
+
+    ![](media/ex3task6img1.png)
+
+1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
+
+    ![](media/ex3task1img1.png)
+
+1. Select the API management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
+
+1. On the APIs page, where the **License-function-<inject key="DeploymentID" enableCopy="false" />** function has been added, click on **Test** (1).
+
+    ![](media/ex3task3img7.png)
+
+1. On the **Test** page select the **GET HttpTrigger1** (1) and click on the **+ Add parameters** (2).
+
+    ![](media/ex3task3img8.png)
+
+1. Provide the **Name** as **id** and enter the corresponding **Value** that you copied from the items in the **Processed** container in Cosmos DB. Click on **Send**.
+
+    ![](media/ex3task6img2.png)
+
+1. After sending the GET request, it will fetch and display all the details related to the LicensePlate.
+
+    ![](media/ex3task6img3.png)
+
+1. Copy the **Request URL** provided in the API test section and open it in a new browser tab to test the API endpoint.
+
+    ![](media/ex3task6img4.png)
+
+1. You will see **access denied**.This means your API is now secured. Now You need Subscription key to access your API. 
+
+    ![](media/ex3task6img5.png)
+
+1. Navigate to **Subscription** page from the left hand menu.
+
+    ![](media/ex3task5img9.png)
+
+1. You can see a precreated Subscription key called **Built-in all-access subscription**. This is a master key which works for all the API under this particular API Management service. Click on **+Add subscription**.
+
+    ![](media/ex3task5img10.png)
+
+
+1. On the **New Subscription** form give the **Name(1)** as ```LicenseKeySub``` , Under **scope(2)** select **API** and Under **API(3)** select the API which is already created previously. Click on **Create(4)**.
+
+    ![](media/ex3task4img1.png)
+
+1. Your subscription will be created. You can view its keys by selecting the 3 dots on the rightmost of your subscription name, and choosing Show/hide keys to see the keys.
+
+    ![](media/ex3task4img2.png)
+
+1. Your keys will be visible. Copy the primary key using the Copy button.
+
+    ![](media/ex3task4img3.png)
+
+1. Goto the API Request URL in your browser and add the subscription key in the end, prior to the subscription-key query parameter, joining it with &. This query parameter will store the value of your subscription key, which is needed to access your API successfully.
+
+Your Request URI should be similar to the following:
+
+```
+https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
+```
+
+1. You will be able to access your API successfully using the subscription key and the expected response will be displayed.
+
+    ![](media/ex3task4img4.png)
+
+
 
 ## Task 5: Configure API policies (e.g., rate limiting, logging) 
 
@@ -236,7 +311,7 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
 1. Select your **apiservice-<inject key="DeploymentID" enableCopy="false" />** service.
 
-1. On the APIs page, Select **License-function-<inject key="DeploymentID" enableCopy="false" />** that has been added.
+1. On the APIs page, Select **License-function-<inject key="DeploymentID" enableCopy="false" />** that you have added previously.
 
     ![](media/ex3task5img2.png)
 
@@ -307,3 +382,5 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 1. Refresh the page, and you will find the details of the fetched data for **LicensePlate**.
 
     ![](media/ex3task6img7.png)
+
+1. Now you will be testing the policy that you have attached in the previous task.
