@@ -218,6 +218,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
 ## Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
 
+In this task you will be Securing your API by creating subscription key. which should be used with the request URL to access the API.
 
 1. In the Azure Portal's search bar, type **Cosmos DB** (1) and select **Azure Cosmos DB** (2) from the search results.
 
