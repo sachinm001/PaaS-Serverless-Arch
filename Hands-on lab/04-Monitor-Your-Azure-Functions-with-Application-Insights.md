@@ -69,12 +69,11 @@ In this task, you will change the Computer Vision API to the Free tier. This wil
 
     ![The Command prompt window displays image uploading information.](media/image71.png 'Command Prompt window')
 
-1. Switch back to the Live Metrics Stream window and observe the activity as the photos are uploaded. After running for a couple of minutes, you should start to notice a few things. The Request Duration will begin to increase over time. As this happens, you should notice more servers being brought online. Each time a server is brought online, you should see a message in the Sample Telemetry stating that it is "Generating 2 job function(s)", followed by a Starting Host message. You should also see messages logged by the resilience policy that the Computer Vision API server is throttling the requests. This is known by the response codes sent back from the service (429). A sample message is "Computer Vision API server is throttling our requests. Automatically delaying for 16000ms".
+1. Switch back to the Live Metrics Stream window and observe the activity as the photos are uploaded. After running for a couple of minutes, you should start to notice a few things. The Request Duration will begin to increase over time. As this happens, you should notice more servers being brought online..
 
     > **Note**: If you select a sample telemetry item and cannot see its details, drag the resize bar at the bottom of the list up to resize the details pane.
 
-    ![In the Live Metrics Stream window, 11 servers are now online.](media/image
-    1.png 'Live Metrics Stream window')
+    ![In the Live Metrics Stream window, 8 servers are now online.](media2/updated14.png 'Live Metrics Stream window')
 
 1. After this has run for some time, close the UploadImages console to stop uploading photos.
 
