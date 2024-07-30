@@ -2,7 +2,9 @@
 
 **Duration**: 15 minutes
 
-Application Insights can be integrated with Azure Function Apps to provide robust monitoring for your functions. In this exercise, you examine telemetry in the Application Insights account that you created when provisioning the Function Apps. Since you associated the Application Insights account with the Function Apps when creating them, the Application Insights telemetry key was added to the Function App configuration for you.
+Here you will be working with Application Insights which is a service that provides powerful, real-time analytics for your applications. It helps you monitor application performance, detect issues, and gain deep insights into usage patterns.
+
+In this exercise, you'll explore the telemetry data collected by the Application Insights account that was set up during the provisioning of your Function Apps. The integration was automatically configured by associating the Application Insights account with your Function Apps, which added the necessary telemetry key to the Function App configuration. This setup enables you to gain valuable insights into the performance, usage, and potential issues within your functions, facilitating proactive maintenance and optimization.
 
 ### Help references
 
@@ -14,6 +16,8 @@ Application Insights can be integrated with Azure Function Apps to provide robus
 
 ## Task 1: Use the Live Metrics Stream to monitor functions in real-time
 
+In this task you will be using Live Metrics feature of App Insights to monitor the performance of your function app. You will run the Complete Application which will process and store 1000 images which you will track in real-time.
+
 1. Open the **appinsights** Application Insights resource from within your lab resource group.
 
     ![The Application Insights instance is highlighted in the resource group.](media/resource-group-application-insights.png "Application Insights")
@@ -23,24 +27,6 @@ Application Insights can be integrated with Azure Function Apps to provide robus
     ![In the TollBoothMonitor blade, in the pane under Investigate, Live Metrics Stream is selected. ](media/live-metrics-link.png 'TollBoothMonitor blade')
 1. Leave the Live Metrics Stream open and return to the starter app solution in Visual Studio on the LabVM.
 
-1. Navigate to the **UploadImages** project using the Solution Explorer of Visual Studio. Right-click on **UploadImages** project and select **Properties**.
-
-    ![In Solution Explorer, the UploadImages project is expanded, and Properties is selected from the right-click context menu.](media/vs-uploadimages.png 'Solution Explorer')
-
-1. Select **Debug** in the left-hand menu, then paste the connection string for your Azure Data Lake Storage Gen2 account into the **Application arguments** text field.
-
-   > **Note**: To obtain the connection string:
-   >
-   > - In the Azure portal, navigate to the **datalake{SUFFIX}** storage account.
-   > - Select **Access keys** from the left menu under **Security + Networking**.
-   > - Copy the **Connection string** value of **key1**.
-   >  
-
-   Providing this value will ensure that the required connection string is added as an argument each time you run the application. Additionally, the combination of adding the value here and having the `.gitignore` file included in the project directory will prevent the sensitive connection string from being added to your source code repository in a later step.
-
-    ![The Debug menu item and the command line arguments text field are highlighted.](media/vs-command-line-arguments.png "Properties - Debug")
-
-1. Save your changes by selecting the Save icon on the Visual Studio toolbar.
 
 1. Right-click the **UploadImages** project in the Solution Explorer, select **Debug**, then **Start New Instance** from the context menu.
 
@@ -93,3 +79,7 @@ In this task, you will change the Computer Vision API to the Free tier. This wil
 1. After this has run for some time, close the UploadImages console to stop uploading photos.
 
 1. Navigate back to the **Computer Vision** resource in the Azure portal and set the pricing tier back to **S1 Standard**.
+
+## Summary
+
+In this exercise, you have tracked the performance and scalablity of your application by using live metrics feature of application insights.
