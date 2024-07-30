@@ -2,7 +2,9 @@
 
 **Duration**: 30 minutes
 
-In this exercise, you create a new Logic App for your data export workflow. This Logic App will execute periodically and call your ExportLicensePlates function, then conditionally send an email if there were no records to export.
+Here you will be using Azure Logic Apps which is a cloud-based service that enables you to automate workflows and integrate various services and applications. It provides a visual designer for building and managing workflows, making it easy to orchestrate complex processes without writing extensive code.
+
+In this exercise, you'll develop a new Logic App to automate your data export workflow. This Logic App will be configured to execute on a scheduled basis, calling the ExportLicensePlates function to retrieve license plate data. The workflow includes a conditional logic step: if the function finds that there are no records to export, the Logic App will automatically send an email notification. This setup ensures that your team stays informed about the status of data exports, even when no new data is available, thereby streamlining communication and operational efficiency.
 
 ### Help references
 
@@ -14,45 +16,61 @@ In this exercise, you create a new Logic App for your data export workflow. This
 
 ## Task 1: Create the Logic App
 
+In this task you will be creating a logic app which will export the data for every 15 minutes if not then send an email to customerservice.
+
 1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-SUFFIX** resource group.
 
    > You can get to the resource group by selecting **Resource groups** under **Azure services** on the Azure portal home page and then select the resource group from the list. If there are many resource groups in your Azure account, you can filter the list for **hands-on-lab** to reduce the resource groups listed.
 
 1. On your resource group blade, select the **logicapp** Logic App resource in the resource group's list of services available.
 
-1. In the **Logic App Designer**, scroll through the page until you locate the _Start with a common trigger_ section. Select the **Recurrence** trigger.
+1. In the **Logic App Designer** **(1)**, click on **Add a trigger** **(2)**. 
 
-    ![The Recurrence tile is selected in the Logic App Designer.](media/logic-app-designer-recurrence.png 'Logic App Designer')
+    ![The Recurrence tile is selected in the Logic App Designer.](media2/updated15.png 'Logic App Designer')
+
+1. In the **Add a trigger** page, Search for **Recurrence** **(1)** and select **Recurrence** **(2)**.
+
+    ![](media2/updated16.png)
 
 1. Enter **15** into the **Interval** box, and make sure Frequency is set to **Minute**. This can be set to an hour or some other interval, depending on business requirements.
 
-1. Select **+ New step**.
+    ![](media2/updated17.png)
 
-    ![Under Recurrence, the Interval field is set to 15, and the + New step button is selected.](media/image83.png 'Logic App Designer Recurrence section')
+1. Now in the **Logic App Designer** click on **+** marker and select **Add an action**.
 
-1. Enter `Functions` in the filter box, then select the **Azure Functions** connector.
+    ![Under Recurrence, the Interval field is set to 15, and the + New step button is selected.](media2/updated18.png 'Logic App Designer Recurrence section')
 
-    ![Under Choose an action, Functions is typed in the search box. Under Connectors, Azure Functions is selected.](media/image85.png 'Logic App Designer Choose an action section')
+1. In the **Add an action** form Enter `Functions` **(1)** in the filter box, then select the **Azure Functions** **(2)**.
 
-1. Select your **TollBoothFunctions** Function App.
+    ![](media2/updated19.png)
 
-    ![Under Azure Functions, in the search results list, Azure Functions (TollBoothFunctions) is selected.](media/logic-app-function-app-action.png 'Logic App Designer Azure Functions section')
+1. Select your **TollBoothFunctions** Function App and check the **ExportLicensePlates** function as shown. and return to designer. 
 
-1. Select the **ExportLicensePlates** function from the list.
+    ![](media2/updated20.png)
 
-    ![Under Azure Functions, under Actions (2), Azure Functions (ExportLicensePlates) is selected.](media/logic-app-select-export-function.png 'Logic App Designer Azure Functions section')
 
-    > This function does not require any parameters that need to be sent when it gets called.
+1. Select **+** marker and select **Add an action**.
 
-1. Select **+ New step**, then search for `condition`. Select the **Condition** Control option from the Actions search result.
+    ![In the logic app designer, in the ExportLicensePlates section, the parameter field is left blank. In the Choose an action box, condition is entered as the search term, and the Condition Control item is selected from the Actions list.](media2/updated22.png 'Logic App Designer ExportLicensePlates section')
 
-    ![In the logic app designer, in the ExportLicensePlates section, the parameter field is left blank. In the Choose an action box, condition is entered as the search term, and the Condition Control item is selected from the Actions list.](media/logicapp-add-condition.png 'Logic App Designer ExportLicensePlates section')
+1. search for `condition` **(1)**. Select the **Condition****(2)** Control option from the Actions search result.
 
-1. For the **value** field, select the **Status code** parameter. Ensure the operator is set to **is equal to**, then enter **200** in the second value field.
+    ![](media2/updated23.png)
+
+1. On the **Condition** pane click on the symbol which represents the function app as shown.
+
+    ![](media2/updated24.png)
+
+1. Scroll down and choose the **Status code** option.
+
+    ![](media2/updated25.png)
+
+1. On the **Condition** page, make sure the condition is set to **is equal to** and set the value as **200** and save it.
+
+    ![](media2/updated26.png)
 
     > **Note**: This evaluates the status code returned from the ExportLicensePlates function, which will return a 200 code when license plates are found and exported. Otherwise, it sends a 204 (NoContent) status code when no license plates were discovered that need to be exported. We will conditionally send an email if any response other than 200 is returned.
 
-    ![The first Condition field displays Status code. The second, drop-down menu field displays is equal to, and the third field is set to 200.](media/logicapp-condition.png 'Condition fields')
 
 1. We will ignore the If true condition because we don't want to perform an action if the license plates are successfully exported. Select **Add an action** within the **If false** condition block.
 
