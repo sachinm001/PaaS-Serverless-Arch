@@ -4,9 +4,9 @@
 
 In this task, you will create an API Management instance in Azure. API Management is a service that acts as a gateway between backend services and client applications, allowing for centralized management, security, and monitoring of APIs.
 
-1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
+1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services**, and then select **API Management services** under **Services**.
 
-    ![](media/ex3task1img1.png)
+    ![](media/ex3task5img1.png)
 
 1. Click on **Create**.
 
@@ -174,9 +174,9 @@ In this task, you will go through creating an Azure Function App and connecting 
 
 ## Task 3: Import your Function App into API Management
 
-1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
+1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services**, and then select **API Management services** under **Services**.
 
-    ![](media/ex3task1img1.png)
+    ![](media/ex3task5img1.png)
 
 1. Select the API Management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -231,9 +231,9 @@ In this task you will be Securing your API by creating subscription key. which s
 
     ![](media/ex3task6img1.png)
 
-1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
+1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services**, and then select **API Management services** under **Services**.
 
-    ![](media/ex3task1img1.png)
+    ![](media/ex3task5img1.png)
 
 1. Select the API management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
 
