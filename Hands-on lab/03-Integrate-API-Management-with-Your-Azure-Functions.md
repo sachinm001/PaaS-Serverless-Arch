@@ -264,7 +264,7 @@ In this task you will be Securing your API by creating subscription key. which s
 
     ![](media/ex3task5img9.png)
 
-1. You can see a precreated Subscription key called **Built-in all-access subscription**. This is a master key which works for all the API under this particular API Management service. Click on **+Add subscription**.
+1. You can see a precreated Subscription key called **Built-in all-access subscription**. This is a master key which works for all the API under this particular API Management service.But for now you will create a new subscription key for the API that you created. Click on **+Add subscription**.
 
     ![](media/ex3task5img10.png)
 
@@ -332,8 +332,24 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     ![](media/ex3task5img7.png)
 
-1. Now the policy will be added to your API, which restricts the access to your LabVM.You will be testing this in the next task.
-   
+1. Now the policy will be added to your API, which restricts the access to your LabVM. To test this use the request URL which you have used in the previous task.
+
+Which looks similar to this:
+
+```
+https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
+
+```
+1. Now paste the request URL in the new tab of your browser. You will see **403 Forbidden** error. Which means the policy is attached successfully which is blocking your IP address from accessing the API.
+
+1. Navigate back to your API's design pane and find the policy that you have attached previously in this task.
+
+1. Click on 3 dots which is at the rightmost of your policy name. and click on **delete** to delete the policy.
+
+1. Click on **save** after deleting the policy.
+
+1. Now navigate back to the browser tab where you have pasted the request URL and refresh the page. Now you will be able to get the data successfully withut any error.
+
 ## Task 6: Test the API through the APIM Developer Portal
 
 1. In the Azure Portal's search bar, type **Cosmos DB** (1) and select **Azure Cosmos DB** (2) from the search results.
