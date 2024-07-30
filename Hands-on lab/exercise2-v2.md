@@ -1,5 +1,43 @@
 # Exercise 2: Create functions in the portal
 
+<<<<<<< HEAD
+**Duration**: 45 minutes
+
+In this exercise, you will create two new Azure Functions written in Node.js, using the Azure portal. These will be triggered by Event Grid and output to Azure Cosmos DB to save the results of license plate processing done by the ProcessImage function.
+
+### Help references
+
+|                  |          |
+| ---------------- | -------- |
+| **Description**  | **Link** |
+| Create your first function in the Azure portal | <https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal> |
+| Store unstructured data using Azure Functions and Azure Cosmos DB | <https://docs.microsoft.com/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb> |
+
+## Task 1: Create a function to save license plate data to Azure Cosmos DB
+
+In this task, you will create a new Node.js function triggered by Event Grid that outputs successfully processed license plate data to Azure Cosmos DB.
+
+1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+
+   ![](media/sss18-1.png)
+
+1. Scroll down to **Functions** , then select **Create Function**.
+
+    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ss7.png)
+
+1. On the **Create function** form, under **Select a template** tab:
+
+   - Search for  **event grid** (1)
+   - Select the **Azure Event Grid trigger** template (2).
+   - Select the **Next** button (3).
+
+    ![In the Create Function form, event grid is entered into the filter box, the Azure Event Grid trigger template is selected and highlighted, and SavePlateData is entered in the Name field and highlighted.](media/ss8.png)
+
+1. On the **Create function** form, under **Template details** tab Enter `SavePlateData` (1) into the **Function name** field, then Click on **Create** (2)
+
+    ![](media/ss9.png)
+
+=======
 **Duration**: 45 minutes
 
 Here you will be using multiple services such as Azure Functions enables you to run event-driven code in a serverless environment. Azure Cosmos DB, a globally distributed, highly scalable database that ensures low latency and high availability. Additionally, Azure Service Bus provides a reliable messaging system.
@@ -207,3 +245,153 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
     ![In the Azure Cosmos DB output form, the following field values display: Document parameter name, outputDocument; Collection name, NeedsManualReview; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb-SUFFIX.](media/ss20.png)
 
 1. Close the **QueuePlateForManualCheckup** function.
+
+## Task 7: Add Service Bus output binding to SavePlateData function 
+
+In this task, you'll bind the Service Bus to Azure Function App by adding connection string which is used in Index.js file of SavePlateData function.
+
+1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
+
+
+1. Select **Shared Access Policies (1)** from settings, click on **RootManageSharedAccessKey (2)**, copy the **Primary Connection String (3)** and paste it in a notepad. 
+
+   ![](media/sss34.png)
+
+1. Navigate to home page  of **TollBoothEvents-<inject key="DeploymentID" enableCopy="false" />** function. Select **Environment variables (1)** and click on **+Add (2)** button.
+
+   ![](media/updated11.png)
+
+1. In the Add/Edit application setting tab, provide Name as **ServiceBusConnection** and paste the **Service Bus connection string (2)** which you copied in earlier step. Click on **Add (3)** button to save. 
+
+   ![](media/sss36.png)
+
+1. In App Settings tab, click on **Apply**.
+
+   ![](media/sss37.png)
+
+1. Now navigate to **SavePlateData** function which you have created previously.
+
+1. On the **SavePlateData** Function blade, select **Code + Test** and replace the code in the new `SavePlateData` function's `index.js` file with the following:
+
+    ```javascript
+    const { ServiceBusClient } = require('@azure/service-bus');
+    const { CosmosClient } = require('@azure/cosmos');
+
+    module.exports = async function (context, eventGridEvent) {
+        context.log(typeof eventGridEvent);
+        context.log(eventGridEvent);
+
+        // Create the output document for Cosmos DB
+        const outputDocument = {
+            id: eventGridEvent.id,
+            fileName: eventGridEvent.data['fileName'],
+            licensePlateText: eventGridEvent.data['licensePlateText'],
+            timeStamp: eventGridEvent.data['timeStamp'],
+            exported: false
+        };
+
+        // Connect to Cosmos DB and add the document to the specified container
+        const cosmosConnectionString = process.env['cosmosdb-<DEPLOYMENT-ID>_DOCUMENTDB'];
+        const databaseName = 'LicensePlates';
+        const containerName = 'Processed';
+        const cosmosClient = new CosmosClient(cosmosConnectionString);
+        const container = cosmosClient.database(databaseName).container(containerName);
+
+        try {
+            await container.items.create(outputDocument);
+            context.log('Document successfully created in Cosmos DB');
+        } catch (error) {
+            context.log.error(`Error creating document in Cosmos DB: ${error.message}`);
+            throw error;
+        }
+
+        // Create a message for the Service Bus queue
+        const message = {
+            body: outputDocument
+        };
+
+        // Connect to Service Bus and send the message
+        const serviceBusConnectionString = process.env['ServiceBusConnection'];
+        const queueName = 'Processed';
+        const sbClient = new ServiceBusClient(serviceBusConnectionString);
+        const sender = sbClient.createSender(queueName);
+
+        try {
+            await sender.sendMessages(message);
+            context.log('Message sent to Service Bus queue');
+        } catch (error) {
+            context.log.error(`Error sending message to Service Bus queue: ${error.message}`);
+            throw error;
+        } finally {
+            await sender.close();
+            await sbClient.close();
+        }
+
+        context.done();
+    };
+    ```
+1. In line 18, replace `<DEPLOYMENT-ID>` with **<inject key="DeploymentID" enableCopy="false" />** **(1)** and click on **Save** **(2)**
+
+   ![](media/sss26.png)
+
+## Task 8: Test the Serverless Architecture
+
+In this task, you will debug the uploadImage solution and obaserve the working of serverless solution by just uploading the license plate images.
+
+1. Navigate back  to the starter app solution in Visual Studio on the LabVM.
+
+1. Navigate to the **UploadImages** project using the Solution Explorer of Visual Studio. Right-click on **UploadImages** project and select **Properties**.
+
+    ![In Solution Explorer, the UploadImages project is expanded, and Properties is selected from the right-click context menu.](media/vs-uploadimages.png 'Solution Explorer')
+
+1. Select **Debug** in the left-hand menu, then paste the connection string for your Azure Data Lake Storage Gen2 account into the **Application arguments** text field.
+
+   > **Note**: To obtain the connection string:
+   >
+   > - In the Azure portal, navigate to the **datalake{SUFFIX}** storage account.
+   > - Select **Access keys** from the left menu under **Security + Networking**.
+   > - Copy the **Connection string** value of **key1**.
+   
+
+   Providing this value will ensure that the required connection string is added as an argument each time you run the application. Additionally, the combination of adding the value here and having the `.gitignore` file included in the project directory will prevent the sensitive connection string from being added to your source code repository in a later step.
+
+    ![The Debug menu item and the command line arguments text field are highlighted.](media/vs-command-line-arguments.png "Properties - Debug")
+
+1. Save your changes by selecting the Save icon on the Visual Studio toolbar.
+
+1. Right-click the **UploadImages** project in the Solution Explorer, select **Debug**, then **Start New Instance** from the context menu.
+
+    ![In Solution Explorer, the UploadImages project is selected. From the context menu, Debug then Start New Instance is selected.](media/vs-debug-uploadimages.png 'Solution Explorer')
+
+
+1. When the console window appears, enter **1** and press **ENTER**. This action uploads a handful of car photos to the images container of your Blob storage account.
+
+    ![A Command prompt window displays, showing images being uploaded.](media/image69.png 'Command prompt window')
+
+1. Switch back to your browser window, navigate to **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />**  and open  **cosmosdb-<inject key="DeploymentID" enableCopy="false" />**.
+
+   ![The Live Metrics Stream window displays information for the two online servers. Displaying line and point graphs including incoming requests, outgoing requests, and overall health. To the side is a list of Sample Telemetry information. ](media/sss40.png 'Live Metrics Stream window')
+
+1. Select **Data Explorer (1)** from the side blade, expand **LicensePlates (2)** database. You'll be able to see 2 containers **NeedsManualReview** and **Processed** **(3)**.
+
+    ![The Command prompt window displays with image uploading information.](media/sss41.png 'Command prompt window')
+
+1. Click on **items** and you should be able to see that processed data and unprocessed are updated. This validates that your serverless architecture is working as expected.
+
+    ![In the Live Metrics Stream window, two servers are online under Incoming Requests. The Request Rate heartbeat line graph is selected, as is the Request Duration dot graph. Under Overall Health, the Process CPU heartbeat line graph is also selected, the similarities between this graph and the Request Rate graph under Incoming Requests are highlighted for comparison.](media/sss42.png 'Live Metrics Stream window')
+
+1. Also, navigate to **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />**  and open  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
+
+   ![](media/sss43.png)
+
+1. From the side-blade, select **Queues (2)** from the **Entities (1)** drop-down, and open **Processed (3)** queue.
+
+   ![](media/sss44.png)
+
+1. Click on **Service Bus Explorer (1)** from the side blade. Select **Peek from start (2)** and you will see the queues craeted by function app.
+
+   ![](media/sss45.png)
+
+## Summary
+
+In this exercise, you added functions to TollBoothEvents-<inject key="DeploymentID" enableCopy="false" /> function. Also, you configured a service bus queue and integrated it with TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" /> function.
