@@ -4,6 +4,8 @@ Here you use the Azure API Management (APIM) which is a powerful service for cre
 
 In this exercise, you'll integrate Azure API Management (APIM) with your Azure Functions to create a secure and manageable API. Specifically, you'll develop a function to retrieve driver license details and import this function into an APIM instance. Once imported, you'll expose this functionality as an API, securing it with a subscription key to control access. Additionally, you'll enhance security by configuring an IP filtering policy, ensuring that only authorized IP addresses can access the API. This setup demonstrates how to effectively manage and secure APIs using Azure's comprehensive API Management features.
 
+## Help references
+
 |                  |          |
 | ---------------- | -------- |
 | **Description**  | **Link** |
