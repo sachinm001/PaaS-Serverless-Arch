@@ -265,8 +265,9 @@ In this task you will be Securing your API by creating subscription key. which s
     Your Request URL will look something like this:
 
     ```
-    https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-                 7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
+    https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=7<ID>&subscription-key=<SUBSCRIPTION-KEY>
     ```
+     >**Note**: Make sure to replace the <ID> and <SUBSCRIPTION-KEY> with the values you copies earlier.
 
 1. You will be able to access your API successfully using the subscription key and the expected response will be displayed.
 
@@ -323,10 +324,11 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     Which looks similar to this:
 
+     ```
+    https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=7<ID>&subscription-key=<SUBSCRIPTION-KEY>
     ```
-    https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
-
-    ```
+     >**Note**: Make sure to replace the <ID> and <SUBSCRIPTION-KEY> with the values you copies earlier.
+     
 1. Now paste the request URL in the new tab of your browser. You will see **403 Forbidden** error. Which means the policy is attached successfully which is blocking your IP address from accessing the API.
 
     ![](media/ex3task5img11.png)
