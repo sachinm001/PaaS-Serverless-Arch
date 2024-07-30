@@ -347,3 +347,7 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     ![](media/ex3task5img14.png)
 
+
+## Summary
+
+In this exercise you have created a new function to pull the driver's license data. and created a API of that function using API Management Service.
