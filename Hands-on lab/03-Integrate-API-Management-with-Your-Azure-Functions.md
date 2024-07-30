@@ -1,37 +1,8 @@
 # Exercise:3 Integrate API Management with Your Azure Functions
 
-## Task 1: Create an API Management instance 
 
-In this task, you will create an API Management instance in Azure. API Management is a service that acts as a gateway between backend services and client applications, allowing for centralized management, security, and monitoring of APIs.
 
-1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services**, and then select **API Management services** under **Services**.
-
-    ![](media/ex3task5img1.png)
-
-1. Click on **Create**.
-
-    ![](media/ex3task1img2.png)
-
-1. On the **Basics** tab of the **Create API Management Service** page, fill in the necessary details, Ensure all required fields are completed accurately, then click on **Review + create** to proceed.
-
-   | Setting         | Value |
-   ------------------|---------
-   | **Subscription** | Keep it as default (1)|
-   | **Resource group**| hands-on-lab-<inject key="DeploymentID"></inject> (2)|
-   | **Resource name** | apiservice-<inject key="DeploymentID"></inject> (3)|
-   | **Organization name** | contoso- (4)|
-   | **Administrator email** | <inject key="AzureAdUserEmail"></inject> (5)|
-   | **Pricing tier** | Consumption (6)|
-
-    ![](media/ex3task1img3.png)
-
-    ![](media/ex3task1img4.png)
-
-1. Review your configuration to ensure all settings are correct, then click on **Create** to initiate the deployment process.
-
-    ![](media/ex3task1img5.png)
-
-## Task 2: Create a function to pull driver's license information 
+## Task 1: Create a function to pull driver's license information 
 
 In this task, you will go through creating an Azure Function App and connecting it to an Azure Cosmos DB. You will create an HTTP-triggered function within the Function App and replace its default code with JavaScript to query Cosmos DB. Additionally, you'll configure environment variables for Cosmos DB connection details to ensure secure and efficient access to the database from the function.
 
@@ -172,6 +143,15 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task2img13.png)
 
+1. Now Click on **Console** (1) under **Development Tools** from the left hand menu and run the command to install the Azure Cosmos DB SDK.
+
+    ```
+    npm install @azure/cosmos
+    ```
+
+    ![](media/ex3task3img9.png)
+
+
 ## Task 3: Import your Function App into API Management
 
 1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services**, and then select **API Management services** under **Services**.
@@ -180,13 +160,6 @@ In this task, you will go through creating an Azure Function App and connecting 
 
 1. Select the API Management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. Click on **Console** (1) under **Development Tools** and run the command to install the Azure Cosmos DB SDK.
-
-    ```
-    npm install @azure/cosmos
-    ```
-
-    ![](media/ex3task3img9.png)
 
 1. In the **APIs** (1) section of your Azure API Management service, click on **APIs** (2) to open the list of available APIs. Then, select **Function App** (3) from the list of available API types. This will allow you to manage and configure your Function App API within the API Management service.
 
@@ -231,7 +204,7 @@ In this task you will be Securing your API by creating subscription key. which s
 
     ![](media/ex3task6img1.png)
 
-1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services**, and then select **API Management services** under **Services**.
+1. On the **Azure Portal**, use the search bar on the top and enter **API Management services**, and then select **API Management services** under **Services**.
 
     ![](media/ex3task5img1.png)
 
@@ -325,9 +298,9 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
     There are multiple types of policies in API Management Service. Some major types are:
 
-    1. ip-filter - it is used to allow or block a particular range of IP adresses.
-    2. rate-limit-by-key - it is used to set a limit to number of API requests that a client can make.
-    3. validate JWT - Enforces existence and validity of a JWT extracted from either a specified HTTP header, query parameter, or token value.
+    1. **ip-filter** - it is used to allow or block a particular range of IP adresses.
+    2. **rate-limit-by-key** - it is used to set a limit to number of API requests that a client can make.
+    3. **validate JWT** - Enforces existence and validity of a JWT extracted from either a specified HTTP header, query parameter, or token value.
 
     for this task you will be using **ip-filter** policy.
 
