@@ -145,13 +145,13 @@ In this task, you will publish the Function App from the starter project in Visu
 
     ![In Solution Explorer, the TollBooth is selected, and within its context menu, the Publish item is selected.](media/image39.png "Solution Explorer")
 
-1. In the Publish window, select **Azure**, then select **Next**.
+1. In the Publish window, select **Azure** **(1)**, then select **Next** **(2)**.
 
-    ![In the Pick a publish target window, the Azure Functions Consumption Plan is selected in the left pane. The Select Existing radio button is selected in the right pane, and the Run from package file (recommended) checkbox is unchecked. The Create Profile button is also selected.](media/vs-publish-function.png 'Publish window')
+    ![In the Pick a publish target window, the Azure Functions Consumption Plan is selected in the left pane. The Select Existing radio button is selected in the right pane, and the Run from package file (recommended) checkbox is unchecked. The Create Profile button is also selected.](media/ex1img1.png)
 
-1. Select **Azure Function App (Windows)** for the specific target, then select **Next**.
+1. Select **Azure Function App (Windows)** **(1)** for the specific target, then select **Next** **(2)**.
 
-    ![The specific target screen of the Publish dialog is shown with the Azure Function App (Windows) item selected and the Next button highlighted.](media/vs-publish-specific-target.png "Publish specific target")
+    ![The specific target screen of the Publish dialog is shown with the Azure Function App (Windows) item selected and the Next button highlighted.](media/ex1img2.png)
 
 1. In the **Publish** dialog:
 
@@ -170,7 +170,7 @@ In this task, you will publish the Function App from the starter project in Visu
 
     > **Note**: If prompted to update the version of the function on Azure, select **Yes**.
 
-    ![The Publish button is selected.](media/vs-publish-function3.png "Publish")
+    ![The Publish button is selected.](media/ex1img3.png)
 
 1. Navigate to home page and double click on the **Azure Portal** icon.
 
@@ -198,7 +198,7 @@ In this task, you will publish the Function App from the starter project in Visu
    
 1. Now you will see the Azure Portal Dashboard, click on **Resource groups** from the Navigate panel to see the resource groups.
 
-   ![](media/sss14.png "Resource groups")
+   ![](media/ex1img4.png "Resource groups")
    
 1. Now, click on the **Next** from the lower right corner to move to the next page.
 
@@ -208,7 +208,7 @@ In this task, you will publish the Function App from the starter project in Visu
 
 1. Scroll down to functions tab. You should see both functions you just published from the Visual Studio solution listed. Click on **ProcessImage** function.
 
-   ![](media/sss16.png "Resource groups")
+   ![](media/ex1img5.png "Resource groups")
 
 1. In the **ProcessImage | Code + Test** page navigate to **Integration (1)** tab. In the integration tab click on **Event Grid Trigger (eventGridEvent) (2)**.
 

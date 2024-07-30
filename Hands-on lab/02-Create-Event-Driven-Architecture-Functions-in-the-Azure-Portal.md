@@ -70,7 +70,7 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
 
 1. On the **Create Event Subscription** blade, specify the following configuration options and click on **Create** **(7)**
 
-    - **Name**: Enter a unique value, similar to **saveplatedatasub<inject key="DeploymentID" enableCopy="false" />** **(1)** (ensure the green checkmark appears).
+    - **Name**: Enter a unique value, similar to **saveplatedatasub** **(1)** (ensure the green checkmark appears).
     - **Event Schema**: Select **Event Grid Schema** **(2)**.
     - **Topic Type**: Select **Event Grid Topics** **(3)**.
     - **Subscription**: Select the subscription you are using for this hands-on lab.
@@ -238,7 +238,7 @@ In this task, you'll add functions in TollBoothIntegration-<inject key="Deployme
 
 1. Scroll down to **Functions** , then select **Create Function**.
 
-    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ss7.png)
+    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ex1img6.png)
 
 1. On the **Create function** form, under **Select a template** tab:
 
