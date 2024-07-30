@@ -1,1 +1,209 @@
-updated...
+# Exercise 2: Create functions in the portal
+
+**Duration**: 45 minutes
+
+Here you will be using multiple services such as Azure Functions enables you to run event-driven code in a serverless environment. Azure Cosmos DB, a globally distributed, highly scalable database that ensures low latency and high availability. Additionally, Azure Service Bus provides a reliable messaging system.
+
+In this exercise, you'll create two new Azure Functions using Node.js within the Azure portal. These functions will be designed to respond to events triggered by Azure Event Grid. Their primary role will be to process the output from the ProcessImage function, which analyzes license plate data. Once processed, the functions will store the results in Azure Cosmos DB and also create a output message and store those in service bus queue, ensuring efficient and scalable data management.
+
+### Help references
+
+|                  |          |
+| ---------------- | -------- |
+| **Description**  | **Link** |
+| Create your first function in the Azure portal | <https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal> |
+| Store unstructured data using Azure Functions and Azure Cosmos DB | <https://docs.microsoft.com/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb> |
+
+## Task 1: Create a function to save license plate data to Azure Cosmos DB
+
+In this task, you will create a new Node.js function triggered by Event Grid that outputs successfully processed license plate data to Azure Cosmos DB.
+
+1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+
+   ![](media/sss18-1.png)
+
+1. Scroll down to **Functions** , then select **Create Function**.
+
+    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ss7.png)
+
+1. On the **Create function** form, under **Select a template** tab:
+
+   - Search for  **event grid**
+   - Select the **Azure Event Grid trigger** template.
+   - Select the **Next** button.
+
+    ![In the Create Function form, event grid is entered into the filter box, the Azure Event Grid trigger template is selected and highlighted, and SavePlateData is entered in the Name field and highlighted.](media/updated3.png)
+
+1. On the **Create function** form, under **Template details** tab Enter `SavePlateData` (1) into the **Function name** field, then Click on **Create** (2)
+
+    ![](media/updated4.png)
+
+
+## Task 2: Add an Event Grid subscription to the SavePlateData function
+
+In this task, you will add an Event Grid subscription to the SavePlateData function. This will ensure that the events sent to the Event Grid topic containing the savePlateData event type are routed to this function.
+
+1. With the SavePlateData function open, navigate to **Integration** (1) tab, then click on **Event Grid Trigger (eventGridEvent)** (2).
+
+    ![In the SavePlateData blade code window, the Add Event Grid subscription link is selected.](media/updated5.png)
+
+1. On the Edit Trigger form, select **Create Event Grid subscription**.
+
+    ![](media/sss28.png)
+
+1. On the **Create Event Subscription** blade, specify the following configuration options and click on **Create** **(6)**
+
+    - **Name**: Enter a unique value, similar to **saveplatedatasub** **(1)** (ensure the green checkmark appears).
+    - **Event Schema**: Select **Event Grid Schema** **(2)**.
+    - **Topic Type**: Select **Event Grid Topics** **(3)**.
+    - **Subscription**: Select the subscription you are using for this hands-on lab.
+    - **Resource Group**: Select the **hands-on-lab-saveplatedatasub<inject key="DeploymentID" enableCopy="false" />** resource group from the list of existing resource groups.
+    - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with **eventgridtopic-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Event Types**: Select **Add Event Type** and enter **savePlateData** **(4)** for the new event type value. This will ensure this Event Grid type only triggers this function.
+    - **Endpoint Type**: Leave **Azure Function** **(5)** as the Endpoint Type.
+    - **Endpoint**: Leave as **SavePlateData**.
+
+    ![](media/updated6.png)
+
+## Task 3: Add an Azure Cosmos DB output to the SavePlateData function
+
+In this task, you will add an Azure Cosmos DB output binding to the SavePlateData function, enabling it to save its data to the Processed collection.
+
+1. While still on the **SavePlateData** Integration blade, select **+ Add output** under `Outputs`.
+
+1. In the **Create Output** blade:
+
+   - Select the `Azure Cosmos DB` for **Binding Type** (1).
+   - Beneath the Cosmos DB account connection drop down, select the **New** link (2).
+   - Choose the connection whose name begins with `cosmosdb-` (3).  
+   - Select **OK** (4).
+
+    ![](media/sss20.png)
+
+1. Specify the following additional configuration options in the Create Output form:
+
+    - **Document parameter name**: Leave set to `outputDocument` **(1)**.
+    - **Database name**: Enter `LicensePlates` **(2)**.
+    - **Collection name**: Enter `Processed` **(3)**.
+    - Click on **Add** **(4)**.
+
+    ![](media/updated7.png)
+
+1. Close the `SavePlateData` function.
+
+## Task 4: Create a function to save manual verification info to Azure Cosmos DB
+
+In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  
+
+1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+
+   ![](media/sss22-1.png)
+
+
+1. Scroll down to **Functions** tab, then select **+ Create**.
+
+    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/ss13.png)
+
+1. On the **Create function** form, under **Select a template** tab:
+
+   - Search for **event grid**.
+   - Select the **Azure Event Grid trigger** template.
+   - Select **next**.
+
+    ![In the Create function form, event grid is entered into the filter box. The Azure Event Grid trigger template is selected and highlighted, and QueuePlateForManualCheckup is entered in the Name field and highlighted.](media/ss8.png)
+
+1. On the **Create function** form, under **Template details** tab Enter `QueuePlateForManualCheckup` (1) into the **Function name** field, then Click on **Create** (2)
+
+    ![](media/updated8.png)
+
+1. On the **QueuePlateForManualCheckup** Function blade, select **Code + Test** from the left-hand menu and replace the code in the new `QueuePlateForManualCheckup` function's `index.js` file with the following:
+
+    ```javascript
+    const { CosmosClient } = require('@azure/cosmos');
+
+    module.exports = async function (context, eventGridEvent) {
+        context.log(typeof eventGridEvent);
+        context.log(eventGridEvent);
+
+        // Create the output document for Cosmos DB
+        const outputDocument = {
+            id: eventGridEvent.id,
+            fileName: eventGridEvent.data['fileName'],
+            licensePlateText: eventGridEvent.data['licensePlateText'],
+            timeStamp: eventGridEvent.data['timeStamp'],
+            exported: false
+        };
+
+        // Retrieve the Cosmos DB connection string from environment variables
+        const cosmosConnectionString = process.env['cosmosdb-<DEPLOYMENT-ID>_DOCUMENTDB'];
+        
+        // Specify the database and container names
+        const databaseName = 'LicensePlates';
+        const containerName = 'NeedsManualReview';
+
+        // Initialize the CosmosClient
+        const cosmosClient = new CosmosClient(cosmosConnectionString);
+        const container = cosmosClient.database(databaseName).container(containerName);
+
+        try {
+            const { resource: createdItem } = await container.items.create(outputDocument);
+            context.log(`Document created with id: ${createdItem.id}`);
+        } catch (error) {
+            context.log.error(`Error creating document: ${error.message}`);
+        }
+    };
+
+    ```
+1. In line 17, replace <DEPLOYMENT-ID> with your DeploymentID.
+
+    ![](media/updated9.png)
+
+1. Select **Save**.
+
+## Task 5: Add an Event Grid subscription to the QueuePlateForManualCheckup function
+
+In this task, you will add an Event Grid subscription to the QueuePlateForManualCheckup function. This will ensure that the events sent to the Event Grid topic containing the queuePlateForManualCheckup event type are routed to this function.
+
+1. With the **QueuePlateForManualCheckup** function open, Navigate to **Integration** (1) tab. Select **Event Grid Trigger (eventGridEvent)** (2). 
+
+    ![In the QueuePlateForManualCheckup Integration blade, the Create Event Grid subscription link is selected.](media/updated10.png)
+
+1. On the Edit Trigger form, select **Create Event Grid subscription**.
+
+   ![](media/updated2.png)
+
+1. On the **Create Event Subscription** blade, specify the following configuration options and Select **Create** **(7)**.
+
+    - **Name**: Enter a unique value, similar to **queueplateformanualcheckupsub** **(1)** (ensure the green check mark appears).
+    - **Event Schema**: Select **Event Grid Schema** **(2)**.
+    - **Topic Type**: Select **Event Grid Topics** **(3)**.
+    - **Subscription**: Select the subscription you are using for this hands-on lab.
+    - **Resource Group**: Select the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group from the list of existing resource groups.
+    - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with **eventgridtopic-<inject key="DeploymentID" enableCopy="false" />** **(4)**.
+    - **Event Types**: Select **Add Event Type** and enter **queuePlateForManualCheckup** **(5)** for the new event type value. This will ensure this function is only triggered by this Event Grid type.
+    - **Endpoint Type**: Leave **Azure Function** **(6)** as the Endpoint Type.
+    - **Endpoint**: Leave as **QueuePlateForManualCheckup** **(6)**.
+
+    ![](media/sss23.png)
+
+1. close the Edit Trigger blade.
+
+## Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
+
+In this task, you will add an Azure Cosmos DB output binding to the QueuePlateForManualCheckup function, enabling it to save its data to the NeedsManualReview collection.
+
+1. While still on the **QueuePlateForManualCheckup** Integration blade, select **+ Add output** under **Outputs**.
+
+1. In the **Create Output** form, select the following configuration options in the Create Output form:
+
+    - **Binding Type**: Select `Azure Cosmos DB`.
+    - **Cosmos DB account connection**: Select the **Azure Cosmos DB account connection** you created earlier.
+    - **Document parameter name**: Leave set to `outputDocument`.
+    - **Database name**: Enter `LicensePlates`.
+    - **Collection name**: Enter `NeedsManualReview`.
+
+1. Select **Add**.
+
+    ![In the Azure Cosmos DB output form, the following field values display: Document parameter name, outputDocument; Collection name, NeedsManualReview; Database name, LicensePlates; Azure Cosmos DB account connection, cosmosdb-SUFFIX.](media/ss20.png)
+
+1. Close the **QueuePlateForManualCheckup** function.
