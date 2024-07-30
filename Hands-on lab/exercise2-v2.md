@@ -1,43 +1,5 @@
 # Exercise 2: Create functions in the portal
 
-<<<<<<< HEAD
-**Duration**: 45 minutes
-
-In this exercise, you will create two new Azure Functions written in Node.js, using the Azure portal. These will be triggered by Event Grid and output to Azure Cosmos DB to save the results of license plate processing done by the ProcessImage function.
-
-### Help references
-
-|                  |          |
-| ---------------- | -------- |
-| **Description**  | **Link** |
-| Create your first function in the Azure portal | <https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal> |
-| Store unstructured data using Azure Functions and Azure Cosmos DB | <https://docs.microsoft.com/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb> |
-
-## Task 1: Create a function to save license plate data to Azure Cosmos DB
-
-In this task, you will create a new Node.js function triggered by Event Grid that outputs successfully processed license plate data to Azure Cosmos DB.
-
-1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
-
-   ![](media/sss18-1.png)
-
-1. Scroll down to **Functions** , then select **Create Function**.
-
-    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create function button is selected.](media/ss7.png)
-
-1. On the **Create function** form, under **Select a template** tab:
-
-   - Search for  **event grid** (1)
-   - Select the **Azure Event Grid trigger** template (2).
-   - Select the **Next** button (3).
-
-    ![In the Create Function form, event grid is entered into the filter box, the Azure Event Grid trigger template is selected and highlighted, and SavePlateData is entered in the Name field and highlighted.](media/ss8.png)
-
-1. On the **Create function** form, under **Template details** tab Enter `SavePlateData` (1) into the **Function name** field, then Click on **Create** (2)
-
-    ![](media/ss9.png)
-
-=======
 **Duration**: 45 minutes
 
 Here you will be using multiple services such as Azure Functions enables you to run event-driven code in a serverless environment. Azure Cosmos DB, a globally distributed, highly scalable database that ensures low latency and high availability. Additionally, Azure Service Bus provides a reliable messaging system.
