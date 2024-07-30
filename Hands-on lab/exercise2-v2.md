@@ -154,7 +154,7 @@ In this task, you will create another new function triggered by Event Grid and o
     };
 
     ```
-1. In line 17, replace <DEPLOYMENT-ID> with your DeploymentID.
+1. In line 17, replace `<DEPLOYMENT-ID>` with **<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](media/updated9.png)
 
@@ -225,7 +225,7 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
 1. In the Add/Edit application setting tab, provide Name as **ServiceBusConnection** and paste the **Service Bus connection string (2)** which you copied in earlier step. Click on **Add (3)** button to save. 
 
-   ![](media/sss36.png)
+   ![](media/updated12.png)
 
 1. In App Settings tab, click on **Apply**.
 
