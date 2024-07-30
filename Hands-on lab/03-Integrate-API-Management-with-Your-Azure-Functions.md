@@ -42,27 +42,7 @@ In this task, you will go through creating an Azure Function App and connecting 
 
     ![](media/ex3task2img6.png)
 
-1. You will see that a function with the specified name has been created successfully.
-
-    ![](media/ex3task2img7.png)
-
-1. In the search bar of the Azure Portal, search for **Cosmos DB** (1) and select **Azure Cosmos DB** (2).
-
-    ![](media/ex3task2img8.png)
-
-1. Select your **cosmosdb-<inject key="DeploymentID" enableCopy="false" />** account.
-
-1. Click on **Keys** (2) under **Settings** (1) and copy the **URI** (3) (Endpoint). Then, click on the **eye** (4) icon to reveal and copy your **PRIMARY KEY** (5). Note down both the URI and PRIMARY KEY.
-
-    ![](media/ex3task2img9.png)
-
-1. Click on the **Data Explorer** (1), note down `databaseId` which is **LicensePlates** (2) and `containerId` which is **Processed** (3).
-
-    ![](media/ex3task2img10.png)
-
-1. Navigate back to your **HttpTrigger** function within the function app named **License-function-<inject key="DeploymentID" enableCopy="false" />**.
-
-1. On the **HttpTrigger1** Function blade, select **Code + Test** and replace the existing code in the `index.js` file with the following:
+1. On the  **Code + Test** pane, replace the existing code in the `index.js` file with the following:
 
     ```
     const { CosmosClient } = require("@azure/cosmos");
@@ -119,6 +99,25 @@ In this task, you will go through creating an Azure Function App and connecting 
     };
 
     ```
+    >**Note**: You can see some of the variables are used in the code such as `COSMOS_DB_ENDPOINT`, `COSMOS_DB_PRIMARY_KEY`, `COSMOS_DB_DATABASE_ID`, and `COSMOS_DB_CONTAINER_ID` you need to add those in **environment variables** which you will be doing in further steps.
+
+1. In the search bar of the Azure Portal, search for **Cosmos DB** (1) and select **Azure Cosmos DB** (2).
+
+    ![](media/ex3task2img8.png)
+
+1. Select your **cosmosdb-<inject key="DeploymentID" enableCopy="false" />** account.
+
+1. Click on **Keys** (2) under **Settings** (1) and copy the **URI** (3) (Endpoint). Then, click on the **eye** (4) icon to reveal and copy your **PRIMARY KEY** (5). Note down both the URI and PRIMARY KEY.
+
+    ![](media/ex3task2img9.png)
+
+1. Click on the **Data Explorer** (1), note down `databaseId` which is **LicensePlates** (2) and `containerId` which is **Processed** (3).
+
+    ![](media/ex3task2img10.png)
+
+1. Navigate back to your **HttpTrigger** function within the function app named **License-function-<inject key="DeploymentID" enableCopy="false" />**.
+
+
 
 1. In the **Settings** section (1) of your function app, navigate to **Environment variables** (2). Click on the **+ ADD** button to begin adding new environment variables.
 
