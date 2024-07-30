@@ -221,11 +221,11 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
 1. Navigate to home page  of **TollBoothEvents-<inject key="DeploymentID" enableCopy="false" />** function. Select **Environment variables (1)** and click on **+Add (2)** button.
 
-   ![](media/updated11.png)
+   ![](media2/updated11.png)
 
 1. In the Add/Edit application setting tab, provide Name as **ServiceBusConnection** and paste the **Service Bus connection string (2)** which you copied in earlier step. Click on **Add (3)** button to save. 
 
-   ![](media/updated12.png)
+   ![](media2/updated12.png)
 
 1. In App Settings tab, click on **Apply**.
 
