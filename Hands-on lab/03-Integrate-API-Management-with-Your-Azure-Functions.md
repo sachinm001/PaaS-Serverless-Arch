@@ -194,7 +194,7 @@ In this task, you will be importing your function into API Management Instance. 
 
     ![](media/ex3task3img10.png)
 
-## Task 4: Secure the API with API Management (e.g., API keys, OAuth 2.0)
+## Task 3: Secure the API with API Management (e.g., API keys, OAuth 2.0)
 
 In this task you will be Securing your API by creating subscription key. which should be used with the request URL to access the API.
 
@@ -275,7 +275,7 @@ In this task you will be Securing your API by creating subscription key. which s
 
 
 
-## Task 5: Configure API policies (e.g., rate limiting, logging) 
+## Task 4: Configure API policies (e.g., rate limiting, logging) 
 
 In this task, you will create and use an API Management (APIM) policy for IP filtering. This policy will help you restrict access to your APIs by allowing only specified IP addresses. IP filtering adds an extra layer of security, ensuring that only trusted clients can access your services.
 
