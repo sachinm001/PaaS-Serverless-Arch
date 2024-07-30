@@ -322,6 +322,14 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
 1. On the **Add inbound policy** page. click on **Filter IP adresses** option.You will be navigated to **Inbound processing** page.
 
+    There are multiple types of policies in API Management Service. Some major types are:
+
+    1. ip-filter - it is used to allow or block a particular range of IP adresses.
+    2. rate-limit-by-key - it is used to set a limit to number of API requests that a client can make.
+    3. validate JWT - Enforces existence and validity of a JWT extracted from either a specified HTTP header, query parameter, or token value.
+
+    for this task you will be using **ip-filter** policy.
+
     ![](media/ex3task5img5.png)
 
 1. Scroll down and change the filtering to **Blocked IPs**(1). and click on **Add IP filter**(2).
@@ -334,70 +342,27 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
 1. Now the policy will be added to your API, which restricts the access to your LabVM. To test this use the request URL which you have used in the previous task.
 
-Which looks similar to this:
+    Which looks similar to this:
 
-```
-https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
+    ```
+    https://apiservice-1411123.azure-api.net/License-function-1411123/HttpTrigger1?id=46cb910d-0667-4474-bbe7-7793e1d13762&subscription-key=6a8009bc3ed04ed094335ca3b92fe204
 
-```
+    ```
 1. Now paste the request URL in the new tab of your browser. You will see **403 Forbidden** error. Which means the policy is attached successfully which is blocking your IP address from accessing the API.
+
+    ![](media/ex3task5img11.png)
 
 1. Navigate back to your API's design pane and find the policy that you have attached previously in this task.
 
 1. Click on 3 dots which is at the rightmost of your policy name. and click on **delete** to delete the policy.
 
+    ![](media/ex3task5img12.png)
+
 1. Click on **save** after deleting the policy.
+
+    ![](media/ex3task5img13.png)
 
 1. Now navigate back to the browser tab where you have pasted the request URL and refresh the page. Now you will be able to get the data successfully withut any error.
 
-## Task 6: Test the API through the APIM Developer Portal
+    ![](media/ex3task5img14.png)
 
-1. In the Azure Portal's search bar, type **Cosmos DB** (1) and select **Azure Cosmos DB** (2) from the search results.
-
-    ![](media/ex3task2img8.png)
-
-1. Select your **cosmosdb-<inject key="DeploymentID" enableCopy="false" />** account.
-
-1. Click on **Data Explorer** (1). Under the **LicensePlates** (2), expand the **Processed** (3) container, select **items** (4), choose an **id** (5) from the list, and copy the **id value**.
-
-    ![](media/ex3task6img1.png)
-
-1. On the **Azure Portal**, in the **Search resources, services, and docs (G+/) box** at the top of the portal, enter **API Management services (1)**, and then select **API Management services (2)** under **Services**.
-
-    ![](media/ex3task1img1.png)
-
-1. Select the API management service named **apiservice-<inject key="DeploymentID" enableCopy="false" />**.
-
-1. On the APIs page, where the **License-function-<inject key="DeploymentID" enableCopy="false" />** function has been added, click on **Test** (1).
-
-    ![](media/ex3task3img7.png)
-
-1. On the **Test** page select the **GET HttpTrigger1** (1) and click on the **+ Add parameters** (2).
-
-    ![](media/ex3task3img8.png)
-
-1. Provide the **Name** as **id** and enter the corresponding **Value** that you copied from the items in the **Processed** container in Cosmos DB. Click on **Send**.
-
-    ![](media/ex3task6img2.png)
-
-1. After sending the GET request, it will fetch and display all the details related to the LicensePlate.
-
-    ![](media/ex3task6img3.png)
-
-1. Copy the **Request URL** provided in the API test section and open it in a new browser tab to test the API endpoint.
-
-    ![](media/ex3task6img4.png)
-
-1. If access is denied due to the missing subscription key, ensure you have removed the subscription key requirement correctly from the **Settings**. If the issue persists, verify that the changes have been saved and applied. 
-
-    ![](media/ex3task6img5.png)
-
-1. To proceed, you need to remove the subscription key requirement from the settings. Click on **Settings**, uncheck **Subscription required**, and then click **Save**.
-
-    ![](media/ex3task6img6.png)
-
-1. Refresh the page, and you will find the details of the fetched data for **LicensePlate**.
-
-    ![](media/ex3task6img7.png)
-
-1. Now you will be testing the policy that you have attached in the previous task.
