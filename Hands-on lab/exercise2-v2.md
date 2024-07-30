@@ -223,13 +223,13 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
    ![](media2/updated11.png)
 
-1. In the Add/Edit application setting tab, provide Name as **ServiceBusConnection** and paste the **Service Bus connection string (2)** which you copied in earlier step. Click on **Add (3)** button to save. 
+1. In the Add/Edit application setting tab, provide Name as **ServiceBusConnection** and paste the **Service Bus connection string (2)** which you copied in earlier step. Click on **Apply (3)** button to save. 
 
-   ![](media2/updated12.png)
+   ![](media/sss36.png)
 
 1. In App Settings tab, click on **Apply**.
 
-   ![](media/sss37.png)
+   ![](media2/updated12.png)
 
 1. Now navigate to **SavePlateData** function which you have created previously.
 
