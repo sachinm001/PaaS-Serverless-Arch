@@ -101,6 +101,8 @@ In this task, you will go through creating an Azure Function App and connecting 
     ```
     >**Note**: You can see some of the variables are used in the code such as `COSMOS_DB_ENDPOINT`, `COSMOS_DB_PRIMARY_KEY`, `COSMOS_DB_DATABASE_ID`, and `COSMOS_DB_CONTAINER_ID` you need to add those in **environment variables** which you will be doing in further steps.
 
+1. Click on **save**.
+
 1. In the search bar of the Azure Portal, search for **Cosmos DB** (1) and select **Azure Cosmos DB** (2).
 
     ![](media/ex3task2img8.png)

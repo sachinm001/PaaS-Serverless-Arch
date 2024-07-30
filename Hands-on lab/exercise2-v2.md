@@ -233,7 +233,7 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
 1. Now navigate to **SavePlateData** function which you have created previously.
 
-1. On the **SavePlateData** Function blade, select **Code + Test** and replace the code in the new `SavePlateData` function's `index.js` file with the following:
+1. On the **SavePlateData** Function blade, select **Code + Test** and replace the code in the `SavePlateData` function's `index.js` file with the following:
 
     ```javascript
     const { ServiceBusClient } = require('@azure/service-bus');
