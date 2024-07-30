@@ -296,6 +296,23 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
    ![](media/sss26.png)
 
+1. From **TollBoothEvents-<inject key="DeploymentID" enableCopy="false" />** function, select **Developer Tools (1)** drop-down from the side blade and click on **Console (2)**.
+
+   ![](media2/updated13.png)
+
+1. In the console, run the below given commands. Make sure to run the commands one by one and wait till the execution completes.
+
+   ```javascript
+   npm install @azure/service-bus
+   ```
+
+   ```javascript
+   npm install @azure/cosmos
+   ```
+
+   ![](media/sss39.png)
+
+
 ## Task 8: Test the Serverless Architecture
 
 In this task, you will debug the uploadImage solution and obaserve the working of serverless solution by just uploading the license plate images.
