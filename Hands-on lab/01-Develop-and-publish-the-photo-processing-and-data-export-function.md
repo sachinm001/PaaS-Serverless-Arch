@@ -2,7 +2,9 @@
 
 **Duration**: 45 minutes
 
-Use Visual Studio and its integrated Azure Functions tooling to develop and debug the functions locally and then publish them to Azure. The starter project solution, TollBooths, contains most of the code needed. You will add in the missing code before deploying to Azure.
+In this Exercise you will be using Visual Studio which is a powerful integrated development environment (IDE) developed by Microsoft. It supports a wide range of programming languages and platforms, making it a versatile tool for developers. With features like code editing, debugging, version control, and integrated Azure tools, Visual Studio streamlines the development process for building, testing, and deploying applications. 
+
+To develop and debug Azure Functions locally, you can use Visual Studio's integrated Azure Functions tooling. The provided "TollBooths" starter project solution contains most of the necessary code. Your task will be to enhance and complete the missing code components before deploying the solution to Azure. This process involves leveraging Visual Studio's robust environment for local development, testing, and debugging, ensuring a smooth transition from local setup to cloud deployment. Once your functions are refined and fully functional, Visual Studio simplifies the publishing process, allowing you to deploy the entire solution seamlessly to Azure
 
 ### Help references
 
@@ -13,7 +15,7 @@ Use Visual Studio and its integrated Azure Functions tooling to develop and debu
 
 ## Task 1: Open the starter solution in Visual Studio
 
-In this , you will access the starter solution and update the files.
+In this task, you will access the starter solution and update the files in it.
 
 1. On the LabVM, open File Explorer and navigate to `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\TollBooth`.
 
@@ -64,13 +66,13 @@ In this , you will access the starter solution and update the files.
 
    ![](media/sss4.png)
 
-1. Return to the open File Explorer window and navigate back `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\license plates`. It contains sample license plate photos used for testing out the solution. One of the images is guaranteed to fail OCR processing, which is meant to show how the workload is designed to handle such failures. The UploadImages project uses the **copyfrom** folder as a basis for the 1,000-photo upload option for testing scalability.
+1. Return to the open File Explorer window and navigate back `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\license plates`. It contains sample license plate photos used for testing out the solution. Some of the images is guaranteed to fail OCR processing, which is meant to show how the workload is designed to handle such failures. The UploadImages project uses the **copyfrom** folder as a basis for the 1,000-photo upload option for testing scalability.
 
    ![](media/sss9.png)
 
 ## Task 2: Finish the ProcessImage function
 
-A few components within the starter project must be completed, which are marked as `TODO` in the code. The first set of `TODO` items we address are in the `ProcessImage` function. We will update the `FindLicensePlateText` class that calls the Computer Vision service and the `SendToEventGrid` class, which is responsible for sending processing results to the Event Grid topic you created earlier.
+A few components within the starter project must be completed, which are marked as `TODO` in the code. The first set of `TODO` items we address are in the `ProcessImage` function. You will update the `FindLicensePlateText` class that calls the Computer Vision service and the `SendToEventGrid` class, which is responsible for sending processing results to the Event Grid topic you created earlier.
 
 > **Note**: **Do not** update the version of any NuGet package. This solution is built to function with the NuGet package versions currently defined within. Updating these packages to newer versions could cause unexpected results.
 
@@ -212,15 +214,15 @@ In this task, you will publish the Function App from the starter project in Visu
 
 1. In the **ProcessImage | Code + Test** page navigate to **Integration (1)** tab. In the integration tab click on **Event Grid Trigger (eventGridEvent) (2)**.
 
-    ![In the TollboothFunctionApp tree-view, the ProcessImage function is selected. In the code window pane, the Add Event Grid subscription link is highlighted.](media/ss5.png)
+    ![In the TollboothFunctionApp tree-view, the ProcessImage function is selected. In the code window pane, the Add Event Grid subscription link is highlighted.](media/updated1.png)
 
 1. In the **Edit Trigger** page, Click on **Create Event Grid subscription**.
 
-    ![](media/ss6.png)
+    ![](media/updated2.png)
 
 1. On the **Create Event Subscription** blade, specify the following configuration options and click on **Create** **(8)**.
 
-    - **Name**: **Name**: Enter **processimagesub-<inject key="DeploymentID" />** **(1)** (ensure the green check mark appears).
+    - **Name**: **Name**: Enter **processimagesub** **(1)** (ensure the green check mark appears).
     - **Event Schema**: Select **Event Grid Schema** **(2)**.
     - **Topic Type**: Select **Storage Accounts (Blob & GPv2)** **(3)**.
     - **Subscription**: Select the subscription you are using for this hands-on lab.
