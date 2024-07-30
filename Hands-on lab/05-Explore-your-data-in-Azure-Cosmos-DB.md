@@ -2,9 +2,8 @@
 
 **Duration**: 15 minutes
 
-In this exercise, you will use the Azure Cosmos DB Data Explorer in the portal to view saved license plate data.
+In this exercise, you'll use the Azure Cosmos DB Data Explorer in the portal to explore both processed and unprocessed license plate data. You'll run queries to retrieve specific data, gaining hands-on experience in navigating and managing your Cosmos DB collections for efficient data analysis.
 
-> **Note:** Ensure that your IP address has been added to the IP list under the **Firewall settings** in your Azure Cosmos DB account. If not, you will not see the License Plates data within Azure Cosmos DB. You completed this step in the Before the hands-on lab guide.
 
 ### Help references
 
@@ -52,3 +51,7 @@ In this exercise, you will use the Azure Cosmos DB Data Explorer in the portal t
 1. Execute the query (2) and observe the results (3). In our case, we have 906 processed documents that need to be exported.
 
     ![In the Query window, the previously defined SQL query displays. Under Results, the number 906 is highlighted.](media/execute-query-cosomosdb.png 'Query 1 tab')
+
+## Summary
+
+In this exercise, you have used the Data Explorer feature in the Azure Cosmos DB to explore both processed and unprocessed data from the 
