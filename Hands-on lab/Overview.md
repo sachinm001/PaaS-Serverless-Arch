@@ -17,7 +17,7 @@ They want to automate this process in a way that is cost-effective and scalable.
 
 Below is a diagram of the solution architecture you will build in this lab. Please study this carefully to understand the whole of the solution as you are working on the various components.
 
-   ![](media/architecturediagram1.png)
+   ![](media2/updatedarch.png)
 
 This architecture diagram illustrates a serverless solution for processing vehicle photos using various Azure services. Here's a breakdown of the workflow:
 
