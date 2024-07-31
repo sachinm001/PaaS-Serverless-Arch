@@ -60,6 +60,16 @@ In this task you will completing the code by performing TODO 5,6,7 steps and pub
 1. Save all your changes by clicking on **Save all** button in visual studio.
 
    ![](media2/updated31.png)
+
+1. Navigate to the TollBooth project using the Solution Explorer of Visual Studio.
+
+1. Right-click the **TollBooth** project and select **Publish** from the context menu.
+
+   ![In Solution Explorer, the TollBooth is selected, and within its context menu, the Publish item is selected.](media/image39.png "Solution Explorer")
+
+1. Select **Publish** to update your function app with exportLicense function.
+
+   ![The Publish button is selected.](media/ex1img3.png)
    
 ## Task 2: Configure the Logic App to export data
 
