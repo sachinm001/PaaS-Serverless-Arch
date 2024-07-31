@@ -95,10 +95,9 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
 
 In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  
 
-1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
    ![](media/sss22-1.png)
-
 
 1. Scroll down to **Functions** tab, then select **+ Create**.
 
@@ -213,7 +212,6 @@ In this task, you will add an Azure Cosmos DB output binding to the QueuePlateFo
 In this task, you'll bind the Service Bus to Azure Function App by adding connection string which is used in Index.js file of SavePlateData function.
 
 1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Function App whose name begins with **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
-
 
 1. Select **Shared Access Policies (1)** from settings, click on **RootManageSharedAccessKey (2)**, copy the **Primary Connection String (3)** and paste it in a notepad. 
 

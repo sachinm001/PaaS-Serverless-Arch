@@ -111,14 +111,15 @@ In this task, you will add an Azure Cosmos DB output binding to the SavePlateDat
 ## Task 4: Create a function to save manual verification info to Azure Cosmos DB
 
 In this task, you will create another new function triggered by Event Grid and outputs information about photos that need to be manually verified to Azure Cosmos DB.  
+/>
 
-1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
+1. From Azure portal, Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" ** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-    ![](media/sss22-1.png)
+   ![](media/sss22-1.png)
 
 1. Scroll down to **Functions** tab, then select **+ Create**.
 
-    ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/ss13.png)
+   ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/ss13.png)
 
 1. On the **Create function** form, under **Select a template** tab:
 
