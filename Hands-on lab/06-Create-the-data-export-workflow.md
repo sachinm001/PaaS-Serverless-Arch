@@ -46,7 +46,7 @@ In this task you will be creating a logic app which will export the data for eve
 
 1. Select your **TollBoothFunctions** Function App and check the **ExportLicensePlates** function as shown. Click on **Add action**. 
 
-    ![](media2/updated20.png)
+    ![](media2/updated21.png)
 
 1. On the **Add action** pane, keep everything as default and click on **save**.
 
