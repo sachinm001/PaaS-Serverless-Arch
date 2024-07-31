@@ -14,9 +14,53 @@ In this exercise, you'll develop a new Logic App to automate your data export wo
 | What is Azure Logic Apps? | <https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview> |
 | Call Azure Functions from logic apps | <https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-functions> |
 
-## Task 1: Create the Logic App
+## Task1: Finish ExportLicensePlates function code and publish it to function app.
 
-In this task you will be creating a logic app which will export the data for every 15 minutes if not then send an email to customerservice.
+In this task you will completing the code by performing TODO 5,6,7 steps and publishing it to the function app from visual studio.
+
+1. Return to the LabVM and within Visual Studio navigate to the TollBooth project using the Solution Explore.
+
+1. From the Visual Studio **View** menu, select **Task List**.
+
+   ![Task List is selected from the Visual Studio View menu.](media/vs-task-list.png 'Visual Studio View menu')
+
+1. In the Task List pane at the bottom of the Visual Studio window, double-click the `TODO 5` item, which will take you to the associated `TODO` task.
+
+   ![TODO 5 is highlighted in the Visual Studio Task List.](media/visual-studio-task-list-todo-5.png "Task List")
+
+1. In the DatabaseMethods.cs file that is opened, update the code on the line below the `TODO 5` comment, using the following code:
+   ```
+   // TODO 5: Retrieve a List of LicensePlateDataDocument objects from the collectionLink where the exported value is          false.
+   licensePlates = _client.CreateDocumentQuery<LicensePlateDataDocument>(collectionLink,
+        new FeedOptions() { EnableCrossPartitionQuery=true,MaxItemCount = 100 })
+    .Where(l => l.exported == false)
+    .ToList();
+   ```
+
+1. Next, return to the `TODO` list and double-click `TODO 6`.
+
+   ![TODO 6 is highlighted in the Visual Studio Task List.](media/visual-studio-task-list-todo-6.png "Task List")
+
+1. This is immediately below the `TODO 5` code you just updated. For this one, delete the line of code below the `// TODO 6` comment.
+
+1. Make sure that you deleted the following line under `TODO 6`: `licensePlates = new List<LicensePlateDataDocument>();`.
+
+1. Return to the TODO list and double-click TODO 7.
+
+   ![TODO 7 is highlighted in the Visual Studio Task List.](media/visual-studio-task-list-todo-7.png "Task List")
+
+1. In the FileMethods.cs file that is opened, update the code on the line below the TODO 7 comment, using the following code:
+
+   ```
+   // TODO 7: Asynchronously upload the blob from the memory stream.
+   await blob.UploadFromStreamAsync(stream);
+   ```
+1. Save all your changes by clicking on **Save all** button in visual studio.
+
+   ![](media2/updated31.png)
+   
+
+## Task 2: Configure the Logic App to export data
 
 1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-SUFFIX** resource group.
 
