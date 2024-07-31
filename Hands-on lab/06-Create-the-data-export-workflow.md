@@ -14,7 +14,7 @@ In this exercise, you'll develop a new Logic App to automate your data export wo
 | What is Azure Logic Apps? | <https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview> |
 | Call Azure Functions from logic apps | <https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-functions> |
 
-## Task1: Finish ExportLicensePlates function code and publish it to function app.
+## Task 1: Finish ExportLicensePlates function code and publish it to function app.
 
 In this task you will completing the code by performing TODO 5,6,7 steps and publishing it to the function app from visual studio.
 
@@ -164,7 +164,7 @@ In this task, you will be configuring logic app to export the license plate data
 
    >**Note**: Now your logic app will be executed and as you have data inside cosmosDB it will export your data into blob storage.
 
-## Task3: Verify the data export workflow
+## Task 3: Verify the data export workflow
 
 In this task you will verify that the data is exported to the blob or not. and also you will verify that you are getting the email if there is no data to export.
 
