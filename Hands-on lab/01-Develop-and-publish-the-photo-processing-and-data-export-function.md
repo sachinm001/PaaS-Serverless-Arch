@@ -1,4 +1,4 @@
-# Exercise 1: Develop and publish the photo processing and data export functions
+# Exercise 1: Develop and publish the photo processing and data export Functions
 
 **Duration**: 45 minutes
 
