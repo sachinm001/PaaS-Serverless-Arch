@@ -32,7 +32,7 @@ In this task you will be creating a logic app which will export the data for eve
 
     ![](media2/updated16.png)
 
-1. Enter **15** into the **Interval** box, and make sure Frequency is set to **Minute**. This can be set to an hour or some other interval, depending on business requirements.
+1. Enter **15** into the **Interval** box, and make sure Frequency is set to **Minute**. This can be set to an hour or some other interval, depending on business requirements. and click on **Save**.
 
     ![](media2/updated17.png)
 
