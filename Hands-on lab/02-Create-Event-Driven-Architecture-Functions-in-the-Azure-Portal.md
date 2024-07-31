@@ -114,7 +114,7 @@ In this task, you will create another new function triggered by Event Grid and o
 
 1. From Azure portal, Open the **hands-on-lab-SUFFIX** resource group and select the Azure Function App whose name begins with **TollBoothEvents**.
 
-   ![](media/sss22-1.png)
+    ![](media/sss22-1.png)
 
 1. Scroll down to **Functions** tab, then select **+ Create**.
 
