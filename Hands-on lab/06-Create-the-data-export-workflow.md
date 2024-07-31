@@ -14,7 +14,7 @@ In this exercise, you'll develop a new Logic App to automate your data export wo
 | What is Azure Logic Apps? | <https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview> |
 | Call Azure Functions from logic apps | <https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-functions> |
 
-## Task 1: Finish ExportLicensePlates function code and publish it to function app.
+## Task 1: Finish ExportLicensePlates function code and publish it to function app
 
 In this task you will completing the code by performing TODO 5,6,7 steps and publishing it to the function app from visual studio.
 
