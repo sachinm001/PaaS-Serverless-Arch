@@ -48,7 +48,7 @@ In this task you will be creating a logic app which will export the data for eve
 
     ![](media2/updated21new.png)
 
-1. On the **Add action** pane, keep everything as default and click on **save**.
+1. On the **Add action** pane, keep everything as default and click on **save** and return to the **Logic App Designer**.
 
     ![](media2/updated27.png)
 
