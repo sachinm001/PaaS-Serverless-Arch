@@ -133,31 +133,33 @@ In this task, you will be configuring logic app to export the license plate data
 
     ![In the Office 365 Outlook - Send an email box, the Sign in button is selected.](media2/updated30.png)
 
-1. You will get a pop up window to **pick an account**. select your account.
+1. You will get a pop up window to **pick an account**. select your account and complete sign in process.
 
-    
+    ![](media2/updated32.png)
 
 1. In the Send an email form, provide the following values:
 
-     - Enter your email address in the **To** box.
-     - Provide a **Subject**, such as `Toll Booth license plate export failed`.
-     - Please enter a message into the **Body** and select the **Status code** from the ExportLicensePlates function to add it to the email body.
+     - Enter your email address in the **To** **(1)** box.
+     - Provide a **Subject** **(2)**, such as `Toll Booth license plate export failed`.
 
-     ![In the Send an email box, fields are set to the previously defined values.](media/logicapp-send-email-form.png 'Logic App Designer, Send an email fields')
+     ![In the Send an email box, fields are set to the previously defined values.](media2/updated33.png)
+
+1. In the **Body** box. select the box and click on the symbol which represents function app as shown.
+
+    ![](media2/updated34.png)
+
+1. In the pop up window select **Status code** option.
+
+    ![](media2/updated35.png)
 
 1. Select **Save** in the toolbar to save your Logic App.
 
-1. Select **Run Trigger** and click on **Run** to execute the Logic App. You should start receiving email alerts because the license plate data is not being exported. This is because we need to finish making changes to the ExportLicensePlates function to extract the license plate data from Azure Cosmos DB, generate the CSV file, and upload it to Blob storage.
+    ![](media2/updated36.png)
 
-    ![The Run button is selected on the Logic Apps Designer blade toolbar.](media/logic-app-designer-run-trigger.png 'Logic Apps Designer blade')
+1. Select **Run** and click on **Run** to execute the Logic App. 
 
-1. While in the Logic Apps Designer, you will see the run result of each step of your workflow. A green check mark is placed next to each step that successfully executed, showing the execution time to complete. This can be used to see how each step is working, and you can select the executed step and see the raw output.
+    ![The Run button is selected on the Logic Apps Designer blade toolbar.](media2/updated37.png 'Logic Apps Designer blade')
 
-    ![In the Logic App Designer, green check marks display next to Recurrence, ExportLicensePlates, Condition, and Send an email steps of the logic app.](media/image96.png 'Logic App Designer ')
-
-1. The Logic App will continue to run in the background, executing every 15 minutes (or whichever interval you set) until you disable it. To disable the app, go to the **Overview** blade for the Logic App and select the **Disable** button on the taskbar.
-
-    ![The Disable button is selected on the TollBoothLogic Logic app blade toolbar menu.](media/MicrosoftTeams-image.png 'TollBoothLogic blade')
 
 
 ## Summary
