@@ -18,7 +18,7 @@ In this exercise, you'll develop a new Logic App to automate your data export wo
 
 In this task you will completing the code by performing TODO 5,6,7 steps and publishing it to the function app from visual studio.
 
-1. Return to the LabVM and within Visual Studio navigate to the TollBooth project using the Solution Explore.
+1. Return to the LabVM and within Visual Studio navigate to the TollBooth project using the Solution Explorer.
 
 1. From the Visual Studio **View** menu, select **Task List**.
 
@@ -61,6 +61,8 @@ In this task you will completing the code by performing TODO 5,6,7 steps and pub
    
 
 ## Task 2: Configure the Logic App to export data
+
+In this task, you will be configuring logic app to export the license plate data to the storage, if there is no data to export then it will send an email to customer service regarding that.
 
 1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-SUFFIX** resource group.
 
