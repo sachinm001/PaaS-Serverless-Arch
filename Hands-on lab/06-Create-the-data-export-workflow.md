@@ -77,15 +77,15 @@ In this task you will be creating a logic app which will export the data for eve
 
 1. We will ignore the If true condition because we don't want to perform an action if the license plates are successfully exported. Select **+** marker and click on **Add an action** within the **If false** condition block.
 
-    ![Under the Conditions field is an If true (green checkmark) section and an if false (red x) section. In the If false section, the Add an action button is selected.](media/logicapp-condition-false-add.png 'Logic App Designer Condition fields if true/false ')
+    ![Under the Conditions field is an If true (green checkmark) section and an if false (red x) section. In the If false section, the Add an action button is selected.](media2/updated28.png)
 
 1. Enter `Send an email (V2)` in the filter box, then select the **Send an email (V2)** action for Office 365 Outlook.
 
-    ![In the Choose an action box, send an email is entered as the search term. From the Actions list, Office 365 Outlook (end an email (V2) item is selected.](media/logicapp-send-email.png 'Office 365 Outlook Actions list')
+    ![In the Choose an action box, send an email is entered as the search term. From the Actions list, Office 365 Outlook (end an email (V2) item is selected.](media2/updated29.png)
 
 1. Select **Sign in** and sign in to your Office 365 Outlook account.
 
-    ![In the Office 365 Outlook - Send an email box, the Sign in button is selected.](media/image93.png 'Office 365 Outlook Sign in prompt')
+    ![In the Office 365 Outlook - Send an email box, the Sign in button is selected.](media2/updated30.png)
 
 1. In the Send an email form, provide the following values:
 
