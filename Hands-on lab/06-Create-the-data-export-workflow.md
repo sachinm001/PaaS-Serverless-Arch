@@ -139,18 +139,20 @@ In this task, you will be configuring logic app to export the license plate data
 
 1. In the Send an email form, provide the following values:
 
-     - Enter your email address in the **To** **(1)** box.
+     - Enter email address as **<inject key="AzureAdUserEmail" />** in the **To** **(1)** box.
      - Provide a **Subject** **(2)**, such as `Toll Booth license plate export failed`.
 
      ![In the Send an email box, fields are set to the previously defined values.](media2/updated33.png)
 
-1. In the **Body** box. select the box and click on the symbol which represents function app as shown.
+1. In the **Body** box, select the box and click on the symbol which represents function app as shown.
 
     ![](media2/updated34.png)
 
 1. In the pop up window select **Status code** option.
 
     ![](media2/updated35.png)
+
+    >**Note**: In this example only status code is added here in the body. But You can add any message in the body such as **No Data Found**. 
 
 1. Select **Save** in the toolbar to save your Logic App.
 
@@ -161,6 +163,51 @@ In this task, you will be configuring logic app to export the license plate data
     ![The Run button is selected on the Logic Apps Designer blade toolbar.](media2/updated37.png 'Logic Apps Designer blade')
 
    >**Note**: Now your logic app will be executed and as you have data inside cosmosDB it will export your data into blob storage.
+
+## Task3: Verify the data export workflow
+
+In this task you will verify that the data is exported to the blob or not. and also you will verify that you are getting the email if there is no data to export.
+
+1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group.
+
+1. On your resource group blade, select the **datalake<inject key="DeploymentID" enableCopy="false" />** storage account from the list.
+
+1. On the storage account menu, select the **containers** **(1)** which is under Data storage. Click on **export** **(2)** container.
+
+    ![](media2/updated38.png)
+
+1. Inside that conatiner you can see a file which is in the `.csv` format. This is the file which contains all the processed license plate data which is exported through your logic app.
+
+    ![](media2/updated39.png)
+
+    >**Note**: You have successfully exported the data to blob storage. Now as there is no new data updated in your CosmosDB, you can verify that you are getting the email as **Toll Booth license plate export failed**.
+
+1. Navigate back to **logicapp-<inject key="DeploymentID" enableCopy="false" />** and run it again.
+
+    ![](media2/updated37.png)
+
+1. To verify that you are getting email alerts, you have to login for outlook. Use the link to login [Outlook Login](https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=157&ct=1722420072&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26culture%3den-us%26country%3dus%26RpsCsrfState%3d6d6ab2de-6ea5-2b12-26f1-cbb3946635b3&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c)
+
+1. You'll see **Sign in to outlook** page. use your credentials to login.
+
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    ![](media2/updated40.png)
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+    ![](media2/updated42.png)
+
+
+1. In the Inbox of your outlook you can see a mail with the subject **Toll Booth license plate export failed**. which says **204** means **No Content Found**.
+
+    ![](media2/updated41.png)
+
+
+
+
+
+
 
 
 
