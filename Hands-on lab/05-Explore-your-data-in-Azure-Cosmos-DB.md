@@ -4,7 +4,6 @@
 
 In this exercise, you'll use the Azure Cosmos DB Data Explorer in the portal to explore both processed and unprocessed license plate data. You'll run queries to retrieve specific data, gaining hands-on experience in navigating and managing your Cosmos DB collections for efficient data analysis.
 
-
 ### Help references
 
 |                       |                                                           |
@@ -24,33 +23,33 @@ In this exercise, you'll use the Azure Cosmos DB Data Explorer in the portal to 
 
 1. On the Cosmos DB blade, select **Data Explorer** from the left-hand navigation menu.
 
-    ![In the Data Explorer blade, Data Explorer is selected from the left menu.](media/cosmosdb-data-explorer.png 'Data Explorer')
+   ![In the Data Explorer blade, Data Explorer is selected from the left menu.](media/cosmosdb-data-explorer.png 'Data Explorer')
 
 1. Expand the **LicensePlates** database and then the **Processed** collection and select **Items**. This will list each of the JSON documents added to the collection.
 
 1. Select one of the documents to view its contents. Your functions added the first four properties. The remaining properties are standard and are assigned by Cosmos DB.
 
-    ![In the tree-view beneath the LicensePlates Cosmos DB, the Processed collection is expanded with the Items item selected. On the Items tab, a document is selected, and its JSON data is displayed. The first four properties of the document (fileName, licensePlateText, timeStamp, and exported) are displayed along with the standard Cosmos DB properties.](media/data-explorer-processed.png 'Data Explorer')
+   ![In the tree-view beneath the LicensePlates Cosmos DB, the Processed collection is expanded with the Items item selected. On the Items tab, a document is selected, and its JSON data is displayed. The first four properties of the document (fileName, licensePlateText, timeStamp, and exported) are displayed along with the standard Cosmos DB properties.](media/data-explorer-processed.png 'Data Explorer')
 
 1. Next, expand the **NeedsManualReview** collection and select **Items**.
 
 1. Select one of the documents to view its contents. Notice that the filename is provided, as well as a property named "resolved." While out of scope for this lab, those properties can be used to provide a manual process for reviewing photos and entering license plates.
 
-    ![In the tree-view beneath the LicensePlates Cosmos DB, the NeedsManualReview collection is expanded, and the Items item is selected. On the Items tab, a document is selected, and its JSON data is displayed. The first four properties of the document (fileName, licensePlateText, timeStamp, and resolved) are shown along with the standard Cosmos DB properties.](media/data-explorer-needsreview.png 'Data Explorer')
+   ![In the tree-view beneath the LicensePlates Cosmos DB, the NeedsManualReview collection is expanded, and the Items item is selected. On the Items tab, a document is selected, and its JSON data is displayed. The first four properties of the document (fileName, licensePlateText, timeStamp, and resolved) are shown along with the standard Cosmos DB properties.](media/data-explorer-needsreview.png 'Data Explorer')
 
 1. Select the ellipses (...) next to the **Processed** collection and select **New SQL Query**.
 
-    ![In the tree-view beneath the LicensePlates Cosmos DB, the Processed collection is selected. From its right-click context menu, New SQL Query is selected.](media/cosmosdb-processed-sqlquery.png 'Data Explorer')
+   ![In the tree-view beneath the LicensePlates Cosmos DB, the Processed collection is selected. From its right-click context menu, New SQL Query is selected.](media/cosmosdb-processed-sqlquery.png 'Data Explorer')
 
 1. Paste the SQL query below into the query window (1). This query counts the number of processed documents that have not been exported:
 
-    ```sql
-    SELECT VALUE COUNT(1) FROM c WHERE c.exported = false
-    ```
+   ```sql
+   SELECT VALUE COUNT(1) FROM c WHERE c.exported = false
+   ```
 
 1. Execute the query (2) and observe the results (3). In our case, we have 906 processed documents that need to be exported.
 
-    ![In the Query window, the previously defined SQL query displays. Under Results, the number 906 is highlighted.](media/execute-query-cosomosdb.png 'Query 1 tab')
+   ![In the Query window, the previously defined SQL query displays. Under Results, the number 906 is highlighted.](media/execute-query-cosomosdb.png 'Query 1 tab')
 
 ## Summary
 
