@@ -274,7 +274,7 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
         // Connect to Service Bus and send the message
         const serviceBusConnectionString = process.env['ServiceBusConnection'];
-        const queueName = 'Processed';
+        const queueName = 'processed';
         const sbClient = new ServiceBusClient(serviceBusConnectionString);
         const sender = sbClient.createSender(queueName);
 
