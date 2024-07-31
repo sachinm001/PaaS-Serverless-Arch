@@ -60,7 +60,7 @@ In this task you will be creating a logic app which will export the data for eve
 
     ![](media2/updated23.png)
 
-1. On the **Condition** pane click on the symbol which represents the function app as shown.
+1. On the **Condition** pane, select **choose value** box and click on the symbol which represents the function app as shown.
 
     ![](media2/updated24.png)
 
