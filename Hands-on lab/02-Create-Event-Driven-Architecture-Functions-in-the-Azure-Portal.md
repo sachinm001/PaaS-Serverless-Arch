@@ -206,7 +206,7 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
 1. Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Service Bus  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
 
-      ![](media/sss43.png)
+   ![](media/sss43.png)
 
 1. On the ServiceBus page click on **+ Queue**.
 
