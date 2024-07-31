@@ -79,7 +79,7 @@ In this task you will be creating a logic app which will export the data for eve
 
     ![Under the Conditions field is an If true (green checkmark) section and an if false (red x) section. In the If false section, the Add an action button is selected.](media2/updated28.png)
 
-1. Enter `Send an email (V2)` in the filter box, then select the **Send an email (V2)** action for Office 365 Outlook.
+1. Enter `Send an email (V2)` **(1)** in the filter box, then select the **Send an email (V2)** **(2)** action for Office 365 Outlook.
 
     ![In the Choose an action box, send an email is entered as the search term. From the Actions list, Office 365 Outlook (end an email (V2) item is selected.](media2/updated29.png)
 
