@@ -311,6 +311,8 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
    ```
 
    ![](media/sss39.png)
+   
+   >**Note**: If you see any error related to `npm notice` you can ignore that.
 
 
 ## Task 8: Test the Serverless Architecture
