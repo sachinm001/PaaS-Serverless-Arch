@@ -1,4 +1,4 @@
-# Exercise 4: Monitor your functions with Application Insights
+# Exercise 4: Monitor your Functions with Application Insights
 
 **Duration**: 15 minutes
 
