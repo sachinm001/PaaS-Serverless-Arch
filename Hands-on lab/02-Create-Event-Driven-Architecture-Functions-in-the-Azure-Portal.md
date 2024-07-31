@@ -116,7 +116,6 @@ In this task, you will create another new function triggered by Event Grid and o
 
    ![](media/sss22-1.png)
 
-
 1. Scroll down to **Functions** tab, then select **+ Create**.
 
     ![In the Function Apps blade, the TollBoothEvents application is selected. In the Overview tab, the + Create button is selected.](media/ss13.png)
@@ -207,7 +206,7 @@ In this task, you will create a Service Bus queue and topic to manage processed 
 
 1. Open the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group and select the Azure Service Bus  **ServiceBus-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](media/sss43.png)
+      ![](media/sss43.png)
 
 1. On the ServiceBus page click on **+ Queue**.
 
