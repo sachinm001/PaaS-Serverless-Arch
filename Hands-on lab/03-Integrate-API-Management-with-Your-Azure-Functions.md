@@ -1,4 +1,4 @@
-# Exercise:3 Integrate API Management with Your Azure Functions
+# Exercise 3: Integrate API Management with Your Azure Functions
 
 **Duration**: 45 minutes
 
