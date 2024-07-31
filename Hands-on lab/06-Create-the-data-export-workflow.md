@@ -198,7 +198,6 @@ In this task you will verify that the data is exported to the blob or not. and a
 
    ![](media2/updated42.png)
 
-
 1. In the Inbox of your outlook you can see a mail with the subject **Toll Booth license plate export failed**. which says **204** means **No Content Found**.
 
    ![](media2/updated41.png)
