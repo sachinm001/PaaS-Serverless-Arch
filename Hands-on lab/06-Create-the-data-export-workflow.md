@@ -204,13 +204,6 @@ In this task you will verify that the data is exported to the blob or not. and a
     ![](media2/updated41.png)
 
 
-
-
-
-
-
-
-
 ## Summary
 
 In this exercise, you have created a logic app automation where it runs for every 15 minutes and export data to storage. If there is no data to export, then sends an email to customer service.
