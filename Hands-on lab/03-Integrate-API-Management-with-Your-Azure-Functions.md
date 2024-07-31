@@ -199,7 +199,7 @@ In this task, you will be importing your function into API Management Instance. 
 
    ![](media/ex3task3img10.png)
 
-## Task 3: Secure the API using Subscription Keys and validate
+## Task 3: Secure the API using Subscription Key and validate
 
 In this task you will be Securing your API by creating subscription key. which should be used with the request URL to access the API.
 
