@@ -160,6 +160,8 @@ In this task, you will be configuring logic app to export the license plate data
 
     ![The Run button is selected on the Logic Apps Designer blade toolbar.](media2/updated37.png 'Logic Apps Designer blade')
 
+   >**Note**: Now your logic app will be executed and as you have data inside cosmosDB it will export your data into blob storage.
+
 
 
 ## Summary
