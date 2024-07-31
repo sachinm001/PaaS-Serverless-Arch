@@ -28,7 +28,7 @@ In this task you will be creating a logic app which will export the data for eve
 
     ![The Recurrence tile is selected in the Logic App Designer.](media2/updated15.png 'Logic App Designer')
 
-1. In the **Add a trigger** page, Search for **Recurrence** **(1)** and select **Recurrence** **(2)**.
+1. In the **Add a trigger** page, Search for `Recurrence` **(1)** and select **Recurrence** **(2)**.
 
     ![](media2/updated16.png)
 
