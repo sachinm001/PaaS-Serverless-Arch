@@ -1,4 +1,4 @@
-# Exercise 2: Create functions in the portal
+# Exercise 2: Create Event driven Architecture Functions in the portal
 
 **Duration**: 45 minutes
 
