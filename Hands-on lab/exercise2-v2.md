@@ -110,7 +110,7 @@ In this task, you will create another new function triggered by Event Grid and o
    - Select the **Azure Event Grid trigger** template.
    - Select **next**.
 
-    ![In the Create function form, event grid is entered into the filter box. The Azure Event Grid trigger template is selected and highlighted, and QueuePlateForManualCheckup is entered in the Name field and highlighted.](media/ss8.png)
+    ![In the Create function form, event grid is entered into the filter box. The Azure Event Grid trigger template is selected and highlighted, and QueuePlateForManualCheckup is entered in the Name field and highlighted.](media/updated3.png)
 
 1. On the **Create function** form, under **Template details** tab Enter `QueuePlateForManualCheckup` (1) into the **Function name** field, then Click on **Create** (2)
 
