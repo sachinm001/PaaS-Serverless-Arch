@@ -172,7 +172,7 @@ In this task, you will publish the Function App from the starter project in Visu
 
     > **Note**: If prompted to update the version of the function on Azure, select **Yes**.
 
-    ![The Publish button is selected.](media/ex1img3new.png)
+    ![The Publish button is selected.](media2/ex1img3new.png)
 
 1. Navigate to home page and double click on the **Azure Portal** icon.
 
