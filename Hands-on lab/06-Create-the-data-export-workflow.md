@@ -64,11 +64,11 @@ In this task you will completing the code by performing TODO 5,6,7 steps and pub
 
 In this task, you will be configuring logic app to export the license plate data to the storage, if there is no data to export then it will send an email to customer service regarding that.
 
-1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-SUFFIX** resource group.
+1. In the [Azure portal](https://portal.azure.com), navigate to the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group.
 
    > You can get to the resource group by selecting **Resource groups** under **Azure services** on the Azure portal home page and then select the resource group from the list. If there are many resource groups in your Azure account, you can filter the list for **hands-on-lab** to reduce the resource groups listed.
 
-1. On your resource group blade, select the **logicapp** Logic App resource in the resource group's list of services available.
+1. On your resource group blade, select the **logicapp-<inject key="DeploymentID" enableCopy="false" />** Logic App resource in the resource group's list of services available.
 
 1. In the **Logic App Designer** **(1)**, click on **Add a trigger** **(2)**. 
 
@@ -132,6 +132,10 @@ In this task, you will be configuring logic app to export the license plate data
 1. Select **Sign in** and sign in to your Office 365 Outlook account.
 
     ![In the Office 365 Outlook - Send an email box, the Sign in button is selected.](media2/updated30.png)
+
+1. You will get a pop up window to **pick an account**. select your account.
+
+    
 
 1. In the Send an email form, provide the following values:
 
