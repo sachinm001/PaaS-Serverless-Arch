@@ -75,7 +75,7 @@ In this task you will be creating a logic app which will export the data for eve
     > **Note**: This evaluates the status code returned from the ExportLicensePlates function, which will return a 200 code when license plates are found and exported. Otherwise, it sends a 204 (NoContent) status code when no license plates were discovered that need to be exported. We will conditionally send an email if any response other than 200 is returned.
 
 
-1. We will ignore the If true condition because we don't want to perform an action if the license plates are successfully exported. Select **Add an action** within the **If false** condition block.
+1. We will ignore the If true condition because we don't want to perform an action if the license plates are successfully exported. Select **+** marker and click on **Add an action** within the **If false** condition block.
 
     ![Under the Conditions field is an If true (green checkmark) section and an if false (red x) section. In the If false section, the Add an action button is selected.](media/logicapp-condition-false-add.png 'Logic App Designer Condition fields if true/false ')
 
