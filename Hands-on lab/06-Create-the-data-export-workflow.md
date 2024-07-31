@@ -69,7 +69,7 @@ In this task you will completing the code by performing TODO 5,6,7 steps and pub
 
 1. Select **Publish** to update your function app with exportLicense function.
 
-   ![The Publish button is selected.](media/ex1img3.png)
+   ![The Publish button is selected.](media2/ex1img3new.png)
    
 ## Task 2: Configure the Logic App to export data
 
