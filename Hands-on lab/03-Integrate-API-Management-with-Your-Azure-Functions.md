@@ -293,7 +293,9 @@ In this task, you will create and use an API Management (APIM) policy for IP fil
 
    ![](media/ex3task5img8.png)
 
-1. Select your **LabVM-<inject key="DeploymentID" enableCopy="false" />**.From the overview page copy the Public IP adress and note it down, you will be using this IP in the further steps.
+1. Select your **LabVM-<inject key="DeploymentID" enableCopy="false" />**.From the overview page copy the **Public IP** adress and note it down, you will be using this IP in the further steps.
+
+   ![](media/ex3task5imgat1.png)
 
 1. Use the search bar in the Azure Portal, enter API Management services, and then select API Management services under Services.
 

@@ -39,9 +39,9 @@ You will be able to complete the following task:
 
 1. Next, expand the **NeedsManualReview** collection and select **Items**.
 
-1. Select one of the documents to view its contents. Notice that the filename is provided, as well as a property named "resolved." While out of scope for this lab, those properties can be used to provide a manual process for reviewing photos and entering license plates.
+1. Select one of the documents to view its contents. Notice that the filename is provided, as well as a property named "exported." While out of scope for this lab, those properties can be used to provide a manual process for reviewing photos and entering license plates.
 
-   ![In the tree-view beneath the LicensePlates Cosmos DB, the NeedsManualReview collection is expanded, and the Items item is selected. On the Items tab, a document is selected, and its JSON data is displayed. The first four properties of the document (fileName, licensePlateText, timeStamp, and resolved) are shown along with the standard Cosmos DB properties.](media/data-explorer-needsreview.png 'Data Explorer')
+   ![In the tree-view beneath the LicensePlates Cosmos DB, the NeedsManualReview collection is expanded, and the Items item is selected. On the Items tab, a document is selected, and its JSON data is displayed. The first four properties of the document (fileName, licensePlateText, timeStamp, and resolved) are shown along with the standard Cosmos DB properties.](media/data-explorer-needsreviewtask.png 'Data Explorer')
 
 1. Select the ellipses (...) next to the **Processed** collection and select **New SQL Query**.
 
@@ -53,7 +53,7 @@ You will be able to complete the following task:
    SELECT VALUE COUNT(1) FROM c WHERE c.exported = false
    ```
 
-1. Execute the query (2) and observe the results (3). In our case, we have 906 processed documents that need to be exported.
+1. Execute the query (2) and observe the results (3). The number of processed documents that need to be exported may vary.
 
    ![In the Query window, the previously defined SQL query displays. Under Results, the number 906 is highlighted.](media/execute-query-cosomosdb.png 'Query 1 tab')
 

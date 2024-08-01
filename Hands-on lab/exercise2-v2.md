@@ -336,7 +336,11 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 
     ![In Solution Explorer, the UploadImages project is expanded, and Properties is selected from the right-click context menu.](media/vs-uploadimages.png 'Solution Explorer')
 
-1. Select **Debug** in the left-hand menu, then paste the connection string for your Azure Data Lake Storage Gen2 account into the **Application arguments** text field.
+1. Select **Debug** from the left-hand menu. In the **General** section, click on **Open debug launch profiles UI** to access the debug launch profiles interface.
+
+   ![](media/sss39task8.png)
+
+1. Paste the connection string for your Azure Data Lake Storage Gen2 account into the **Command line arguments** text field.
 
    > **Note**: To obtain the connection string:
    >
@@ -347,7 +351,7 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 
    Providing this value will ensure that the required connection string is added as an argument each time you run the application. Additionally, the combination of adding the value here and having the `.gitignore` file included in the project directory will prevent the sensitive connection string from being added to your source code repository in a later step.
 
-    ![The Debug menu item and the command line arguments text field are highlighted.](media/vs-command-line-arguments.png "Properties - Debug")
+    ![The Debug menu item and the command line arguments text field are highlighted.](media/vs-command-line-argumentstask8.png "Properties - Debug")
 
 1. Save your changes by selecting the Save icon on the Visual Studio toolbar.
 
