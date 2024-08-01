@@ -47,6 +47,8 @@ In this task you will be using Live Metrics feature of App Insights to monitor t
 1. Switch back to your browser window with the Live Metrics Stream still open within Application Insights. You should start seeing new telemetry arrive, showing the number of servers online, the incoming request rate, CPU process amount, etc. You can select some of the sample telemetry in the list to the side to view output data.
 
    ![The Live Metrics Stream window displays information for the two online servers. Displaying line and point graphs including incoming requests, outgoing requests, and overall health. To the side is a list of Sample Telemetry information. ](media/image70.png 'Live Metrics Stream window')
+   
+   >**Note**: The number of servers online here may differ for you, you can ignore that.
 
 1. Leave the Live Metrics Stream window open once again and close the console window for the image upload. Debug the UploadImages project again, then enter **2** and press **ENTER**. This will upload 1,000 new photos.
 
@@ -55,6 +57,8 @@ In this task you will be using Live Metrics feature of App Insights to monitor t
 1. Switch back to the Live Metrics Stream window and observe the activity as the photos are uploaded. You can see the number of servers online, which translates to the number of Function App instances running between both Function Apps. You should also notice things such as a steady cadence for the Request Rate monitor, the Request Duration hovering below \~200ms second, and the Incoming Requests roughly matching the Outgoing Requests.
 
    ![In the Live Metrics Stream window, two servers are online under Incoming Requests. The Request Rate heartbeat line graph is selected, as is the Request Duration dot graph. Under Overall Health, the Process CPU heartbeat line graph is also selected, the similarities between this graph and the Request Rate graph under Incoming Requests are highlighted for comparison.](media/image72.png 'Live Metrics Stream window')
+
+   >**Note**: The number of servers online here may differ for you, you can ignore that.
 
 1. After this has run for a while, close the image upload console window once again, but leave the Live Metrics Stream window open.
 
@@ -78,9 +82,9 @@ In this task, you will change the Computer Vision API to the Free tier. This wil
 
 1. Switch back to the Live Metrics Stream window and observe the activity as the photos are uploaded. After running for a couple of minutes, you should start to notice a few things. The Request Duration will begin to increase over time. As this happens, you should notice more servers being brought online..
 
-   > **Note**: If you select a sample telemetry item and cannot see its details, drag the resize bar at the bottom of the list up to resize the details pane.
-
    ![In the Live Metrics Stream window, 8 servers are now online.](media2/updated14.png 'Live Metrics Stream window')
+
+   >**Note**: The number of servers online here may differ for you, you can ignore that.
 
 1. After this has run for some time, close the UploadImages console to stop uploading photos.
 
