@@ -1,10 +1,18 @@
 # Exercise 1: Develop and publish the photo processing and data export Functions
 
-**Duration**: 45 minutes
+**Estimated Duration**: 45 minutes
 
 In this Exercise you will be using Visual Studio which is a powerful integrated development environment (IDE) developed by Microsoft. It supports a wide range of programming languages and platforms, making it a versatile tool for developers. With features like code editing, debugging, version control, and integrated Azure tools, Visual Studio streamlines the development process for building, testing, and deploying applications. 
 
 To develop and debug Azure Functions locally, you can use Visual Studio's integrated Azure Functions tooling. The provided "TollBooths" starter project solution contains most of the necessary code. Your task will be to enhance and complete the missing code components before deploying the solution to Azure. This process involves leveraging Visual Studio's robust environment for local development, testing, and debugging, ensuring a smooth transition from local setup to cloud deployment. Once your functions are refined and fully functional, Visual Studio simplifies the publishing process, allowing you to deploy the entire solution seamlessly to Azure
+
+## Lab objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Open the starter solution in Visual Studio
+- Task 2: Finish the ProcessImage function
+- Task 3: Publish the Function App from Visual Studio
 
 ### Help references
 
@@ -238,5 +246,7 @@ In this task, you will publish the Function App from the starter project in Visu
 ### Summary
 
 In this exercise, you updated code file, published the functions to Azure, and added an event grid trigger to initiate a trigger when images are published to blob storage.
+
+## You have successfully completed the Lab!
 
 

@@ -1,10 +1,17 @@
 # Exercise 4: Monitor your Functions with Application Insights
 
-**Duration**: 15 minutes
+**Estimated Duration**: 15 minutes
 
 Here you will be working with Application Insights which is a service that provides powerful, real-time analytics for your applications. It helps you monitor application performance, detect issues, and gain deep insights into usage patterns.
 
 In this exercise, you'll explore the telemetry data collected by the Application Insights account that was set up during the provisioning of your Function Apps. The integration was automatically configured by associating the Application Insights account with your Function Apps, which added the necessary telemetry key to the Function App configuration. This setup enables you to gain valuable insights into the performance, usage, and potential issues within your functions, facilitating proactive maintenance and optimization.
+
+## Lab objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Use the Live Metrics Stream to monitor functions in real-time
+- Task 2: Observe your functions dynamically scaling when resource-constrained
 
 ### Help references
 
@@ -82,3 +89,5 @@ In this task, you will change the Computer Vision API to the Free tier. This wil
 ## Summary
 
 In this exercise, you have tracked the performance and scalablity of your application by using live metrics feature of application insights.
+
+## You have successfully completed the Lab!

@@ -1,10 +1,18 @@
 # Exercise 6: Create the data export workflow
 
-**Duration**: 30 minutes
+**Estimated Duration**: 30 minutes
 
 Here you will be using Azure Logic Apps which is a cloud-based service that enables you to automate workflows and integrate various services and applications. It provides a visual designer for building and managing workflows, making it easy to orchestrate complex processes without writing extensive code.
 
 In this exercise, you'll develop a new Logic App to automate your data export workflow. This Logic App will be configured to execute on a scheduled basis, calling the ExportLicensePlates function to retrieve license plate data. The workflow includes a conditional logic step: if the function finds that there are no records to export, the Logic App will automatically send an email notification. This setup ensures that your team stays informed about the status of data exports, even when no new data is available, thereby streamlining communication and operational efficiency.
+
+## Lab objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Finish ExportLicensePlates function code and publish it to function app
+- Task 2: Configure the Logic App to export data
+- Task 3: Verify the data export workflow
 
 ### Help references
 
@@ -215,3 +223,5 @@ In this task you will verify that the data is exported to the blob or not. and a
 ## Summary
 
 In this exercise, you have created a logic app automation where it runs for every 15 minutes and export data to storage. If there is no data to export, then sends an email to customer service.
+
+## You have successfully completed the Lab!

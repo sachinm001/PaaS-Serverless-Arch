@@ -1,10 +1,23 @@
 # Exercise 2: Create Event driven Architecture Functions in the portal
 
-**Duration**: 45 minutes
+**Estimated Duration**: 45 minutes
 
 Here you will be using multiple services such as Azure Functions enables you to run event-driven code in a serverless environment. Azure Cosmos DB, a globally distributed, highly scalable database that ensures low latency and high availability. Additionally, Azure Service Bus provides a reliable messaging system.
 
 In this exercise, you'll create two new Azure Functions using Node.js within the Azure portal. These functions will be designed to respond to events triggered by Azure Event Grid. Their primary role will be to process the output from the ProcessImage function, which analyzes license plate data. Once processed, the functions will store the results in Azure Cosmos DB and also create a output message and store those in service bus queue, ensuring efficient and scalable data management.
+
+## Lab objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Create a function to save license plate data to Azure Cosmos DB
+- Task 2: Add an Event Grid subscription to the SavePlateData function
+- Task 3: Add an Azure Cosmos DB output to the SavePlateData function
+- Task 4: Create a function to save manual verification info to Azure Cosmos DB
+- Task 5: Add an Event Grid subscription to the QueuePlateForManualCheckup function
+- Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
+- Task 7: Add Service Bus output binding to SavePlateData function
+- Task 8: Test the Serverless Architecture
 
 ### Help references
 
@@ -373,3 +386,5 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 ## Summary
 
 In this exercise, you added functions to TollBoothEvents-<inject key="DeploymentID" enableCopy="false" /> function. Also, you configured a service bus queue and integrated it with TollBoothIntegration-<inject key="DeploymentID" enableCopy="false" /> function.
+
+## You have successfully completed the Lab!
