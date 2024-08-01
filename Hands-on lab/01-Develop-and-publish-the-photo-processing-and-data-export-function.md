@@ -31,13 +31,17 @@ In this task, you will access the starter solution and update the files in it.
 
    ![](media/sss8.png)
 
-1. If prompted about how to open the file, select **Visual Studio 2019**, and then select **OK**.
+1. If prompted about how to open the file, select **Visual Studio 2022**, and then select **OK**.
 
    ![Visual Studio 2019 is highlighted in the How do you want to open this file? dialog.](media/solution-file-open-with.png "Visual Studio 2019")
 
 1. Click on the **Sign in** button and paste your Azure account credentials given below:
 
    ![](media/ss1.png)
+
+1. Select **Work or school account** and click on **Continue**.
+
+   ![](media/ss2.png)
 
    - Username: **<inject key="AzureAdUserEmail" />** and click on **Next**.
 
@@ -47,7 +51,11 @@ In this task, you will access the starter solution and update the files in it.
 
      ![](media/image3.png)
 
-1. After signing in you will be prompted to choose environment settings, leave all the options to **default**, and click on **Start Visual Studio**.
+1. In the **Stay signed in to all your apps** page, uncheck the box for **Allow my organization to manage my device** and click on **No, sign in to this app only**.
+
+   ![](media/ss3.png)
+
+1. After signing in you will be prompted to choose environment settings, click on **Blue** colour theme for better visibility, and click on **Start Visual Studio**.
     
    ![](media/sss2.png)
 
@@ -107,7 +115,7 @@ A few components within the starter project must be completed, which are marked 
 1. Update the code on the line below the `TODO 1` comment, using the following code:
 
     ```csharp
-    // **TODO 1: Set the licensePlateText value by awaiting a new FindLicensePlateText.GetLicensePlate method.**
+    // TODO 1: Set the licensePlateText value by awaiting a new FindLicensePlateText.GetLicensePlate method.
     licensePlateText = await new FindLicensePlateText(log, _client).GetLicensePlate(licensePlateImage);
     ```
 
@@ -166,15 +174,18 @@ In this task, you will publish the Function App from the starter project in Visu
 1. In the **Publish** dialog:
 
     - Select your **Subscription** (1).
-    - Select **Resource Group** under **View** (2).
-    - In the **Function Apps** box (3), expand your **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group. Select the Function App **TollBoothFunctions-<inject key="DeploymentID" enableCopy="false" />**.
-    - **Uncheck the `Run from package file` option** (4).
+    - In the **Function Apps** box (2), expand your **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group. Select the Function App **TollBoothFunctions-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Uncheck the `Run from package file` option** (3).
 
     ![In the App Service form, Resource Group displays in the View field, and in the tree-view below, the hands-on-lab-SUFFIX folder is expanded, and TollBoothFunctionApp is selected.](media/vs-publish-function2.png 'Publish window')
 
     > **Important**: We do not want to run from a package file because when we deploy from GitHub later on, the build process will be skipped if the Function App is configured for a zip deployment.
 
 1. Select **Finish**.  This creates an Azure Function App publish XML file with a `.pubxml` extension.
+
+1. Click on **Close** in **Public profile creation progress** page.
+
+   ![](media/ssstask3pt7.png)
 
 1. Select **Publish** to start the process. Watch the Output window in Visual Studio as the Function App publishes. When it is finished, you should see a message that says, `========== Publish: 1 succeeded, 0 failed, 0 skipped ==========`.
 
@@ -248,5 +259,3 @@ In this task, you will publish the Function App from the starter project in Visu
 In this exercise, you updated code file, published the functions to Azure, and added an event grid trigger to initiate a trigger when images are published to blob storage.
 
 ## You have successfully completed the Lab!
-
-
