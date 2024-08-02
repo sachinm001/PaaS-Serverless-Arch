@@ -238,7 +238,7 @@ In this task, you'll bind the Service Bus to Azure Function App by adding connec
 
    ![](media/sss36.png)
 
-1. In App Settings tab, click on **Apply**.
+1. In App Settings tab, click on **Apply** and **Coinform**.
 
    ![](media2/updated12.png)
 
