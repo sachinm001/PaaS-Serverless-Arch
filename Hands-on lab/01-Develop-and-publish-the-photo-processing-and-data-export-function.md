@@ -70,18 +70,6 @@ In this task, you will access the starter solution and update the files in it.
 
    ![The two projects listed above are highlighted in Solution Explorer.](media/visual-studio-solution-explorer-projects.png 'Solution Explorer')
 
-1. From left-top corner, click on **View (1)** and select **Cloud Explorer (2)**.
-
-   ![](media/sss3.png)
-
-1. In the Cloud Explorer, you should be connected to your Azure Account and should be able to see the resources as refered in the screenshot. Else, click on **Account icon** and log in to the Azure account using the below credentials.
-
-   - Username: **<inject key="AzureAdUserEmail" />** and click on **Next**.
-
-   - Password: **<inject key="AzureAdUserPassword" />** and click on **Sign in**.
-
-   ![](media/sss4.png)
-
 1. Return to the open File Explorer window and navigate back `C:\ServerlessArch\PaaS-Serverless-Arch-main\Hands-on lab\lab-files\src\license plates`. It contains sample license plate photos used for testing out the solution. Some of the images is guaranteed to fail OCR processing, which is meant to show how the workload is designed to handle such failures. The UploadImages project uses the **copyfrom** folder as a basis for the 1,000-photo upload option for testing scalability.
 
    ![](media/sss9.png)
