@@ -344,7 +344,7 @@ In this task, you will debug the uploadImage solution and obaserve the working o
 
    > **Note**: To obtain the connection string:
    >
-   > - In the Azure portal, navigate to the **datalake{SUFFIX}** storage account.
+   > - In the Azure portal, navigate to the **datalake<inject key="DeploymentID" enableCopy="false" />** storage account.
    > - Select **Access keys** from the left menu under **Security + Networking**.
    > - Copy the **Connection string** value of **key1**.
    
