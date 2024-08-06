@@ -84,17 +84,17 @@ A few components within the starter project must be completed, which are marked 
 
     ![The Visual Studio Menu displays, with View and Task List selected.](media/vs-task-list-link.png 'Visual Studio Menu')
 
-1. There, you will see a list of `TODO` tasks, where each task represents one line of code that needs to be completed.
-
-    ![A list of TODO tasks, including their description, project, file, and line number are displayed.](media/vs-task-list.png 'TODO tasks')
-
-    > **Note**: If the TODO ordering is out of order, select **Description** to sort it in a logical order.
-
 1. In the Visual Studio Solution Explorer, expand the **TollBooth** project and double-click `ProcessImage.cs` to open the file.
 
     > Notice the Run method is decorated with the **FunctionName** attribute, which sets the name of the Azure Function to `ProcessImage`. This is triggered by HTTP requests sent to it from the Event Grid service. You tell Event Grid that you want to get these notifications at your function's URL by creating an event subscription, which you will do in a later task, in which you subscribe to blob-created events. The function's trigger watches for new blobs being added to the images container of the data lake storage account that was created by the ARM template in the Before the hands-on lab guide. The data passed to the function from the Event Grid notification includes the URL of the blob. That URL is, in turn, passed to the input binding to obtain the uploaded image from data lake storage.
 
     ![The ProcessImage.cs file is highlighted within the TollBooth project in the Visual Studio Solution Explorer.](media/select-process-image.png "Solution Explorer")
+
+1. There, you will see a list of `TODO` tasks, where each task represents one line of code that needs to be completed.
+
+    ![A list of TODO tasks, including their description, project, file, and line number are displayed.](media/vs-task-list.png 'TODO tasks')
+
+    > **Note**: If the TODO ordering is out of order, select **Description** to sort it in a logical order.
 
 1. In the **Task List** pane at the bottom of the Visual Studio window, double-click the `TODO 1` item, which will take you to the first `TODO` task.
 
@@ -241,6 +241,14 @@ In this task, you will publish the Function App from the starter project in Visu
     - **Endpoint**: Leave as **ProcessImage** **(7)**.
 
     ![](media/sss17.png)
+
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+	
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   <validation step="4494ee7a-fc63-44ff-912e-eae19f9b4046" />
 
 ### Summary
 
