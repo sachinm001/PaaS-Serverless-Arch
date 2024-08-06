@@ -51,6 +51,13 @@ In this task, you will create a new Node.js function triggered by Event Grid tha
 
     ![](media/updated4.png)
 
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+	
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   <validation step="d1732963-931e-4ac4-bce6-49b2e526e153" />
 
 ## Task 2: Add an Event Grid subscription to the SavePlateData function
 
@@ -77,6 +84,15 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
     - **Endpoint**: Leave as **SavePlateData**.
 
     ![](media/updated6.png)
+
+
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+	
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   <validation step="326ebf95-2c8a-4b80-b0d5-d8df85c05db7" />
 
 ## Task 3: Add an Azure Cosmos DB output to the SavePlateData function
 
@@ -172,6 +188,14 @@ In this task, you will create another new function triggered by Event Grid and o
 
 1. Select **Save**.
 
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+	
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   <validation step="a268f259-fdbc-45fe-878c-b67fb5d8261e" />
+
 ## Task 5: Add an Event Grid subscription to the QueuePlateForManualCheckup function
 
 In this task, you will add an Event Grid subscription to the QueuePlateForManualCheckup function. This will ensure that the events sent to the Event Grid topic containing the queuePlateForManualCheckup event type are routed to this function.
@@ -199,6 +223,14 @@ In this task, you will add an Event Grid subscription to the QueuePlateForManual
     ![](media/sss23.png)
 
 1. close the Edit Trigger blade.
+
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+	
+  - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+   <validation step="7a65ad8d-1425-4c4b-9a54-dcf23864322c" />
 
 ## Task 6: Add an Azure Cosmos DB output to the QueuePlateForManualCheckup function
 
