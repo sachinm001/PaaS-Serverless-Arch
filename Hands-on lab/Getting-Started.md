@@ -43,9 +43,9 @@ This architecture leverages serverless computing (Azure Functions) and event-dri
 - **API Management Service** : Azure API Management is a fully managed service that enables you to create, publish, secure, and analyze APIs.
 - **Azure Logic Apps** : Azure Logic Apps is a cloud service that allows you to automate workflows and integrate apps, data, and services. It enables you to design and execute workflows with minimal code using a visual designer, connecting various services and triggering actions based on events.
 
-# Getting Started with Serverless Architecture Hands-on lab
+# Getting Started with Deploying Event-Driven Serverless Architectures with Azure Integration Services 
 
-Welcome to your Serverless Architecture Hands-on lab! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
+Welcome to your Deploying Event-Driven Serverless Architectures with Azure Integration Services, We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
 
 ## Accessing Your Lab Environment
 
