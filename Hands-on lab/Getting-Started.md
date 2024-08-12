@@ -1,4 +1,4 @@
-# PaaS: Serverless architecture Hands-on Lab
+# Deploying Event-Driven Serverless Architectures with Azure Integration Services
 
 ## Overall Estimated Duration: 8 Hours
 
