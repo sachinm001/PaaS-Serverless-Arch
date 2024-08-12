@@ -51,7 +51,7 @@ Welcome to your Serverless Architecture Hands-on lab! We've prepared a seamless 
 
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](./media2/gettingstartedimg1.png)
+![Access Your VM and Lab Guide](./media2/gs1.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -61,7 +61,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](./media2/gettingstartedimg2.png)
+![Explore Lab Resources](./media2/gs2.png)
 
 ## Utilizing the Split Window Feature
  
