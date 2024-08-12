@@ -74,7 +74,7 @@ In this task, you will add an Event Grid subscription to the SavePlateData funct
     - **Event Schema**: Select **Event Grid Schema** **(2)**.
     - **Topic Type**: Select **Event Grid Topics** **(3)**.
     - **Subscription**: Select the subscription you are using for this hands-on lab.
-    - **Resource Group**: Select the **hands-on-lab-saveplatedatasub<inject key="DeploymentID" enableCopy="false" />** resource group from the list of existing resource groups.
+    - **Resource Group**: Select the **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />** resource group from the list of existing resource groups.
     - **Resource**: Select your Event Grid Topic. This should be the only service listed and will start with **eventgridtopic-<inject key="DeploymentID" enableCopy="false" />** **(4)**.
     - **Event Types**: Select **Add Event Type** and enter **savePlateData** **(5)** for the new event type value. This will ensure this Event Grid type only triggers this function.
     - **Endpoint Type**: Leave **Azure Function** **(6)** as the Endpoint Type.
