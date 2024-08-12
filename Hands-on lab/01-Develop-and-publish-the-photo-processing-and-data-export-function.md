@@ -95,6 +95,8 @@ A few components within the starter project must be completed, which are marked 
     ![A list of TODO tasks, including their description, project, file, and line number are displayed.](media/vs-task-list.png 'TODO tasks')
 
     > **Note**: If the TODO ordering is out of order, select **Description** to sort it in a logical order.
+    
+    > **Note**: It may take upto 5 minutes to render all the tasks.
 
 1. In the **Task List** pane at the bottom of the Visual Studio window, double-click the `TODO 1` item, which will take you to the first `TODO` task.
 
