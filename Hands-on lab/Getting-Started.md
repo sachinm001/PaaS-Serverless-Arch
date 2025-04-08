@@ -17,8 +17,12 @@ By the end of this lab, you will be able to:
 - **Exploring data in Azure Cosmos DB** : In this exercise, you'll use the Azure Cosmos DB Data Explorer in the portal to explore both processed and unprocessed license plate data. You'll run queries to retrieve specific data, gaining hands-on experience in navigating and managing your Cosmos DB collections for efficient data analysis.
 - **Create the data export workflow** : This hands-on exercise aims to develop a new Logic App to automate the data export workflow. The Logic App will run on a schedule, calling the ExportLicensePlates function to retrieve license plate data. It includes a conditional step that sends an email notification if no records are found, ensuring your team stays informed and streamlining communication and operational efficiency.
 
-## Pre-requisites
+## Prerequisites
+
+Participants should have:
+
 - **Fundamental Knowledge of Azure Services** : Knowing about some of the basics services like Functions, CosmosDB etc. 
+
 - **Programming Skills**: Familiarity with Node JS, C# or similar languages
 
 ## Architecture
@@ -34,6 +38,8 @@ This architecture leverages serverless computing (Azure Functions) and event-dri
    ![](media2/updatedarch.png)
 
 ## Explanation of Components
+
+The architecture for this lab involves the following key components:
 
 - **Azure Blob** : Azure Blob Storage is a scalable cloud storage service for storing large amounts of unstructured data, such as text or binary data
 - **Azure Functions** : Azure Functions is a serverless compute service that enables you to run event-driven code without managing infrastructure. 
@@ -74,6 +80,12 @@ For convenience, you can open the lab guide in a separate window by selecting th
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
 ![Manage Your Virtual Machine](media/res.png)
+
+## Lab Guide Zoom In/Zoom Out
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+![](media/labzoom-2.png)
  
 ## Let's Get Started with Azure Portal
  
