@@ -1,6 +1,6 @@
 # Exercise 5: Explore your data in Azure Cosmos DB
 
-**Estimated Duration**: 15 minutes
+### Estimated Duration: 30 minutes
 
 In this exercise, you'll use the Azure Cosmos DB Data Explorer in the portal to explore both processed and unprocessed license plate data. You'll run queries to retrieve specific data, gaining hands-on experience in navigating and managing your Cosmos DB collections for efficient data analysis.
 

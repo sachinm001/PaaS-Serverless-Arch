@@ -1,6 +1,6 @@
 # Exercise 6: Create the data export workflow
 
-**Estimated Duration**: 30 minutes
+### Estimated Duration: 65 minutes
 
 Here you will be using Azure Logic Apps which is a cloud-based service that enables you to automate workflows and integrate various services and applications. It provides a visual designer for building and managing workflows, making it easy to orchestrate complex processes without writing extensive code.
 

@@ -1,6 +1,6 @@
 # Exercise 4: Monitor your Functions with Application Insights
 
-**Estimated Duration**: 15 minutes
+### Estimated Duration: 45 minutes
 
 Here you will be working with Application Insights which is a service that provides powerful, real-time analytics for your applications. It helps you monitor application performance, detect issues, and gain deep insights into usage patterns.
 

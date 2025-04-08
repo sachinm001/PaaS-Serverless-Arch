@@ -1,6 +1,6 @@
 # Exercise 3: Integrate API Management with your Azure Functions
 
-**Estimated Duration**: 45 minutes
+### Estimated Duration: 90 minutes
 
 Here you use the Azure API Management (APIM) which is a powerful service for creating, securing, and managing APIs. It offers features like authentication, rate limiting, and IP filtering to ensure robust security and performance. APIM also provides developer portals for easy API documentation and testing, facilitating seamless integration for developers.
 

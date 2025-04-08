@@ -1,6 +1,6 @@
 # Exercise 1: Develop and publish the photo processing and data export Functions
 
-**Estimated Duration**: 45 minutes
+### Estimated Duration: 120 minutes
 
 In this Exercise you will be using Visual Studio which is a powerful integrated development environment (IDE) developed by Microsoft. It supports a wide range of programming languages and platforms, making it a versatile tool for developers. With features like code editing, debugging, version control, and integrated Azure tools, Visual Studio streamlines the development process for building, testing, and deploying applications. 
 

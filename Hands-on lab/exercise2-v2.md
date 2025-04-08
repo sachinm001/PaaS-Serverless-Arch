@@ -1,6 +1,6 @@
 # Exercise 2: Create Event driven Architecture Functions in the portal
 
-**Estimated Duration**: 45 minutes
+### Estimated Duration: 120 minutes
 
 Here you will be using multiple services such as Azure Functions enables you to run event-driven code in a serverless environment. Azure Cosmos DB, a globally distributed, highly scalable database that ensures low latency and high availability. Additionally, Azure Service Bus provides a reliable messaging system.
 
